@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)file:///C:/Users/gusta/Downloads/index_5.html -->
+<!-- saved from url=(0045)file:///C:/Users/gusta/Downloads/index_7.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -139,24 +139,54 @@
 </div>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
+  <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
   <button class="nav-btn" onclick="showScreen(&#39;nueva-venta&#39;)" id="nav-nueva-venta"><span class="icon">✚</span>Venta</button>
   <button class="nav-btn" onclick="showScreen(&#39;historial&#39;)" id="nav-historial"><span class="icon">📋</span>Historial</button>
-  <button class="nav-btn" onclick="showScreen(&#39;config&#39;)" id="nav-config"><span class="icon">⚙️</span>Config</button>
+  <button class="nav-btn active" onclick="showScreen(&#39;config&#39;)" id="nav-config"><span class="icon">⚙️</span>Config</button>
 </nav>
 
 <!-- CLIENTES -->
-<div class="screen active" id="screen-clientes">
+<div class="screen" id="screen-clientes">
   <div class="stats-bar">
-    <div class="stat-box"><div class="stat-num" id="statTotal">—</div><div class="stat-label">Clientas</div></div>
-    <div class="stat-box"><div class="stat-num" id="statRecurrentes">—</div><div class="stat-label">Recurrentes</div></div>
-    <div class="stat-box"><div class="stat-num" id="statMvd">—</div><div class="stat-label">Montevideo</div></div>
+    <div class="stat-box"><div class="stat-num" id="statTotal">3</div><div class="stat-label">Clientas</div></div>
+    <div class="stat-box"><div class="stat-num" id="statRecurrentes">3</div><div class="stat-label">Recurrentes</div></div>
+    <div class="stat-box"><div class="stat-num" id="statMvd">2</div><div class="stat-label">Montevideo</div></div>
   </div>
   <div class="search-wrap">
     <input type="text" id="searchInput" placeholder="Buscar por nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
     <span class="search-icon">🔍</span>
   </div>
-  <div id="clientesList"><div class="empty"><div class="empty-icon">⚠️</div><div class="empty-text">No se pudieron cargar las clientas. Verificá la configuración.</div></div></div>
+  <div id="clientesList">
+    <div class="card" onclick="abrirModal(0)">
+      <div class="card-name">María González</div>
+      <div class="card-detail">📱 099123456</div>
+      <div class="card-detail">📍 18 de Julio 1234</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">3 envíos</span>
+        <span class="tag tag-fecha">2024-01-15</span>
+      </div>
+    </div>
+    <div class="card" onclick="abrirModal(1)">
+      <div class="card-name">Juan Pérez</div>
+      <div class="card-detail">📱 098765432</div>
+      <div class="card-detail">📍 Av. Italia 5678</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">5 envíos</span>
+        <span class="tag tag-fecha">2024-01-20</span>
+      </div>
+    </div>
+    <div class="card" onclick="abrirModal(2)">
+      <div class="card-name">Ana Rodríguez</div>
+      <div class="card-detail">📱 091234567</div>
+      <div class="card-detail">📍 Bvar. Artigas 910</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Canelones</span>
+        <span class="tag tag-envios">2 envíos</span>
+        <span class="tag tag-fecha">2024-01-10</span>
+      </div>
+    </div></div>
 </div>
 
 <!-- NUEVA VENTA -->
@@ -231,7 +261,7 @@
 </div>
 
 <!-- CONFIG -->
-<div class="screen" id="screen-config">
+<div class="screen active" id="screen-config">
   <div class="section-title">Configuración</div>
 
   <div class="api-key-info">
@@ -299,7 +329,7 @@
   </div>
 </div>
 
-<div class="toast" id="toast">Error al cargar</div>
+<div class="toast" id="toast">Cargando via Claude…</div>
 
 <script>
 // ── CONFIG ──────────────────────────────────────────────
@@ -386,7 +416,7 @@ async function claudeAPI(messages, system='') {
         'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-sonnet-4-5',
         max_tokens: 2000,
         system: system,
         messages: messages
