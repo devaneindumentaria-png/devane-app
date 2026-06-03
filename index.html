@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(18).html -->
+<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(19).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,338 +110,38 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
+  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
   <div class="login-error" id="loginError"></div>
 </div>
 
-<div id="appScreen" style="display: none;">
+<div id="appScreen" style="display:none">
   <div class="header">
     <img src="data:image/png;base64,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" style="width:130px" alt="Devané">
     <button class="logout-btn" onclick="logout()">Salir</button>
   </div>
   <nav class="nav">
-    <button class="nav-btn active" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
-    <button class="nav-btn" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
+    <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
+    <button class="nav-btn active" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
     <button class="nav-btn" onclick="showScreen(&#39;backup&#39;)" id="nav-backup"><span class="icon">💾</span>Backup</button>
   </nav>
 
   <!-- CLIENTES -->
-  <div class="screen active" id="screen-clientes">
+  <div class="screen" id="screen-clientes">
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab(&#39;clientes&#39;,&#39;buscar&#39;)" id="tab-clientes-buscar">Buscar</button>
       <button class="tab-btn" onclick="showTab(&#39;clientes&#39;,&#39;agregar&#39;)" id="tab-clientes-agregar">Nueva clienta</button>
     </div>
     <div id="subtab-clientes-buscar">
       <div class="stats-bar">
-        <div class="stat-box"><div class="stat-num" id="statTotal">1598</div><div class="stat-label">Clientas</div></div>
-        <div class="stat-box"><div class="stat-num" id="statRecurrentes">288</div><div class="stat-label">Recurrentes</div></div>
-        <div class="stat-box"><div class="stat-num" id="statMvd">939</div><div class="stat-label">Montevideo</div></div>
+        <div class="stat-box"><div class="stat-num" id="statTotal">—</div><div class="stat-label">Clientas</div></div>
+        <div class="stat-box"><div class="stat-num" id="statRecurrentes">—</div><div class="stat-label">Recurrentes</div></div>
+        <div class="stat-box"><div class="stat-num" id="statMvd">—</div><div class="stat-label">Montevideo</div></div>
       </div>
       <div class="search-wrap">
         <input type="text" id="searchInput" class="search-input" placeholder="Nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
         <span class="search-icon">🔍</span>
       </div>
-      <div id="clientesList"><div class="section-label">Últimas agregadas</div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2197,&quot;nombre&quot;:&quot;gustavo tubino&quot;,&quot;telefono&quot;:&quot;099717466&quot;,&quot;direccion&quot;:&quot;Cno Maldonado 6279&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-03&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T03:35:07.754822&quot;})">
-      <div class="card-name">gustavo tubino</div>
-      <div class="card-detail">📱 099717466</div>
-      <div class="card-detail">📍 Cno Maldonado 6279</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-06-03</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:4,&quot;nombre&quot;:&quot;Adriana&quot;,&quot;telefono&quot;:&quot;095085530&quot;,&quot;direccion&quot;:&quot;Zum Felde 1839&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;Entrega un paquete&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-08-08&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana</div>
-      <div class="card-detail">📱 095085530</div>
-      <div class="card-detail">📍 Zum Felde 1839</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2025-08-08</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:17,&quot;nombre&quot;:&quot;Adriana Muniz Larrosa&quot;,&quot;telefono&quot;:&quot;098742172&quot;,&quot;direccion&quot;:&quot;Santiago Gadea 1024&quot;,&quot;departamento&quot;:&quot;Treinta Y Tres&quot;,&quot;localidad&quot;:&quot;Treinta Y Tres&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-11-11&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Muniz Larrosa</div>
-      <div class="card-detail">📱 098742172</div>
-      <div class="card-detail">📍 Santiago Gadea 1024</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Treinta Y Tres</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2025-11-11</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:6,&quot;nombre&quot;:&quot;Adriana&quot;,&quot;telefono&quot;:&quot;098660433&quot;,&quot;direccion&quot;:&quot;Florida 1175 entre Canelones y Maldonado&quot;,&quot;departamento&quot;:&quot;Florida&quot;,&quot;localidad&quot;:&quot;Florida&quot;,&quot;notas&quot;:&quot;Entrega un paquete&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-04-05&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana</div>
-      <div class="card-detail">📱 098660433</div>
-      <div class="card-detail">📍 Florida 1175 entre Canelones y Maldonado</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Florida</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-04-05</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:7,&quot;nombre&quot;:&quot;Adriana&quot;,&quot;telefono&quot;:&quot;099445999&quot;,&quot;direccion&quot;:&quot;Av rivera 3238 apto 201:entre Buxareo y la Gaceta&quot;,&quot;departamento&quot;:&quot;Rivera&quot;,&quot;localidad&quot;:&quot;Rivera&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2024-12-17&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana</div>
-      <div class="card-detail">📱 099445999</div>
-      <div class="card-detail">📍 Av rivera 3238 apto 201:entre Buxareo y la Gaceta</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Rivera</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2024-12-17</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:8,&quot;nombre&quot;:&quot;Adriana&quot;,&quot;telefono&quot;:&quot;099504868&quot;,&quot;direccion&quot;:&quot;Isabellino Bosch 2585&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2024-05-08&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana</div>
-      <div class="card-detail">📱 099504868</div>
-      <div class="card-detail">📍 Isabellino Bosch 2585</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2024-05-08</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:9,&quot;nombre&quot;:&quot;Adriana&quot;,&quot;telefono&quot;:&quot;099917617&quot;,&quot;direccion&quot;:&quot;Bvar Artigas 579 apto 2 entre García Zuñiga e Itapúa&quot;,&quot;departamento&quot;:&quot;Artigas&quot;,&quot;localidad&quot;:&quot;Artigas&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2023-09-05&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana</div>
-      <div class="card-detail">📱 099917617</div>
-      <div class="card-detail">📍 Bvar Artigas 579 apto 2 entre García Zuñiga e Itap…</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Artigas</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2023-09-05</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:10,&quot;nombre&quot;:&quot;Adriana Aguirre&quot;,&quot;telefono&quot;:&quot;098953824&quot;,&quot;direccion&quot;:&quot;CORONILLA 543 /1&quot;,&quot;departamento&quot;:&quot;Colonia&quot;,&quot;localidad&quot;:&quot;Colonia Del Sacramento&quot;,&quot;notas&quot;:&quot;Real de San Carlos&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-06-05&quot;,&quot;cantidad_envios&quot;:2,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Aguirre</div>
-      <div class="card-detail">📱 098953824</div>
-      <div class="card-detail">📍 CORONILLA 543 /1</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Colonia</span>
-        <span class="tag tag-envios">2 envíos</span>
-        <span class="tag tag-fecha">2025-06-05</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:11,&quot;nombre&quot;:&quot;Adriana Barrios&quot;,&quot;telefono&quot;:&quot;092081164&quot;,&quot;direccion&quot;:&quot;18 DE JULIO 965&quot;,&quot;departamento&quot;:&quot;Maldonado&quot;,&quot;localidad&quot;:&quot;Maldonado&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-03-23&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Barrios</div>
-      <div class="card-detail">📱 092081164</div>
-      <div class="card-detail">📍 18 DE JULIO 965</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Maldonado</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-03-23</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:12,&quot;nombre&quot;:&quot;Adriana Fernández&quot;,&quot;telefono&quot;:&quot;092191971&quot;,&quot;direccion&quot;:&quot;MISIONES 1328&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;Ciudad Vieja&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-02-18&quot;,&quot;cantidad_envios&quot;:4,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Fernández</div>
-      <div class="card-detail">📱 092191971</div>
-      <div class="card-detail">📍 MISIONES 1328</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">4 envíos</span>
-        <span class="tag tag-fecha">2026-02-18</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:13,&quot;nombre&quot;:&quot;Adriana Fernández&quot;,&quot;telefono&quot;:&quot;098863875&quot;,&quot;direccion&quot;:&quot;MISIONES 1266&quot;,&quot;departamento&quot;:&quot;Rivera&quot;,&quot;localidad&quot;:&quot;Rivera&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-02-23&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Fernández</div>
-      <div class="card-detail">📱 098863875</div>
-      <div class="card-detail">📍 MISIONES 1266</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Rivera</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-02-23</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:14,&quot;nombre&quot;:&quot;Adriana Gadea&quot;,&quot;telefono&quot;:&quot;099277303&quot;,&quot;direccion&quot;:&quot;Galicia 780&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2024-02-26&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Gadea</div>
-      <div class="card-detail">📱 099277303</div>
-      <div class="card-detail">📍 Galicia 780</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2024-02-26</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:15,&quot;nombre&quot;:&quot;Adriana García&quot;,&quot;telefono&quot;:&quot;099267341&quot;,&quot;direccion&quot;:&quot;Rivera 3564 entre Tiburcio Gómez y Magariños Cervantes&quot;,&quot;departamento&quot;:&quot;Rivera&quot;,&quot;localidad&quot;:&quot;Rivera&quot;,&quot;notas&quot;:&quot;Herrería, puede estar cerrada, avisar al cel&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2024-05-06&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana García</div>
-      <div class="card-detail">📱 099267341</div>
-      <div class="card-detail">📍 Rivera 3564 entre Tiburcio Gómez y Magariños Cerva…</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Rivera</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2024-05-06</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:16,&quot;nombre&quot;:&quot;Adriana Moreno&quot;,&quot;telefono&quot;:&quot;095958394&quot;,&quot;direccion&quot;:&quot;Mevir 3067&quot;,&quot;departamento&quot;:&quot;Lavalleja&quot;,&quot;localidad&quot;:&quot;Solis De Mataojo&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-03-26&quot;,&quot;cantidad_envios&quot;:7,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Moreno</div>
-      <div class="card-detail">📱 095958394</div>
-      <div class="card-detail">📍 Mevir 3067</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Lavalleja</span>
-        <span class="tag tag-envios">7 envíos</span>
-        <span class="tag tag-fecha">2026-03-26</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:5,&quot;nombre&quot;:&quot;Adriana&quot;,&quot;telefono&quot;:&quot;096421244&quot;,&quot;direccion&quot;:&quot;esquina Norberto Ortiz&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;Francisco Pla 3669&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2024-03-02&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana</div>
-      <div class="card-detail">📱 096421244</div>
-      <div class="card-detail">📍 esquina Norberto Ortiz</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2024-03-02</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:18,&quot;nombre&quot;:&quot;Adriana Núñez&quot;,&quot;telefono&quot;:&quot;098728376&quot;,&quot;direccion&quot;:&quot;Gral.Rivera s/n&quot;,&quot;departamento&quot;:&quot;Rivera&quot;,&quot;localidad&quot;:&quot;Tranqueras&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-07-02&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Núñez</div>
-      <div class="card-detail">📱 098728376</div>
-      <div class="card-detail">📍 Gral.Rivera s/n</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Rivera</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2025-07-02</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:19,&quot;nombre&quot;:&quot;Adriana paccio&quot;,&quot;telefono&quot;:&quot;099354118&quot;,&quot;direccion&quot;:&quot;Arrillaga 1176&quot;,&quot;departamento&quot;:&quot;Florida&quot;,&quot;localidad&quot;:&quot;Sarandi Grande&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-04-02&quot;,&quot;cantidad_envios&quot;:2,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana paccio</div>
-      <div class="card-detail">📱 099354118</div>
-      <div class="card-detail">📍 Arrillaga 1176</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Florida</span>
-        <span class="tag tag-envios">2 envíos</span>
-        <span class="tag tag-fecha">2025-04-02</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:20,&quot;nombre&quot;:&quot;Adriana Rodríguez&quot;,&quot;telefono&quot;:&quot;098515272&quot;,&quot;direccion&quot;:&quot;calle agorrody torre san carlos torre 2 s/n /212 M/s/n S/s/n&quot;,&quot;departamento&quot;:&quot;Maldonado&quot;,&quot;localidad&quot;:&quot;San Carlos&quot;,&quot;notas&quot;:&quot;esquina Alvariza,Torre frente a taller mecánico&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-04-01&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Rodríguez</div>
-      <div class="card-detail">📱 098515272</div>
-      <div class="card-detail">📍 calle agorrody torre san carlos torre 2 s/n /212 M…</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Maldonado</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-04-01</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:21,&quot;nombre&quot;:&quot;Adriana Santos&quot;,&quot;telefono&quot;:&quot;098724868&quot;,&quot;direccion&quot;:&quot;CORONEL, DIONISIO 1168&quot;,&quot;departamento&quot;:&quot;Treinta Y Tres&quot;,&quot;localidad&quot;:&quot;Vergara&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-01-14&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Santos</div>
-      <div class="card-detail">📱 098724868</div>
-      <div class="card-detail">📍 CORONEL, DIONISIO 1168</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Treinta Y Tres</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-01-14</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:22,&quot;nombre&quot;:&quot;Adriana Santos&quot;,&quot;telefono&quot;:&quot;098151189&quot;,&quot;direccion&quot;:&quot;batlle entre ituizangó y williman 830&quot;,&quot;departamento&quot;:&quot;Lavalleja&quot;,&quot;localidad&quot;:&quot;Minas&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-04-06&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Santos</div>
-      <div class="card-detail">📱 098151189</div>
-      <div class="card-detail">📍 batlle entre ituizangó y williman 830</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Lavalleja</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-04-06</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:23,&quot;nombre&quot;:&quot;Adriana Suárez&quot;,&quot;telefono&quot;:&quot;099555989&quot;,&quot;direccion&quot;:&quot;constituyente entre olimar y yaguarón 24 /24&quot;,&quot;departamento&quot;:&quot;Soriano&quot;,&quot;localidad&quot;:&quot;Mercedes&quot;,&quot;notas&quot;:&quot;Covicrimer vivienda 24&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-04-30&quot;,&quot;cantidad_envios&quot;:9,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Suárez</div>
-      <div class="card-detail">📱 099555989</div>
-      <div class="card-detail">📍 constituyente entre olimar y yaguarón 24 /24</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Soriano</span>
-        <span class="tag tag-envios">9 envíos</span>
-        <span class="tag tag-fecha">2026-04-30</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:24,&quot;nombre&quot;:&quot;Adriana Verónica Echeto Petrone&quot;,&quot;telefono&quot;:&quot;099020909&quot;,&quot;direccion&quot;:&quot;25 de mayo 164&quot;,&quot;departamento&quot;:&quot;Tacuarembó&quot;,&quot;localidad&quot;:&quot;San Gregorio De Polanco&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-03-19&quot;,&quot;cantidad_envios&quot;:2,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Adriana Verónica Echeto Petrone</div>
-      <div class="card-detail">📱 099020909</div>
-      <div class="card-detail">📍 25 de mayo 164</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Tacuarembó</span>
-        <span class="tag tag-envios">2 envíos</span>
-        <span class="tag tag-fecha">2026-03-19</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:25,&quot;nombre&quot;:&quot;Agustina&quot;,&quot;telefono&quot;:&quot;094664324&quot;,&quot;direccion&quot;:&quot;Costanera Maestra Aurelia Viera 2926 bis Esq Débora Vitale&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2023-12-20&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Agustina</div>
-      <div class="card-detail">📱 094664324</div>
-      <div class="card-detail">📍 Costanera Maestra Aurelia Viera 2926 bis Esq Débor…</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2023-12-20</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:26,&quot;nombre&quot;:&quot;Agustina Pollero&quot;,&quot;telefono&quot;:&quot;098151463&quot;,&quot;direccion&quot;:&quot;Magallanes 1862 esquina Nueva York&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;HASTA 16 Y 30 HORAS&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2023-01-25&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Agustina Pollero</div>
-      <div class="card-detail">📱 098151463</div>
-      <div class="card-detail">📍 Magallanes 1862 esquina Nueva York</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2023-01-25</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:27,&quot;nombre&quot;:&quot;Aida&quot;,&quot;telefono&quot;:&quot;091404515&quot;,&quot;direccion&quot;:&quot;Avda Bolivia 1474 entre Canadá y Podestá&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2024-06-06&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Aida</div>
-      <div class="card-detail">📱 091404515</div>
-      <div class="card-detail">📍 Avda Bolivia 1474 entre Canadá y Podestá</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2024-06-06</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:28,&quot;nombre&quot;:&quot;Alba Decuadro&quot;,&quot;telefono&quot;:&quot;099817406&quot;,&quot;direccion&quot;:&quot;FERRER, DR. P 1282&quot;,&quot;departamento&quot;:&quot;Rocha&quot;,&quot;localidad&quot;:&quot;Castillos&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-06-05&quot;,&quot;cantidad_envios&quot;:2,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Alba Decuadro</div>
-      <div class="card-detail">📱 099817406</div>
-      <div class="card-detail">📍 FERRER, DR. P 1282</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Rocha</span>
-        <span class="tag tag-envios">2 envíos</span>
-        <span class="tag tag-fecha">2025-06-05</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:29,&quot;nombre&quot;:&quot;Alba Espinosa&quot;,&quot;telefono&quot;:&quot;095618155&quot;,&quot;direccion&quot;:&quot;Roma  464 Vachelli y mtdeo 464&quot;,&quot;departamento&quot;:&quot;Colonia&quot;,&quot;localidad&quot;:&quot;Juan Lacaze&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-03-11&quot;,&quot;cantidad_envios&quot;:2,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Alba Espinosa</div>
-      <div class="card-detail">📱 095618155</div>
-      <div class="card-detail">📍 Roma  464 Vachelli y mtdeo 464</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Colonia</span>
-        <span class="tag tag-envios">2 envíos</span>
-        <span class="tag tag-fecha">2026-03-11</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:30,&quot;nombre&quot;:&quot;Alba Gallero&quot;,&quot;telefono&quot;:&quot;098912700&quot;,&quot;direccion&quot;:&quot;Manuel Ferreira 531&quot;,&quot;departamento&quot;:&quot;Soriano&quot;,&quot;localidad&quot;:&quot;Mercedes&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2025-11-24&quot;,&quot;cantidad_envios&quot;:2,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Alba Gallero</div>
-      <div class="card-detail">📱 098912700</div>
-      <div class="card-detail">📍 Manuel Ferreira 531</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Soriano</span>
-        <span class="tag tag-envios">2 envíos</span>
-        <span class="tag tag-fecha">2025-11-24</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:31,&quot;nombre&quot;:&quot;Alba Mgnone&quot;,&quot;telefono&quot;:&quot;098197167&quot;,&quot;direccion&quot;:&quot;San Juan 2740 entre Tapes y Ounanian&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:&quot;&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2023-08-28&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Alba Mgnone</div>
-      <div class="card-detail">📱 098197167</div>
-      <div class="card-detail">📍 San Juan 2740 entre Tapes y Ounanian</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Montevideo</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2023-08-28</span>
-      </div>
-    </div>
-    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:3,&quot;nombre&quot;:&quot;Ada Saboreo&quot;,&quot;telefono&quot;:&quot;099449958&quot;,&quot;direccion&quot;:&quot;RIVERA, GRAL. FRUCTUOSO 428&quot;,&quot;departamento&quot;:&quot;Durazno&quot;,&quot;localidad&quot;:&quot;Durazno&quot;,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-01-13&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T01:01:46.267792&quot;})">
-      <div class="card-name">Ada Saboreo</div>
-      <div class="card-detail">📱 099449958</div>
-      <div class="card-detail">📍 RIVERA, GRAL. FRUCTUOSO 428</div>
-      <div class="card-tags">
-        <span class="tag tag-depto">Durazno</span>
-        <span class="tag tag-envios">1 envío</span>
-        <span class="tag tag-fecha">2026-01-13</span>
-      </div>
-    </div></div>
+      <div id="clientesList"></div>
     </div>
     <div id="subtab-clientes-agregar" style="display:none">
       <div class="form-group"><label class="form-label">Nombre</label><input type="text" id="nuevaNombre" class="form-input" placeholder="Nombre completo"></div>
@@ -454,7 +154,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
   <!-- VENTAS -->
-  <div class="screen" id="screen-ventas">
+  <div class="screen active" id="screen-ventas">
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
@@ -463,14 +163,14 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="form-group">
         <label class="form-label">Clienta</label>
         <div class="search-wrap" style="margin-bottom:4px">
-          <input type="text" id="ventaClientaBuscar" class="search-input" placeholder="Buscar clienta…" oninput="buscarParaVenta()" autocomplete="off" style="">
+          <input type="text" id="ventaClientaBuscar" class="search-input" placeholder="Buscar clienta…" oninput="buscarParaVenta()" autocomplete="off">
           <span class="search-icon">🔍</span>
         </div>
         <div id="ventaClientaSugerencias"></div>
-        <div id="ventaClientaSeleccionada" style="display: none;" class="card">
-          <div class="card-name" id="ventaClientaNombre">Rosana Cavelli</div>
-          <div class="card-detail" id="ventaClientaTel">📱 098307563</div>
-          <div class="card-detail" id="ventaClientaDir" style="font-size:12px;margin-top:2px">📍 Solari junto al Hotel Cabo Sta. María</div>
+        <div id="ventaClientaSeleccionada" style="display:none" class="card">
+          <div class="card-name" id="ventaClientaNombre"></div>
+          <div class="card-detail" id="ventaClientaTel"></div>
+          <div class="card-detail" id="ventaClientaDir" style="font-size:12px;margin-top:2px"></div>
           <button onclick="limpiarClientaVenta()" style="margin-top:10px;background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer">Cambiar</button>
         </div>
         <div id="btnAgregarInlineWrap" style="display:none;margin-top:8px">
@@ -491,15 +191,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <!-- ARTÍCULOS -->
       <div class="form-group">
         <label class="form-label">Artículos</label>
-        <div id="articulosList"><div class="articulo-fila" style="display: grid; grid-template-columns: 1fr 60px 90px 32px; gap: 6px; margin-bottom: 8px; align-items: center;">
-    <select class="art-cat form-input" style="padding:10px 12px;font-size:13px" onchange="calcTotal()">
-      <option value="">Categoría…</option>
-      <option>Sweater</option><option>Calza</option><option>Pantalón</option><option>Remera</option><option>Canguro</option><option>Buzo Deportivo</option><option>Pantalón Deportivo</option><option>Polera</option><option>Polerón</option><option>Jeans</option>
-    </select>
-    <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center" oninput="calcTotal()">
-    <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px" oninput="calcTotal()">
-    <button onclick="this.parentElement.remove();calcTotal()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
-  </div></div>
+        <div id="articulosList"></div>
         <button onclick="agregarArticulo()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
       </div>
       <div class="form-group">
@@ -514,7 +206,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div class="total-amount">$<span id="totalDisplay">0</span></div>
       </div>
       <button class="btn btn-primary" id="btnRegistrar" onclick="registrarVenta()">Registrar venta</button>
-      <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display: block; margin-top: 10px;">🏷️ Descargar etiqueta .lbx</button>
+      <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display:none;margin-top:10px">🏷️ Descargar etiqueta .lbx</button>
     </div>
     <div id="subtab-ventas-historial" style="display:none">
       <div class="search-wrap">
@@ -568,7 +260,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast">Etiqueta descargada ✓</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
