@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(55).html -->
+<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(57).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,9 +110,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
+  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
   <div class="login-error" id="loginError"></div>
-  <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v0.3</div>
+  <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.0</div>
 </div>
 
 <div id="appScreen" style="display: block;">
@@ -329,15 +329,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div id="subtab-ventas-historial" style="display: block;">
       <!-- Pills filtro -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--danger); background: rgba(192, 57, 43, 0.1); color: var(--danger); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Pendiente</button>
-        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Despachado</button>
+        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s">Pendiente</button>
+        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s">Despachado</button>
       </div>
       <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 Hoy</div>
         <div class="venta-card">
           <div class="venta-header">
             <div class="venta-nombre">Sandra</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":25,"fecha":"2026-06-03","nombre_cliente":"sandra","telefono":"095694044","direccion":"coronel="" raíz="" 2102="" (entre="" duran="" y="" colman)="" casa="" muro="" rosado,="" reja="" chap="" gris","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"","articulo":"1x="" calza","monto":1390,"envio":200,"total":1590,"pago":"débito="" crédito","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t17:33:09.026665","detalle":[{"cantidad":1,"subtotal":1390,"categoria":"calza","descripcion":"osaka="" negra="" talle="" 3","precio_unitario":1390}],"canal_venta":"","pago_momento":"entrega","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(25)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$1.590</div>
             </div>
           </div>
@@ -355,7 +355,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Santa Melo</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":27,"fecha":"2026-06-03","nombre_cliente":"santa="" melo","telefono":"092088104","direccion":"josé="" b="" y="" ordoñez="" 6290","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"","articulo":"1x="" polerón","monto":1390,"envio":220,"total":1610,"pago":"contado","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t18:32:47.938135","detalle":[{"cantidad":1,"subtotal":1390,"categoria":"polerón","descripcion":"aspen="" negro","precio_unitario":1390}],"canal_venta":"","pago_momento":"entrega","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(27)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$1.610</div>
             </div>
           </div>
@@ -373,7 +373,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Yhojana Vignoli</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":29,"fecha":"2026-06-03","nombre_cliente":"yhojana="" vignoli","telefono":"096760439","direccion":"correo="" las="" piedras","departamento":"canelones","localidad":"","notas_direccion":"","notas_venta":"","articulo":"2x="" polera","monto":1490,"envio":189,"total":1679,"pago":"transferencia","canal":"correo="" uruguayo","estado":"pendiente","created_at":"2026-06-03t20:43:20.343433","detalle":[{"cantidad":2,"subtotal":1490,"categoria":"polera","descripcion":"manteca="" y="" rojo","precio_unitario":745}],"canal_venta":"","pago_momento":"","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(29)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$1.679</div>
             </div>
           </div>
@@ -391,7 +391,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Alejandra Fabiani</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":31,"fecha":"2026-06-03","nombre_cliente":"alejandra="" fabiani","telefono":"095866244","direccion":"continuación="" monseñor="" jacinto="" vera="" s="" n="" m="" n","departamento":"canelones","localidad":"san="" jacinto","notas_direccion":"entre="" cnotapia="" y="" ruta="" 11","notas_venta":"","articulo":"1x="" calza,="" 1x="" sweater","monto":2580,"envio":189,"total":2769,"pago":"mercado="" pago","canal":"correo="" uruguayo","estado":"pendiente","created_at":"2026-06-03t21:13:03.017153","detalle":[{"cantidad":1,"subtotal":1390,"categoria":"calza","descripcion":"osaka="" talle="" 2="" choco","precio_unitario":1390},{"cantidad":1,"subtotal":1190,"categoria":"sweater","descripcion":"teddy="" 1="" oliva","precio_unitario":1190}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(31)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$2.769</div>
             </div>
           </div>
@@ -409,7 +409,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Leticia Iguini</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":26,"fecha":"2026-06-03","nombre_cliente":"leticia="" iguini","telefono":"099850276","direccion":"manuel="" lavalleja="" 816","departamento":"treinta="" y="" tres","localidad":"treinta="" tres","notas_direccion":"","notas_venta":"","articulo":"1x="" polerón,="" 1x="" polerón","monto":2390,"envio":0,"total":2390,"pago":"transferencia","canal":"correo="" uruguayo","estado":"pendiente","created_at":"2026-06-03t18:16:59.444219","detalle":[{"cantidad":1,"subtotal":1195,"categoria":"polerón","descripcion":"turquesa="" xl="" 2xl","precio_unitario":1195},{"cantidad":1,"subtotal":1195,"categoria":"polerón","descripcion":"l="" mostaza","precio_unitario":1195}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(26)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$2.390</div>
             </div>
           </div>
@@ -427,7 +427,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Ana Paz</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":30,"fecha":"2026-06-03","nombre_cliente":"ana="" paz","telefono":"099973597","direccion":"gusyaquí="" 3386="" apto="" 105="" esquina="" b="" blanco","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"viernes="" de="" 12="" a="" 18="" hs","articulo":"4x="" polerón","monto":4780,"envio":180,"total":4960,"pago":"transferencia","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t21:00:16.281065","detalle":[{"cantidad":4,"subtotal":4780,"categoria":"polerón","descripcion":"l="" xl="" c="" tajo="" rosa,="" gris="" y="" crudo="" sin="" turquesa","precio_unitario":1195}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(30)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$4.960</div>
             </div>
           </div>
@@ -445,7 +445,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Adriana Fernández</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":28,"fecha":"2026-06-03","nombre_cliente":"adriana="" fernández","telefono":"092191971","direccion":"misiones="" 1328","departamento":"montevideo","localidad":"ciudad="" vieja","notas_direccion":"","notas_venta":"rincón="" 660","articulo":"1x="" pantalón,="" 1x="" sweater","monto":2280,"envio":180,"total":2460,"pago":"transferencia","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t20:08:58.980106","detalle":[{"cantidad":1,"subtotal":990,"categoria":"pantalón","descripcion":"gris="" 3x","precio_unitario":990},{"cantidad":1,"subtotal":1290,"categoria":"sweater","descripcion":"1x="" 2x="" beige","precio_unitario":1290}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(28)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$2.460</div>
             </div>
           </div>
@@ -463,7 +463,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="venta-header">
             <div class="venta-nombre">Luisa</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir({" id":24,"fecha":"2026-06-03","nombre_cliente":"luisa","telefono":"094740670","direccion":"carlos="" maría="" ramírez="" 345="" florería="" tamara","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"","articulo":"2x="" polerón","monto":2390,"envio":230,"total":2620,"pago":"transferencia","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t17:28:16.815319","detalle":[{"cantidad":2,"subtotal":2390,"categoria":"polerón","descripcion":"talle="" l="" xl="" negro="" y="" verde","precio_unitario":1195}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(24)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$2.620</div>
             </div>
           </div>
@@ -555,7 +555,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast">Etiqueta descargada ✓</div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
@@ -1142,7 +1142,7 @@ function renderHistorial() {
           <div class="venta-header">
             <div class="venta-nombre">${v.nombre_cliente||'—'}</div>
             <div style="display:flex;align-items:center;gap:8px">
-              <button onclick="event.stopPropagation();reimprimir(${JSON.stringify(v).replace(/'/g,"&#39;")})" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(${v.id})" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$${(v.total||0).toLocaleString('es-UY')}</div>
             </div>
           </div>
@@ -1239,6 +1239,12 @@ async function cambiarEstadoVenta() {
   } catch(e) { toast('Error: ' + e.message, 'error'); }
 }
 
+function reimprimirPorId(id) {
+  const v = todasVentas.find(v => v.id === id);
+  if (v) reimprimir(v);
+  else toast('No se encontró la venta', 'error');
+}
+
 function reimprimir(v) {
   ultimaVenta = {
     nombre_cliente: v.nombre_cliente, telefono: v.telefono,
@@ -1266,9 +1272,6 @@ function generarLBX(venta) {
 
   // Construir líneas de la etiqueta
   const lineas = [];
-  lineas.push(`${nombre} ${tel}`.trim());
-  if (dir) lineas.push(dir);
-  if (notas) lineas.push(notas);
   const momentoPago = venta.pago_momento || '';
   const fechaEntrega = venta.fecha_entrega || '';
   const horarioEntrega = venta.horario_entrega || '';
@@ -1276,6 +1279,9 @@ function generarLBX(venta) {
     const lineaFecha = [fechaEntrega, horarioEntrega].filter(Boolean).join(' · ');
     lineas.push(lineaFecha);
   }
+  lineas.push(`${nombre} ${tel}`.trim());
+  if (dir) lineas.push(dir);
+  lineas.push(pago);
   if (momentoPago === 'Previo') {
     lineas.push('Pago');
   } else {
