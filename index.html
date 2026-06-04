@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(53).html -->
+<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(55).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
+  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v0.3</div>
 </div>
@@ -157,16 +157,16 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <!-- VENTAS -->
   <div class="screen active" id="screen-ventas">
     <div class="tabs">
-      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
+      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
-      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
+      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
     </div>
-    <div id="subtab-ventas-reservas" style="display: block;">
+    <div id="subtab-ventas-reservas" style="display: none;">
       <!-- FILTROS -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="res-filtro active" id="resfiltro-hoy" onclick="setFiltroReservas(&#39;hoy&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--accent); background: rgba(74, 82, 64, 0.1); color: var(--accent); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer;">Hoy</button>
-        <button class="res-filtro" id="resfiltro-ayer" onclick="setFiltroReservas(&#39;ayer&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer;">Ayer</button>
-        <button class="res-filtro" id="resfiltro-anteriores" onclick="setFiltroReservas(&#39;anteriores&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer;">Anteriores</button>
+        <button class="res-filtro active" id="resfiltro-hoy" onclick="setFiltroReservas(&#39;hoy&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--accent);background:rgba(74,82,64,0.1);color:var(--accent);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer">Hoy</button>
+        <button class="res-filtro" id="resfiltro-ayer" onclick="setFiltroReservas(&#39;ayer&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer">Ayer</button>
+        <button class="res-filtro" id="resfiltro-anteriores" onclick="setFiltroReservas(&#39;anteriores&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer">Anteriores</button>
       </div>
       <div id="reservasList"><div class="empty"><div class="empty-icon">📋</div><div class="empty-text">No hay reservas</div></div></div>
       <button onclick="abrirNuevaReserva()" style="position:fixed;bottom:80px;right:20px;width:52px;height:52px;background:var(--dark);border:none;border-radius:50%;color:#FAFAF8;font-size:24px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center">+</button>
@@ -180,7 +180,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div class="form-group">
           <label class="form-label">Canal de venta</label>
           <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
-          <button type="button" class="canal-pill-res active" onclick="seleccionarCanalRes(this,&#39;WhatsApp&#39;)" style="flex: 1 1 0%; min-width: 80px; padding: 10px 8px; border-radius: 24px; border: 1.5px solid rgb(37, 211, 102); background: rgba(37, 211, 102, 0.1); color: rgb(26, 128, 64); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s;">💬 WhatsApp</button>
+          <button type="button" class="canal-pill-res active" onclick="seleccionarCanalRes(this,&#39;WhatsApp&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid #25D366;background:rgba(37,211,102,0.1);color:#1a8040;font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">💬 WhatsApp</button>
           <button type="button" class="canal-pill-res" onclick="seleccionarCanalRes(this,&#39;Instagram&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">📸 Instagram</button>
           <button type="button" class="canal-pill-res" onclick="seleccionarCanalRes(this,&#39;Facebook&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">👥 Facebook</button>
           <button type="button" class="canal-pill-res" onclick="seleccionarCanalRes(this,&#39;Web&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">🌐 Web</button>
@@ -214,18 +214,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div class="form-group">
           <label class="form-label">Artículos</label>
-          <div id="articulosListRes"><div class="articulo-fila-res" style="background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; margin-bottom: 8px;">
-    <div style="display:grid;grid-template-columns:1fr 60px 90px 32px;gap:6px;margin-bottom:8px;align-items:center">
-      <select class="art-cat form-input" style="padding:10px 12px;font-size:13px" onchange="calcTotalRes()">
-        <option value="">Categoría…</option>
-        <option>Sweater</option><option>Calza</option><option>Pantalón</option><option>Remera</option><option>Canguro</option><option>Buzo Deportivo</option><option>Pantalón Deportivo</option><option>Polera</option><option>Polerón</option><option>Jeans</option>
-      </select>
-      <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center" oninput="calcTotalRes()">
-      <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px" oninput="calcTotalRes()">
-      <button onclick="this.closest(&#39;.articulo-fila-res&#39;).remove();calcTotalRes()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
-    </div>
-    <input type="text" class="art-desc form-input" placeholder="Descripción (color, talle…)" style="font-size:13px;padding:10px 12px">
-  </div></div>
+          <div id="articulosListRes"></div>
           <button onclick="agregarArticuloRes()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
         </div>
         <div class="form-group"><label class="form-label">Notas de reserva</label><input type="text" id="resNotas" class="form-input" placeholder="Observaciones de la reserva…"></div>
@@ -337,13 +326,157 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <button class="btn btn-primary" id="btnRegistrar" onclick="registrarVenta()">Registrar venta</button>
       <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display:none;margin-top:10px">🏷️ Descargar etiqueta .lbx</button>
     </div>
-        <div id="subtab-ventas-historial" style="display:none">
+        <div id="subtab-ventas-historial" style="display: block;">
       <!-- Pills filtro -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s">Pendiente</button>
-        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s">Despachado</button>
+        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--danger); background: rgba(192, 57, 43, 0.1); color: var(--danger); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Pendiente</button>
+        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Despachado</button>
       </div>
-      <div id="historialList"></div>
+      <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 Hoy</div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Sandra</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":25,"fecha":"2026-06-03","nombre_cliente":"sandra","telefono":"095694044","direccion":"coronel="" raíz="" 2102="" (entre="" duran="" y="" colman)="" casa="" muro="" rosado,="" reja="" chap="" gris","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"","articulo":"1x="" calza","monto":1390,"envio":200,"total":1590,"pago":"débito="" crédito","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t17:33:09.026665","detalle":[{"cantidad":1,"subtotal":1390,"categoria":"calza","descripcion":"osaka="" negra="" talle="" 3","precio_unitario":1390}],"canal_venta":"","pago_momento":"entrega","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.590</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Calza · Flex Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(25)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Entrega · Débito/Crédito</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(25)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Santa Melo</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":27,"fecha":"2026-06-03","nombre_cliente":"santa="" melo","telefono":"092088104","direccion":"josé="" b="" y="" ordoñez="" 6290","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"","articulo":"1x="" polerón","monto":1390,"envio":220,"total":1610,"pago":"contado","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t18:32:47.938135","detalle":[{"cantidad":1,"subtotal":1390,"categoria":"polerón","descripcion":"aspen="" negro","precio_unitario":1390}],"canal_venta":"","pago_momento":"entrega","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.610</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Polerón · Flex Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(27)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Entrega · Contado</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(27)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Yhojana Vignoli</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":29,"fecha":"2026-06-03","nombre_cliente":"yhojana="" vignoli","telefono":"096760439","direccion":"correo="" las="" piedras","departamento":"canelones","localidad":"","notas_direccion":"","notas_venta":"","articulo":"2x="" polera","monto":1490,"envio":189,"total":1679,"pago":"transferencia","canal":"correo="" uruguayo","estado":"pendiente","created_at":"2026-06-03t20:43:20.343433","detalle":[{"cantidad":2,"subtotal":1490,"categoria":"polera","descripcion":"manteca="" y="" rojo","precio_unitario":745}],"canal_venta":"","pago_momento":"","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.679</div>
+            </div>
+          </div>
+          <div class="venta-detail">2x Polera · Correo Uruguayo</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(29)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)"> · Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(29)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Alejandra Fabiani</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":31,"fecha":"2026-06-03","nombre_cliente":"alejandra="" fabiani","telefono":"095866244","direccion":"continuación="" monseñor="" jacinto="" vera="" s="" n="" m="" n","departamento":"canelones","localidad":"san="" jacinto","notas_direccion":"entre="" cnotapia="" y="" ruta="" 11","notas_venta":"","articulo":"1x="" calza,="" 1x="" sweater","monto":2580,"envio":189,"total":2769,"pago":"mercado="" pago","canal":"correo="" uruguayo","estado":"pendiente","created_at":"2026-06-03t21:13:03.017153","detalle":[{"cantidad":1,"subtotal":1390,"categoria":"calza","descripcion":"osaka="" talle="" 2="" choco","precio_unitario":1390},{"cantidad":1,"subtotal":1190,"categoria":"sweater","descripcion":"teddy="" 1="" oliva","precio_unitario":1190}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$2.769</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Calza, 1x Sweater · Correo Uruguayo</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(31)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Previo · Mercado Pago</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(31)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Leticia Iguini</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":26,"fecha":"2026-06-03","nombre_cliente":"leticia="" iguini","telefono":"099850276","direccion":"manuel="" lavalleja="" 816","departamento":"treinta="" y="" tres","localidad":"treinta="" tres","notas_direccion":"","notas_venta":"","articulo":"1x="" polerón,="" 1x="" polerón","monto":2390,"envio":0,"total":2390,"pago":"transferencia","canal":"correo="" uruguayo","estado":"pendiente","created_at":"2026-06-03t18:16:59.444219","detalle":[{"cantidad":1,"subtotal":1195,"categoria":"polerón","descripcion":"turquesa="" xl="" 2xl","precio_unitario":1195},{"cantidad":1,"subtotal":1195,"categoria":"polerón","descripcion":"l="" mostaza","precio_unitario":1195}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$2.390</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Polerón, 1x Polerón · Correo Uruguayo</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(26)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Previo · Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(26)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Ana Paz</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":30,"fecha":"2026-06-03","nombre_cliente":"ana="" paz","telefono":"099973597","direccion":"gusyaquí="" 3386="" apto="" 105="" esquina="" b="" blanco","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"viernes="" de="" 12="" a="" 18="" hs","articulo":"4x="" polerón","monto":4780,"envio":180,"total":4960,"pago":"transferencia","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t21:00:16.281065","detalle":[{"cantidad":4,"subtotal":4780,"categoria":"polerón","descripcion":"l="" xl="" c="" tajo="" rosa,="" gris="" y="" crudo="" sin="" turquesa","precio_unitario":1195}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$4.960</div>
+            </div>
+          </div>
+          <div class="venta-detail">4x Polerón · Flex Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(30)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Previo · Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(30)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Adriana Fernández</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":28,"fecha":"2026-06-03","nombre_cliente":"adriana="" fernández","telefono":"092191971","direccion":"misiones="" 1328","departamento":"montevideo","localidad":"ciudad="" vieja","notas_direccion":"","notas_venta":"rincón="" 660","articulo":"1x="" pantalón,="" 1x="" sweater","monto":2280,"envio":180,"total":2460,"pago":"transferencia","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t20:08:58.980106","detalle":[{"cantidad":1,"subtotal":990,"categoria":"pantalón","descripcion":"gris="" 3x","precio_unitario":990},{"cantidad":1,"subtotal":1290,"categoria":"sweater","descripcion":"1x="" 2x="" beige","precio_unitario":1290}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$2.460</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Pantalón, 1x Sweater · Flex Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(28)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Previo · Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(28)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Luisa</div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <button onclick="event.stopPropagation();reimprimir({" id":24,"fecha":"2026-06-03","nombre_cliente":"luisa","telefono":"094740670","direccion":"carlos="" maría="" ramírez="" 345="" florería="" tamara","departamento":"montevideo","localidad":"","notas_direccion":"","notas_venta":"","articulo":"2x="" polerón","monto":2390,"envio":230,"total":2620,"pago":"transferencia","canal":"flex="" mathias","estado":"pendiente","created_at":"2026-06-03t17:28:16.815319","detalle":[{"cantidad":2,"subtotal":2390,"categoria":"polerón","descripcion":"talle="" l="" xl="" negro="" y="" verde","precio_unitario":1195}],"canal_venta":"","pago_momento":"previo","fecha_entrega":"2026-06-04","horario_entrega":null})"="" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$2.620</div>
+            </div>
+          </div>
+          <div class="venta-detail">2x Polerón · Flex Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 jue, 4 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(24)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Previo · Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(24)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+        </div></div>
     </div>
   </div>
 </div>
@@ -1213,6 +1346,7 @@ function renderReservas() {
   const hoy = new Date().toISOString().split('T')[0];
   const ayer = new Date(Date.now()-86400000).toISOString().split('T')[0];
   const filtradas = todasReservas.filter(r => {
+    if (r.estado === 'Cancelada' || r.estado === 'Convertida') return false;
     const fecha = (r.created_at||'').split('T')[0];
     if (filtroReservas === 'hoy') return fecha === hoy;
     if (filtroReservas === 'ayer') return fecha === ayer;
@@ -1230,7 +1364,10 @@ function renderReservas() {
         </div>
         <div class="venta-detail">${r.articulo||'—'} · ${r.canal_venta||'—'}</div>
         ${r.notas?`<div class="venta-detail" style="margin-top:2px;font-style:italic">${r.notas}</div>`:''}
-        <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--accent);margin-top:6px">$${(r.monto||0).toLocaleString('es-UY')}</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--accent)">$${(r.monto||0).toLocaleString('es-UY')}</div>
+          <span style="font-size:11px;color:var(--text3)">${r.created_at ? new Date(r.created_at).toLocaleString('es-UY',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}) : ''}</span>
+        </div>
         ${estado === 'Activa' ? `
         <div style="display:flex;gap:8px;margin-top:12px">
           <button onclick="convertirReservaEnVenta(${r.id})" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">✓ Confirmar venta</button>
