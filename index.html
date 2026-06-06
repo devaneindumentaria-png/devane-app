@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(63).html -->
+<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(72).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
+  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.0</div>
 </div>
@@ -121,13 +121,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <button class="logout-btn" onclick="logout()">Salir</button>
   </div>
   <nav class="nav">
-    <button class="nav-btn active" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
-    <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
+    <button class="nav-btn" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
+    <button class="nav-btn active" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
     <button class="nav-btn" onclick="showScreen(&#39;backup&#39;)" id="nav-backup"><span class="icon">💾</span>Backup</button>
   </nav>
 
   <!-- CLIENTES -->
-  <div class="screen" id="screen-clientes">
+  <div class="screen active" id="screen-clientes">
     <div class="tabs">
       <button class="tab-btn active" onclick="showTab(&#39;clientes&#39;,&#39;buscar&#39;)" id="tab-clientes-buscar">Buscar</button>
       <button class="tab-btn" onclick="showTab(&#39;clientes&#39;,&#39;agregar&#39;)" id="tab-clientes-agregar">Nueva clienta</button>
@@ -142,7 +142,57 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <input type="text" id="searchInput" class="search-input" placeholder="Nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
         <span class="search-icon">🔍</span>
       </div>
-      <div id="clientesList"></div>
+      <div id="clientesList"><div class="section-label">Últimas agregadas</div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2226,&quot;nombre&quot;:&quot;Graciela Pallarea&quot;,&quot;telefono&quot;:&quot;099640627&quot;,&quot;direccion&quot;:&quot;Dr Carlos Travieso 5828 entre Bolivia y Ancona&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-05&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-05T16:19:16.882332&quot;})">
+      <div class="card-name">Graciela Pallarea</div>
+      <div class="card-detail">📱 099640627</div>
+      <div class="card-detail">📍 Dr Carlos Travieso 5828 entre Bolivia y Ancona</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-05</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2225,&quot;nombre&quot;:&quot;Shirley Vasconcellos&quot;,&quot;telefono&quot;:&quot;099558006&quot;,&quot;direccion&quot;:&quot;Misiones 215&quot;,&quot;departamento&quot;:&quot;Artigas&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-05&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-05T12:57:59.507746&quot;})">
+      <div class="card-name">Shirley Vasconcellos</div>
+      <div class="card-detail">📱 099558006</div>
+      <div class="card-detail">📍 Misiones 215</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Artigas</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-05</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2223,&quot;nombre&quot;:&quot;Ana Paz&quot;,&quot;telefono&quot;:&quot;099973597&quot;,&quot;direccion&quot;:&quot;Gusyaquí 3386 apto 105 esquina B Blanco&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-03&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T20:58:41.911755&quot;})">
+      <div class="card-name">Ana Paz</div>
+      <div class="card-detail">📱 099973597</div>
+      <div class="card-detail">📍 Gusyaquí 3386 apto 105 esquina B Blanco</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-03</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2222,&quot;nombre&quot;:&quot;Yhojana Vignoli&quot;,&quot;telefono&quot;:&quot;096760439&quot;,&quot;direccion&quot;:&quot;Correo las Piedras&quot;,&quot;departamento&quot;:&quot;Canelones&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-03&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T20:42:29.125349&quot;})">
+      <div class="card-name">Yhojana Vignoli</div>
+      <div class="card-detail">📱 096760439</div>
+      <div class="card-detail">📍 Correo las Piedras</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Canelones</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-03</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2213,&quot;nombre&quot;:&quot;Santa Melo&quot;,&quot;telefono&quot;:&quot;092088104&quot;,&quot;direccion&quot;:&quot;José B y Ordoñez 6290&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-03&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-03T18:31:55.568057&quot;})">
+      <div class="card-name">Santa Melo</div>
+      <div class="card-detail">📱 092088104</div>
+      <div class="card-detail">📍 José B y Ordoñez 6290</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-03</span>
+      </div>
+    </div></div>
     </div>
     <div id="subtab-clientes-agregar" style="display:none">
       <div class="form-group"><label class="form-label">Nombre</label><input type="text" id="nuevaNombre" class="form-input" placeholder="Nombre completo"></div>
@@ -155,13 +205,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
   <!-- VENTAS -->
-  <div class="screen active" id="screen-ventas">
+  <div class="screen" id="screen-ventas">
     <div class="tabs">
-      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
+      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
-      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
+      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
     </div>
-    <div id="subtab-ventas-reservas" style="display: none;">
+    <div id="subtab-ventas-reservas" style="display: block;">
       <!-- FILTROS -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
         <button class="res-filtro active" id="resfiltro-hoy" onclick="setFiltroReservas(&#39;hoy&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--accent);background:rgba(74,82,64,0.1);color:var(--accent);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer">Hoy</button>
@@ -326,11 +376,20 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <button class="btn btn-primary" id="btnRegistrar" onclick="registrarVenta()">Registrar venta</button>
       <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display:none;margin-top:10px">🏷️ Descargar etiqueta .lbx</button>
     </div>
-        <div id="subtab-ventas-historial" style="display: block;">
-      <!-- Pills filtro -->
-      <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s">Pendiente</button>
-        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s">Despachado</button>
+        <div id="subtab-ventas-historial" style="display: none;">
+      <!-- Pills fecha -->
+      <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;flex-wrap:wrap">
+        <button class="hfecha-pill" id="hfecha-hoy" onclick="toggleFiltroFecha(&#39;hoy&#39;)" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Hoy</button>
+        <button class="hfecha-pill" id="hfecha-ayer" onclick="toggleFiltroFecha(&#39;ayer&#39;)" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Ayer</button>
+        <label id="hfecha-desde-label" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:4px">
+          📅 <input type="date" id="historialDesde" style="border:none;background:transparent;color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;cursor:pointer;outline:none;width:90px" onchange="setFiltroFechaHistorial(&#39;desde&#39;)">
+        </label>
+      </div>
+      <!-- Pills estado + orden -->
+      <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
+        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--danger); background: rgba(192, 57, 43, 0.1); color: var(--danger); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Pendiente</button>
+        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Despachado</button>
+        <button id="btnOrden" onclick="toggleOrdenHistorial()" style="padding:9px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;cursor:pointer;transition:all 0.2s;flex-shrink:0" title="Cambiar orden">↑</button>
       </div>
       <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 lunes, 8 de junio</div>
         <div class="venta-card">
@@ -371,8 +430,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <div class="modal-overlay" id="modalVentaOverlay" onclick="if(event.target===this)cerrarModalVenta()">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="modalVentaNombre"></div>
+    <div class="modal-title" id="modalVentaNombre">Graciela Pallarea</div>
     <div style="height:12px"></div>
+    <div id="modalDirContainer" style="display: block; margin-bottom: 4px;">
+          <div class="form-group">
+            <label class="form-label">Dirección de entrega</label>
+            <select id="modalDirSelect" class="form-input" style="font-size:13px">
+              <option data-dir="Dr Carlos Travieso 5828 entre Bolivia y Ancona" data-depto="Montevideo" selected="">⭐ Dr Carlos Travieso 5828 entre Bolivia y Ancona</option><option data-dir="Aleternativa" data-depto="Montevideo">Aleternativa</option>
+            </select>
+          </div></div>
     <div class="form-group">
       <label class="form-label">Fecha de entrega</label>
       <input type="date" id="modalFechaEntrega" class="form-input">
@@ -388,9 +454,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div>
           <label class="form-label" style="font-size:10px">Hasta</label>
-          <select id="modalHorarioHasta" class="form-input">
-            <option value="">—</option>
-          </select>
+          <select id="modalHorarioHasta" class="form-input"><option value="">—</option></select>
         </div>
       </div>
     </div>
@@ -403,9 +467,64 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)cerrarModal()">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="modalNombre"></div>
-    <div class="modal-sub" id="modalTel"></div>
-    <div class="detail-section" id="modalInfo"></div>
+    <div class="modal-title" id="modalNombre">Graciela Pallarea</div>
+    <div class="modal-sub" id="modalTel">099640627</div>
+    <div class="detail-section" id="modalInfo">
+    <div class="detail-row"><span class="detail-key">Departamento</span><span class="detail-val">Montevideo</span></div>
+    <div class="detail-row"><span class="detail-key">Envíos</span><span class="detail-val">1</span></div>
+    <div class="detail-row"><span class="detail-key">Último</span><span class="detail-val">2026-06-05</span></div>
+  </div>
+
+    <!-- DIRECCIONES -->
+    <div style="margin-bottom:16px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+        <span style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase">Direcciones</span>
+        <button onclick="mostrarFormNuevaDireccion()" style="background:var(--accent);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;padding:5px 14px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">+ Nueva</button>
+      </div>
+      <div id="modalDirecciones">
+      <div style="background:rgba(74,82,64,0.08);border:1px solid var(--accent);border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="flex:1">
+            <span style="font-size:10px;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase">Principal</span><br>
+            <span style="font-size:14px;color:var(--text)">Dr Carlos Travieso 5828 entre Bolivia y Ancona</span>
+            <br><span style="font-size:12px;color:var(--text2)">Montevideo</span>
+            
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0">
+            
+            <button onclick="borrarDireccion(1560,&#39;099640627&#39;,true)" style="background:none;border:1px solid var(--border);color:var(--danger);border-radius:6px;padding:4px 8px;font-size:11px;cursor:pointer">✕</button>
+          </div>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="flex:1">
+            
+            <span style="font-size:14px;color:var(--text)">Aleternativa</span>
+            <br><span style="font-size:12px;color:var(--text2)">Montevideo</span>
+            
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0">
+            <button onclick="setPrincipal(1567,&#39;099640627&#39;)" style="background:none;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:4px 8px;font-size:11px;cursor:pointer">Principal</button>
+            <button onclick="borrarDireccion(1567,&#39;099640627&#39;,false)" style="background:none;border:1px solid var(--border);color:var(--danger);border-radius:6px;padding:4px 8px;font-size:11px;cursor:pointer">✕</button>
+          </div>
+        </div>
+      </div></div>
+      <div id="formNuevaDireccion" style="display: none; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; margin-top: 8px;">
+        <div class="form-group"><label class="form-label">Dirección</label><input type="text" id="nuevaDirInput" class="form-input" placeholder="Dirección de entrega"></div>
+        <div class="form-group"><label class="form-label">Departamento</label>
+          <select id="nuevaDirDepto" class="form-input">
+            <option>Montevideo</option><option>Canelones</option><option>Maldonado</option><option>San José</option><option>Colonia</option><option>Soriano</option><option>Rivera</option><option>Salto</option><option>Paysandú</option><option>Artigas</option><option>Tacuarembó</option><option>Cerro Largo</option><option>Treinta y Tres</option><option>Rocha</option><option>Lavalleja</option><option>Florida</option><option>Flores</option><option>Durazno</option><option>Río Negro</option>
+          </select>
+        </div>
+        <div class="form-group" style="margin-bottom:0"><label class="form-label">Notas</label><input type="text" id="nuevaDirNotas" class="form-input" placeholder="Referencias, horario…"></div>
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="guardarNuevaDireccion()" class="btn btn-primary" style="flex:1;padding:11px">Guardar</button>
+          <button onclick="document.getElementById(&#39;formNuevaDireccion&#39;).style.display=&#39;none&#39;" style="padding:11px 14px;background:none;border:1px solid var(--border);border-radius:var(--radius);cursor:pointer;font-size:13px;color:var(--text2)">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
     <button class="btn btn-primary" onclick="irAVentaDesdeModal()">Registrar venta</button>
     <button class="btn btn-secondary" onclick="abrirEditar()">Editar clienta</button>
     <button class="btn btn-danger" onclick="confirmarBorrar()">Eliminar clienta</button>
@@ -429,7 +548,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast">Etiqueta descargada ✓</div>
+<div class="toast" id="toast">Dirección agregada ✓</div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
@@ -634,15 +753,91 @@ function abrirModal(c) {
   document.getElementById('modalNombre').textContent = c.nombre||'Sin nombre';
   document.getElementById('modalTel').textContent = c.telefono||'';
   document.getElementById('modalInfo').innerHTML = `
-    <div class="detail-row"><span class="detail-key">Dirección</span><span class="detail-val">${c.direccion||'—'}</span></div>
     <div class="detail-row"><span class="detail-key">Departamento</span><span class="detail-val">${c.departamento||'—'}</span></div>
-    ${c.localidad?`<div class="detail-row"><span class="detail-key">Localidad</span><span class="detail-val">${c.localidad}</span></div>`:''}
-    ${c.notas?`<div class="detail-row"><span class="detail-key">Notas</span><span class="detail-val">${c.notas}</span></div>`:''}
     <div class="detail-row"><span class="detail-key">Envíos</span><span class="detail-val">${c.cantidad_envios||0}</span></div>
     ${c.fecha_ultimo_envio?`<div class="detail-row"><span class="detail-key">Último</span><span class="detail-val">${c.fecha_ultimo_envio.substring(0,10)}</span></div>`:''}
   `;
+  document.getElementById('formNuevaDireccion').style.display = 'none';
   document.getElementById('modalOverlay').classList.add('open');
+  cargarDireccionesModal(c.telefono);
 }
+
+async function cargarDireccionesModal(telefono) {
+  const el = document.getElementById('modalDirecciones');
+  el.innerHTML = '<div class="loader"><div class="spinner"></div></div>';
+  try {
+    const dirs = await API.get('direcciones', `telefono=eq.${telefono}&order=es_principal.desc`);
+    if (!dirs.length) { el.innerHTML = '<div style="font-size:13px;color:var(--text2);padding:8px 0">Sin direcciones cargadas</div>'; return; }
+    el.innerHTML = dirs.map(d => `
+      <div style="background:${d.es_principal?'rgba(74,82,64,0.08)':'var(--surface)'};border:1px solid ${d.es_principal?'var(--accent)':'var(--border)'};border-radius:10px;padding:12px;margin-bottom:8px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:8px">
+          <div style="flex:1">
+            ${d.es_principal?'<span style="font-size:10px;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase">Principal</span><br>':''}
+            <span style="font-size:14px;color:var(--text)">${d.direccion}</span>
+            ${d.departamento?`<br><span style="font-size:12px;color:var(--text2)">${d.departamento}</span>`:''}
+            ${d.notas?`<br><span style="font-size:12px;color:var(--text2);font-style:italic">${d.notas}</span>`:''}
+          </div>
+          <div style="display:flex;gap:6px;flex-shrink:0">
+            ${!d.es_principal?`<button onclick="setPrincipal(${d.id},'${telefono}')" style="background:none;border:1px solid var(--accent);color:var(--accent);border-radius:6px;padding:4px 8px;font-size:11px;cursor:pointer">Principal</button>`:''}
+            <button onclick="borrarDireccion(${d.id},'${telefono}',${d.es_principal})" style="background:none;border:1px solid var(--border);color:var(--danger);border-radius:6px;padding:4px 8px;font-size:11px;cursor:pointer">✕</button>
+          </div>
+        </div>
+      </div>`).join('');
+  } catch(e) { el.innerHTML = '<div style="font-size:13px;color:var(--danger)">Error al cargar</div>'; }
+}
+
+function mostrarFormNuevaDireccion() {
+  const form = document.getElementById('formNuevaDireccion');
+  form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  document.getElementById('nuevaDirInput').value = '';
+  document.getElementById('nuevaDirNotas').value = '';
+}
+
+async function guardarNuevaDireccion() {
+  const dir = document.getElementById('nuevaDirInput').value.trim();
+  if (!dir) { toast('Ingresá una dirección','error'); return; }
+  const tel = clientaSeleccionada.telefono;
+  try {
+    const dirs = await API.get('direcciones', `telefono=eq.${tel}&select=id`);
+    const esPrincipal = dirs.length === 0;
+    await API.post('direcciones', {
+      telefono: tel, direccion: dir,
+      departamento: document.getElementById('nuevaDirDepto').value,
+      notas: document.getElementById('nuevaDirNotas').value.trim(),
+      es_principal: esPrincipal
+    });
+    toast('Dirección agregada ✓','success');
+    document.getElementById('formNuevaDireccion').style.display = 'none';
+    cargarDireccionesModal(tel);
+  } catch(e) { toast('Error: '+e.message,'error'); }
+}
+
+async function setPrincipal(id, telefono) {
+  try {
+    const dirs = await API.get('direcciones', `telefono=eq.${telefono}`);
+    for (const d of dirs) {
+      if (d.es_principal) await API.patch('direcciones', d.id, { es_principal: false });
+    }
+    await API.patch('direcciones', id, { es_principal: true });
+    const nueva = dirs.find(d => d.id === id);
+    if (nueva && clientaSeleccionada) {
+      await API.patch('clientes', clientaSeleccionada.id, { direccion: nueva.direccion, departamento: nueva.departamento });
+    }
+    toast('Dirección principal actualizada ✓','success');
+    cargarDireccionesModal(telefono);
+  } catch(e) { toast('Error: '+e.message,'error'); }
+}
+
+async function borrarDireccion(id, telefono, esPrincipal) {
+  if (esPrincipal) { toast('No podés borrar la dirección principal','error'); return; }
+  if (!confirm('¿Borrar esta dirección?')) return;
+  try {
+    await API.del('direcciones', id);
+    toast('Dirección eliminada','success');
+    cargarDireccionesModal(telefono);
+  } catch(e) { toast('Error: '+e.message,'error'); }
+}
+
 function cerrarModal() { document.getElementById('modalOverlay').classList.remove('open'); }
 function irAVentaDesdeModal() {
   cerrarModal();
@@ -760,7 +955,7 @@ async function agregarClientaInline() {
   } catch(e) { toast('Error: '+e.message,'error'); }
 }
 
-function seleccionarClientaVenta(c) {
+async function seleccionarClientaVenta(c) {
   clientaSeleccionada = c;
   document.getElementById('ventaClientaBuscar').style.display='none';
   document.getElementById('ventaClientaSugerencias').innerHTML='';
@@ -770,8 +965,36 @@ function seleccionarClientaVenta(c) {
   sel.style.display='block';
   document.getElementById('ventaClientaNombre').textContent=c.nombre;
   document.getElementById('ventaClientaTel').textContent='📱 '+c.telefono;
-  document.getElementById('ventaClientaDir').textContent=c.direccion?'📍 '+c.direccion.substring(0,60):'';
+
+  // Cargar direcciones y mostrar selector si hay mas de una
+  try {
+    const dirs = await API.get('direcciones', `telefono=eq.${c.telefono}&order=es_principal.desc`);
+    if (dirs.length > 1) {
+      const principal = dirs.find(d => d.es_principal) || dirs[0];
+      clientaSeleccionada.direccion = principal.direccion;
+      clientaSeleccionada.departamento = principal.departamento || c.departamento;
+      document.getElementById('ventaClientaDir').innerHTML = `
+        <select id="ventaDireccionSelect" class="form-input" style="margin-top:8px;font-size:13px;padding:10px 12px" onchange="cambiarDireccionVenta(this)">
+          ${dirs.map(d => `<option data-dir="${d.direccion}" data-depto="${d.departamento||''}" ${d.es_principal?'selected':''}>${d.es_principal?'⭐ ':''}${d.direccion}</option>`).join('')}
+        </select>`;
+    } else if (dirs.length === 1) {
+      clientaSeleccionada.direccion = dirs[0].direccion;
+      clientaSeleccionada.departamento = dirs[0].departamento || c.departamento;
+      document.getElementById('ventaClientaDir').textContent = '📍 ' + dirs[0].direccion.substring(0,60);
+    } else {
+      document.getElementById('ventaClientaDir').textContent = c.direccion ? '📍 ' + c.direccion.substring(0,60) : '';
+    }
+  } catch(e) {
+    document.getElementById('ventaClientaDir').textContent = c.direccion ? '📍 ' + c.direccion.substring(0,60) : '';
+  }
 }
+
+function cambiarDireccionVenta(sel) {
+  const opt = sel.options[sel.selectedIndex];
+  clientaSeleccionada.direccion = opt.dataset.dir;
+  clientaSeleccionada.departamento = opt.dataset.depto;
+}
+
 
 function limpiarClientaVenta() {
   clientaSeleccionada=null;
@@ -962,6 +1185,8 @@ function limpiarFormVenta() {
 
 // HISTORIAL
 let filtroHistorial = 'Pendiente';
+let filtroFechaHistorial = 'todos';
+let ordenHistorialAsc = true;
 let ventaModalActual = null;
 
 async function cargarHistorial() {
@@ -973,8 +1198,48 @@ async function cargarHistorial() {
   } catch(e) { empty('historialList','⚠️','Error al cargar historial'); }
 }
 
+function toggleFiltroFecha(filtro) {
+  // Si ya está activo, deseleccionar (mostrar todos)
+  if (filtroFechaHistorial === filtro) {
+    filtroFechaHistorial = 'todos';
+  } else {
+    filtroFechaHistorial = filtro;
+    // Limpiar fecha desde si no es desde
+    if (filtro !== 'desde') document.getElementById('historialDesde').value = '';
+  }
+  actualizarPillsFecha();
+  renderHistorial();
+}
+
+function setFiltroFechaHistorial(filtro) {
+  filtroFechaHistorial = filtro;
+  actualizarPillsFecha();
+  renderHistorial();
+}
+
+function actualizarPillsFecha() {
+  ['hoy','ayer'].forEach(f => {
+    const btn = document.getElementById('hfecha-'+f);
+    const activo = f === filtroFechaHistorial;
+    btn.style.cssText = `padding:9px 16px;border-radius:20px;border:1.5px solid ${activo?'var(--accent)':'var(--border2)'};background:${activo?'rgba(74,82,64,0.1)':'transparent'};color:${activo?'var(--accent)':'var(--text2)'};font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s`;
+  });
+  const desdeLabel = document.getElementById('hfecha-desde-label');
+  const desdeActivo = filtroFechaHistorial === 'desde';
+  desdeLabel.style.cssText = `padding:9px 16px;border-radius:20px;border:1.5px solid ${desdeActivo?'var(--accent)':'var(--border2)'};background:${desdeActivo?'rgba(74,82,64,0.1)':'transparent'};color:${desdeActivo?'var(--accent)':'var(--text2)'};font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:4px`;
+}
+
+function toggleOrdenHistorial() {
+  ordenHistorialAsc = !ordenHistorialAsc;
+  const btn = document.getElementById('btnOrden');
+  btn.textContent = ordenHistorialAsc ? '↑' : '↓';
+  renderHistorial();
+}
+
 function setFiltroHistorial(estado) {
   filtroHistorial = estado;
+  // Default order: Pendiente asc, Despachado desc
+  ordenHistorialAsc = estado === 'Pendiente';
+  document.getElementById('btnOrden').textContent = ordenHistorialAsc ? '↑' : '↓';
   // Update pills
   document.getElementById('pill-pendiente').style.cssText = estado === 'Pendiente'
     ? 'flex:1;padding:10px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:DM Sans,sans-serif;font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s'
@@ -986,12 +1251,23 @@ function setFiltroHistorial(estado) {
 }
 
 function renderHistorial() {
-  const filtradas = todasVentas.filter(v => (v.estado||'Pendiente') === filtroHistorial);
+  const hoy = new Date().toISOString().split('T')[0];
+  const ayer = new Date(Date.now()-86400000).toISOString().split('T')[0];
+  const filtradas = todasVentas.filter(v => {
+    if ((v.estado||'Pendiente') !== filtroHistorial) return false;
+    const fecha = v.fecha_entrega || '';
+    if (filtroFechaHistorial === 'todos') return true;
+    if (filtroFechaHistorial === 'hoy') return fecha === hoy;
+    if (filtroFechaHistorial === 'ayer') return fecha === ayer;
+    if (filtroFechaHistorial === 'desde') {
+      const desde = document.getElementById('historialDesde').value;
+      return desde ? fecha >= desde : true;
+    }
+    return true;
+  });
   if (!filtradas.length) { empty('historialList','📋', filtroHistorial === 'Pendiente' ? 'No hay ventas pendientes' : 'No hay ventas despachadas'); return; }
 
   // Agrupar por fecha entrega
-  const hoy = new Date().toISOString().split('T')[0];
-  const manana = new Date(Date.now() + 86400000).toISOString().split('T')[0];
   const grupos = {};
   filtradas.forEach(v => {
     const fecha = v.fecha_entrega || 'sin-fecha';
@@ -1000,10 +1276,9 @@ function renderHistorial() {
   });
 
   let html = '';
-  Object.keys(grupos).sort().forEach(fecha => {
+  Object.keys(grupos).sort((a,b) => ordenHistorialAsc ? a.localeCompare(b) : b.localeCompare(a)).forEach(fecha => {
     let titulo = fecha;
     if (fecha === hoy) titulo = '📅 Hoy';
-    else if (fecha === manana) titulo = '📅 Mañana';
     else if (fecha !== 'sin-fecha') titulo = '📅 ' + new Date(fecha + 'T12:00:00').toLocaleDateString('es-UY', {weekday:'long', day:'numeric', month:'long'});
     else titulo = '📅 Sin fecha';
 
@@ -1051,6 +1326,28 @@ function abrirModalVenta(v) {
   actualizarModalHorarioHasta();
   setTimeout(() => { document.getElementById('modalHorarioHasta').value = horarioParts[1] || ''; }, 50);
 
+  // Cargar selector de dirección solo para Pendiente
+  const dirContainer = document.getElementById('modalDirContainer');
+  if (estado === 'Pendiente' && v.telefono) {
+    dirContainer.style.display = 'block';
+    dirContainer.innerHTML = '<div style="font-size:12px;color:var(--text2);padding:4px 0">Cargando direcciones…</div>';
+    API.get('direcciones', `telefono=eq.${v.telefono}&order=es_principal.desc`).then(dirs => {
+      if (dirs.length > 1) {
+        dirContainer.innerHTML = `
+          <div class="form-group">
+            <label class="form-label">Dirección de entrega</label>
+            <select id="modalDirSelect" class="form-input" style="font-size:13px">
+              ${dirs.map(d => `<option data-dir="${d.direccion}" data-depto="${d.departamento||''}" ${d.direccion===v.direccion?'selected':''}>${d.es_principal?'⭐ ':''}${d.direccion}</option>`).join('')}
+            </select>
+          </div>`;
+      } else {
+        dirContainer.innerHTML = `<div class="form-group"><label class="form-label">Dirección de entrega</label><div style="font-size:14px;color:var(--text);padding:8px 0">${v.direccion||'—'}</div></div>`;
+      }
+    }).catch(() => dirContainer.style.display = 'none');
+  } else {
+    dirContainer.style.display = 'none';
+  }
+
   document.getElementById('modalVentaOverlay').classList.add('open');
 }
 
@@ -1080,11 +1377,15 @@ async function guardarCambiosVenta() {
   const desde = document.getElementById('modalHorarioDesde').value;
   const hasta = document.getElementById('modalHorarioHasta').value;
   const horario = [desde, hasta].filter(Boolean).join(' - ') || null;
+  const cambios = { fecha_entrega: fecha || null, horario_entrega: horario };
+  // Dirección si está disponible y venta es Pendiente
+  const dirSelect = document.getElementById('modalDirSelect');
+  if (dirSelect && (ventaModalActual.estado||'Pendiente') === 'Pendiente') {
+    const opt = dirSelect.options[dirSelect.selectedIndex];
+    if (opt) { cambios.direccion = opt.dataset.dir; }
+  }
   try {
-    await API.patch('ventas', ventaModalActual.id, {
-      fecha_entrega: fecha || null,
-      horario_entrega: horario
-    });
+    await API.patch('ventas', ventaModalActual.id, cambios);
     toast('Cambios guardados ✓', 'success');
     cerrarModalVenta();
     cargarHistorial();
