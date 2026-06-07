@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0043)file:///C:/Users/gusta/Downloads/index.html -->
+<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(87).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
+  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.1</div>
 </div>
@@ -123,6 +123,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <nav class="nav">
     <button class="nav-btn active" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
     <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
+    <button class="nav-btn" onclick="showScreen(&#39;consulta&#39;)" id="nav-consulta"><span class="icon">🔍</span>Consulta</button>
     <button class="nav-btn" onclick="showScreen(&#39;backup&#39;)" id="nav-backup"><span class="icon">💾</span>Backup</button>
   </nav>
 
@@ -134,15 +135,65 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
     <div id="subtab-clientes-buscar">
       <div class="stats-bar">
-        <div class="stat-box"><div class="stat-num" id="statTotal">1607</div><div class="stat-label">Clientas</div></div>
+        <div class="stat-box"><div class="stat-num" id="statTotal">1609</div><div class="stat-label">Clientas</div></div>
         <div class="stat-box"><div class="stat-num" id="statRecurrentes">291</div><div class="stat-label">Recurrentes</div></div>
-        <div class="stat-box"><div class="stat-num" id="statMvd">942</div><div class="stat-label">Montevideo</div></div>
+        <div class="stat-box"><div class="stat-num" id="statMvd">943</div><div class="stat-label">Montevideo</div></div>
       </div>
       <div class="search-wrap">
         <input type="text" id="searchInput" class="search-input" placeholder="Nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
         <span class="search-icon">🔍</span>
       </div>
-      <div id="clientesList"></div>
+      <div id="clientesList"><div class="section-label">Últimas agregadas</div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2232,&quot;nombre&quot;:&quot;Test&quot;,&quot;telefono&quot;:&quot;099123456&quot;,&quot;direccion&quot;:&quot;Camino Maldonado 6279&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-07&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-07T22:38:50.834666&quot;})">
+      <div class="card-name">Test</div>
+      <div class="card-detail">📱 099123456</div>
+      <div class="card-detail">📍 Camino Maldonado 6279</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-07</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2231,&quot;nombre&quot;:&quot;Fabiana Molina&quot;,&quot;telefono&quot;:&quot;098783306&quot;,&quot;direccion&quot;:&quot;Montenegro  959   San Carlos / Maldonado&quot;,&quot;departamento&quot;:&quot;Maldonado&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-07&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-07T22:12:25.003794&quot;})">
+      <div class="card-name">Fabiana Molina</div>
+      <div class="card-detail">📱 098783306</div>
+      <div class="card-detail">📍 Montenegro  959   San Carlos / Maldonado</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Maldonado</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-07</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2230,&quot;nombre&quot;:&quot;Marlene Garaza&quot;,&quot;telefono&quot;:&quot;099825787&quot;,&quot;direccion&quot;:&quot;Maldonado&quot;,&quot;departamento&quot;:null,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-07&quot;,&quot;cantidad_envios&quot;:0,&quot;created_at&quot;:&quot;2026-06-07T19:25:18.898239&quot;})">
+      <div class="card-name">Marlene Garaza</div>
+      <div class="card-detail">📱 099825787</div>
+      <div class="card-detail">📍 Maldonado</div>
+      <div class="card-tags">
+        
+        
+        <span class="tag tag-fecha">2026-06-07</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2229,&quot;nombre&quot;:&quot;Mercedes Abalos&quot;,&quot;telefono&quot;:&quot;098728912&quot;,&quot;direccion&quot;:&quot;Correo Paysandú&quot;,&quot;departamento&quot;:&quot;Paysandú&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-07&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-07T16:47:56.506451&quot;})">
+      <div class="card-name">Mercedes Abalos</div>
+      <div class="card-detail">📱 098728912</div>
+      <div class="card-detail">📍 Correo Paysandú</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Paysandú</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-07</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2228,&quot;nombre&quot;:&quot;Cristina Lettiere&quot;,&quot;telefono&quot;:&quot;091338670&quot;,&quot;direccion&quot;:&quot;Damasco Antonio Larrañaga 4570&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-06&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-06T22:20:31.131545&quot;})">
+      <div class="card-name">Cristina Lettiere</div>
+      <div class="card-detail">📱 091338670</div>
+      <div class="card-detail">📍 Damasco Antonio Larrañaga 4570</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-06</span>
+      </div>
+    </div></div>
     </div>
     <div id="subtab-clientes-agregar" style="display:none">
       <div class="form-group"><label class="form-label">Nombre</label><input type="text" id="nuevaNombre" class="form-input" placeholder="Nombre completo"></div>
@@ -157,15 +208,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <!-- VENTAS -->
   <div class="screen active" id="screen-ventas">
     <div class="tabs">
-      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
-      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
+      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
+      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
     </div>
-    <div id="subtab-ventas-reservas" style="display: block;">
+    <div id="subtab-ventas-reservas" style="display: none;">
       <!-- FILTROS -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="res-filtro" id="resfiltro-recientes" onclick="toggleFiltroReservas(&#39;recientes&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Recientes</button>
-        <button class="res-filtro" id="resfiltro-retraso" onclick="toggleFiltroReservas(&#39;retraso&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">⚠️ Retraso</button>
+        <button class="res-filtro" id="resfiltro-recientes" onclick="toggleFiltroReservas(&#39;recientes&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--accent); background: rgba(74, 82, 64, 0.1); color: var(--accent); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">Recientes</button>
+        <button class="res-filtro" id="resfiltro-retraso" onclick="toggleFiltroReservas(&#39;retraso&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">⚠️ Retraso</button>
       </div>
       <div id="reservasList">
       <div class="venta-card">
@@ -177,7 +228,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div class="venta-detail" style="margin-top:2px;font-style:italic">Espera cierre tarjeta</div>
         <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
           <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$4.280</div>
-          <span style="font-size:11px;color:var(--text3)">06/06/2026, 09:06 p. m.</span>
+          <span style="font-size:11px;color:var(--text3)">06/06/2026, 06:06 p. m.</span>
         </div>
         
         <div style="display:flex;gap:8px;margin-top:12px">
@@ -259,7 +310,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
     </div>
 
-        <div id="subtab-ventas-nueva" style="display: none;">
+        <div id="subtab-ventas-nueva" style="display: block;">
       <!-- 1. CANAL DE VENTA -->
       <div class="form-group">
         <label class="form-label">Canal de venta</label>
@@ -305,18 +356,35 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <!-- 3. ARTÍCULOS -->
       <div class="form-group">
         <label class="form-label">Artículos</label>
-        <div id="articulosList"></div>
+        <div id="articulosList"><div class="articulo-fila" style="margin-bottom: 12px; padding: 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius);">
+    <div style="display:grid;grid-template-columns:1fr 60px 90px 32px;gap:6px;margin-bottom:8px;align-items:center">
+      <select class="art-cat form-input" style="padding:10px 12px;font-size:13px" onchange="calcTotal()">
+        <option value="">Categoría…</option>
+        <option>Sweater</option><option>Calza</option><option>Pantalón</option><option>Remera</option><option>Canguro</option><option>Buzo Deportivo</option><option>Pantalón Deportivo</option><option>Polera</option><option>Polerón</option><option>Jeans</option><option>Campera</option>
+      </select>
+      <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center" oninput="calcTotal()">
+      <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px" oninput="calcTotal()">
+      <button onclick="this.closest(&#39;.articulo-fila&#39;).remove();calcTotal()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
+    </div>
+    <input type="text" class="art-desc form-input" placeholder="Descripción (color, talle, detalle…)" style="font-size:13px;padding:10px 12px">
+  </div></div>
         <button onclick="agregarArticulo()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
       </div>
 
       <!-- 4. MÉTODO DE PAGO -->
-      <div class="form-group"><label class="form-label">Método de pago</label><select id="ventaPago" class="form-input"><option>Transferencia</option><option>Mercado Pago</option><option>Débito/Crédito</option><option>Contado</option></select></div>
+      <div class="form-group"><label class="form-label">Método de pago</label><select id="ventaPago" class="form-input" onchange="actualizarEnvioIncluido()"><option>Transferencia</option><option>Mercado Pago</option><option>Débito/Crédito</option><option>Contado</option></select></div>
 
       <!-- 6. CANAL DE ENVÍO -->
       <div class="form-group"><label class="form-label">Canal de envío</label><select id="ventaCanal" class="form-input"><option>Cadete Mathias</option><option>Correo Uruguayo</option><option>Retira en mano</option></select></div>
 
       <!-- 7. ENVÍO -->
-      <div class="form-group"><label class="form-label">Envío ($)</label><input type="number" id="ventaEnvio" class="form-input" placeholder="0" oninput="calcTotal()"></div>
+      <div class="form-group"><label class="form-label">Envío ($)</label><input type="number" id="ventaEnvio" class="form-input" placeholder="0" oninput="calcTotal();actualizarEnvioIncluido()"></div>
+      <div id="envioIncluidoWrap" style="display:none;margin-bottom:16px">
+        <label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)">
+          <input type="checkbox" id="ventaEnvioIncluido" style="width:18px;height:18px;accent-color:var(--accent);cursor:pointer">
+          <span style="font-size:14px;color:var(--text)">Envío incluido en el pago previo</span>
+        </label>
+      </div>
 
       <!-- 8. FECHA ENTREGA -->
       <div class="form-group">
@@ -356,80 +424,61 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div id="subtab-ventas-historial" style="display: none;">
       <!-- Pills fecha -->
       <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;flex-wrap:wrap">
-        <button class="hfecha-pill" id="hfecha-hoy" onclick="toggleFiltroFecha(&#39;hoy&#39;)" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Hoy</button>
-        <button class="hfecha-pill" id="hfecha-ayer" onclick="toggleFiltroFecha(&#39;ayer&#39;)" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Ayer</button>
-        <label id="hfecha-desde-label" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s;display:inline-flex;align-items:center;gap:4px">
+        <button class="hfecha-pill" id="hfecha-hoy" onclick="toggleFiltroFecha(&#39;hoy&#39;)" style="padding: 9px 16px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">Hoy</button>
+        <button class="hfecha-pill" id="hfecha-ayer" onclick="toggleFiltroFecha(&#39;ayer&#39;)" style="padding: 9px 16px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">Ayer</button>
+        <label id="hfecha-desde-label" style="padding: 9px 16px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 4px;">
           📅 <input type="date" id="historialDesde" style="border:none;background:transparent;color:inherit;font-family:inherit;font-size:inherit;font-weight:inherit;cursor:pointer;outline:none;width:90px" onchange="setFiltroFechaHistorial(&#39;desde&#39;)">
         </label>
       </div>
       <!-- Pills estado + orden -->
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Pendiente</button>
-        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Despachado</button>
+        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--danger); background: rgba(192, 57, 43, 0.1); color: var(--danger); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Pendiente</button>
+        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Despachado</button>
         <button id="btnOrden" onclick="toggleOrdenHistorial()" style="padding:9px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;cursor:pointer;transition:all 0.2s;flex-shrink:0" title="Cambiar orden">↑</button>
       </div>
       <!-- Pills canal envío -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🛵 Cadete</button>
-        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">📦 Correo</button>
-        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🤝 Retiro</button>
+        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🛵 Cadete</button>
+        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--accent); background: rgba(74, 82, 64, 0.1); color: var(--accent); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">📦 Correo</button>
+        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🤝 Retiro</button>
       </div>
       <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 lunes, 8 de junio</div>
         <div class="venta-card">
           <div class="venta-header">
-            <div class="venta-nombre">Yanet</div>
+            <div class="venta-nombre">Rosario Rodriguez</div>
             <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(36)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(36)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.330</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(36)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(36)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Marlene Garaza</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(39)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(39)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.290</div>
+              <button onclick="event.stopPropagation();abrirDetalleVenta(34)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(34)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.579</div>
             </div>
           </div>
           <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
           <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
             <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(39)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(34)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(39)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(34)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
         </div>
         <div class="venta-card">
           <div class="venta-header">
-            <div class="venta-nombre">Marlene Garaza</div>
+            <div class="venta-nombre">Fabiana Molina</div>
             <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(40)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(40)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.290</div>
+              <button onclick="event.stopPropagation();abrirDetalleVenta(42)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(42)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.479</div>
             </div>
           </div>
-          <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
+          <div class="venta-detail">1x Polerón · Correo Uruguayo</div>
           <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
             <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(40)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(42)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(40)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(42)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
         </div>
         <div class="venta-card">
@@ -448,7 +497,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
             <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(37)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(37)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
         </div>
         <div class="venta-card">
@@ -467,69 +516,41 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
             <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(38)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(38)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
         </div>
         <div class="venta-card">
           <div class="venta-header">
-            <div class="venta-nombre">Rosario Rodriguez</div>
+            <div class="venta-nombre">Gladys López Burgos</div>
             <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(34)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(34)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.579</div>
+              <button onclick="event.stopPropagation();abrirDetalleVenta(41)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(41)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.379</div>
             </div>
           </div>
           <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
           <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
             <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(34)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(41)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
             <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(34)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Graciela Pallarea</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(33)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(33)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.590</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Canguro · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(33)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(33)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Cristina Lettiere</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(35)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(35)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$2.970</div>
-            </div>
-          </div>
-          <div class="venta-detail">2x Polerón · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(35)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Contado</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(35)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(41)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
         </div></div>
     </div>
   </div>
 </div>
+
+  <!-- CONSULTA -->
+  <div class="screen" id="screen-consulta">
+    <div class="section-title">Consulta</div>
+    <div class="search-wrap">
+      <input type="text" id="consultaSearch" class="search-input" placeholder="Buscar clienta por nombre o teléfono…" oninput="buscarConsulta()" autocomplete="off">
+      <span class="search-icon">🔍</span>
+    </div>
+    <div id="consultaResultado"></div>
+  </div>
 
   <!-- BACKUP -->
   <div class="screen" id="screen-backup">
@@ -543,30 +564,40 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
   </div>
 
+<!-- MODAL LÍNEA DE TIEMPO -->
+<div class="modal-overlay" id="modalTimelineOverlay" onclick="if(event.target===this)document.getElementById(&#39;modalTimelineOverlay&#39;).classList.remove(&#39;open&#39;)">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title" id="modalTimelineNombre"></div>
+    <div class="modal-sub" id="modalTimelineSub"></div>
+    <div id="modalTimelineContent"></div>
+    <button onclick="document.getElementById(&#39;modalTimelineOverlay&#39;).classList.remove(&#39;open&#39;)" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:16px">Cerrar</button>
+  </div>
+</div>
+
 <!-- MODAL DETALLE VENTA -->
 <div class="modal-overlay" id="modalDetalleVentaOverlay" onclick="if(event.target===this)document.getElementById(&#39;modalDetalleVentaOverlay&#39;).classList.remove(&#39;open&#39;)">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="modalDetalleNombre">Naty Rocha</div>
-    <div class="modal-sub" id="modalDetalleFecha">Sin fecha de entrega</div>
+    <div class="modal-title" id="modalDetalleNombre">Rosario Rodriguez</div>
+    <div class="modal-sub" id="modalDetalleFecha">📅 2026-06-08</div>
     <div class="detail-section" id="modalDetalleInfo">
-    <div class="detail-row"><span class="detail-key">Teléfono</span><span class="detail-val">093596401</span></div>
-    <div class="detail-row"><span class="detail-key">Canal</span><span class="detail-val">WhatsApp</span></div>
+    <div class="detail-row"><span class="detail-key">Teléfono</span><span class="detail-val">099997694</span></div>
+    <div class="detail-row"><span class="detail-key">Dirección</span><span class="detail-val">Ruta 80 km 90 Migues</span></div>
+    <div class="detail-row"><span class="detail-key">Canal venta</span><span class="detail-val">—</span></div>
+    <div class="detail-row"><span class="detail-key">Canal envío</span><span class="detail-val">Correo Uruguayo</span></div>
+    <div class="detail-row"><span class="detail-key">Pago</span><span class="detail-val">Mercado Pago</span></div>
+    <div class="detail-row"><span class="detail-key">Monto</span><span class="detail-val">$1.390</span></div>
+    <div class="detail-row"><span class="detail-key">Envío</span><span class="detail-val">$189</span></div>
+    <div class="detail-row"><span class="detail-key">Total</span><span class="detail-val" style="font-weight:600;color:var(--accent)">$1.579</span></div>
     
-    
-    
-    <div class="detail-row"><span class="detail-key">Notas</span><span class="detail-val">Espera cierre tarjeta</span></div>
-    <div class="detail-row"><span class="detail-key">Monto</span><span class="detail-val" style="font-weight:600;color:var(--accent)">$4.280</span></div>
-    <div class="detail-row"><span class="detail-key">Registrada</span><span class="detail-val">06/06/2026, 09:06 p. m.</span></div>
+    <div class="detail-row"><span class="detail-key">Estado</span><span class="detail-val" style="font-weight:600;color:var(--danger)">Pendiente</span></div>
   </div>
     <div id="modalDetalleArticulos">
     <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:12px 0 8px">Artículos</div>
     <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)">
-      <div><span style="font-size:14px">1x Polerón</span><br><span style="font-size:12px;color:var(--text2)">2x/3x tajo chocolate y sin tajo negro</span></div>
-      <span style="font-size:14px;color:var(--accent)">$2.390</span>
-    </div><div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)">
-      <div><span style="font-size:14px">1x Polerón</span><br><span style="font-size:12px;color:var(--text2)">Berry y rojo</span></div>
-      <span style="font-size:14px;color:var(--accent)">$1.890</span>
+      <div><span style="font-size:14px">1x Sweater</span><br><span style="font-size:12px;color:var(--text2)">Aspen tostado</span></div>
+      <span style="font-size:14px;color:var(--accent)">$1.390</span>
     </div></div>
     <button onclick="document.getElementById(&#39;modalDetalleVentaOverlay&#39;).classList.remove(&#39;open&#39;)" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cerrar</button>
   </div>
@@ -579,6 +610,14 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div class="modal-title" id="modalVentaNombre"></div>
     <div style="height:12px"></div>
     <div id="modalDirContainer" style="display:none;margin-bottom:4px"></div>
+    <div class="form-group">
+      <label class="form-label">Canal de envío</label>
+      <select id="modalCanalEnvio" class="form-input">
+        <option>Cadete Mathias</option>
+        <option>Correo Uruguayo</option>
+        <option>Retira en mano</option>
+      </select>
+    </div>
     <div class="form-group">
       <label class="form-label">Fecha de entrega</label>
       <input type="date" id="modalFechaEntrega" class="form-input">
@@ -728,19 +767,24 @@ const API = {
 };
 
 // ZONA HORARIA (Uruguay UTC-3)
+function parseUTC(dateStr) {
+  if (!dateStr) return null;
+  // Asegurar que se interpreta como UTC
+  return new Date(dateStr.endsWith('Z') ? dateStr : dateStr + 'Z');
+}
 function aUY(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
+  const d = parseUTC(dateStr);
+  if (!d) return '';
   return d.toLocaleString('es-UY', { timeZone: 'America/Montevideo', day:'2-digit', month:'2-digit', year:'numeric', hour:'2-digit', minute:'2-digit' });
 }
 function fechaUY(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
+  const d = parseUTC(dateStr);
+  if (!d) return '';
   return d.toLocaleDateString('es-UY', { timeZone: 'America/Montevideo', day:'2-digit', month:'2-digit', year:'numeric' });
 }
 function horaUY(dateStr) {
-  if (!dateStr) return '';
-  const d = new Date(dateStr);
+  const d = parseUTC(dateStr);
+  if (!d) return '';
   return d.toLocaleTimeString('es-UY', { timeZone: 'America/Montevideo', hour:'2-digit', minute:'2-digit' });
 }
 
@@ -1156,6 +1200,14 @@ function limpiarClientaVenta() {
   document.getElementById('btnAgregarInlineWrap').style.display='none';
 }
 
+function actualizarEnvioIncluido() {
+  const pago = document.getElementById('ventaPago').value;
+  const esPrevio = ['Transferencia','Mercado Pago'].includes(pago);
+  const envio = parseFloat(document.getElementById('ventaEnvio').value) || 0;
+  const wrap = document.getElementById('envioIncluidoWrap');
+  wrap.style.display = (esPrevio && envio > 0) ? 'block' : 'none';
+}
+
 function calcTotal() {
   const articulos = obtenerArticulos();
   const monto = articulos.reduce((s,a) => s + a.subtotal, 0);
@@ -1216,7 +1268,9 @@ function seleccionarCanal(btn) {
 }
 
 async function registrarVenta() {
-  if (!clientaSeleccionada) { toast('Seleccioná una clienta','error'); return; }
+  if (registrandoVenta) return;
+  registrandoVenta = true;
+  if (!clientaSeleccionada) { registrandoVenta = false; toast('Seleccioná una clienta','error'); return; }
   const fechaEntregaVal = document.getElementById('ventaFechaEntrega').value;
   if (!fechaEntregaVal) { toast('La fecha de entrega es obligatoria','error'); return; }
   const btn=document.getElementById('btnRegistrar');
@@ -1228,7 +1282,7 @@ async function registrarVenta() {
     const detalle = obtenerArticulos();
     if (!detalle.length) { toast('Agregá al menos un artículo','error'); btn.disabled=false; btn.textContent='Registrar venta'; return; }
     const resumenArticulos = detalle.map(a => `${a.cantidad}x ${a.categoria}`).join(', ');
-    await API.post('ventas',{
+    const ventaResult = await API.post('ventas',{
       fecha:new Date().toISOString().split('T')[0],
       nombre_cliente:c.nombre, telefono:c.telefono,
       direccion:c.direccion||'', departamento:c.departamento||'',
@@ -1239,6 +1293,7 @@ async function registrarVenta() {
       articulo:resumenArticulos,
       monto, envio, total:monto+envio,
       pago:document.getElementById('ventaPago').value,
+      envio_incluido:document.getElementById('ventaEnvioIncluido')?.checked || false,
       canal:document.getElementById('ventaCanal').value,
       canal_venta:document.querySelector('.canal-pill.activo')?.dataset.canal||'',
       estado:'Pendiente',
@@ -1255,18 +1310,20 @@ async function registrarVenta() {
       nombre_cliente: c.nombre, telefono: c.telefono,
       direccion: c.direccion||'', notas_venta: notasVenta,
       pago: pagoVenta,
+      envio_incluido: document.getElementById('ventaEnvioIncluido')?.checked || false,
       fecha_entrega: document.getElementById('ventaFechaEntrega').value||'',
       horario_entrega: [document.getElementById('ventaHorarioDesde').value, document.getElementById('ventaHorarioHasta').value].filter(Boolean).join(' - ')||'',
       monto: monto, envio: envio, total: monto+envio,
       detalle: detalle
     };
     toast('Venta registrada ✓','success');
-    await registrarAudit('Venta registrada', 'ventas', null, { nombre: c.nombre, total: monto+envio });
+    // audit con ID se registra después
     limpiarFormVenta();
     document.getElementById('btnEtiqueta').style.display = 'block';
     cargarStats();
   } catch(e) { toast('Error: '+e.message,'error'); }
   btn.disabled=false; btn.textContent='Registrar venta';
+  registrandoVenta = false;
 }
 
 function seleccionarCanal(btn, canal) {
@@ -1284,7 +1341,7 @@ function seleccionarCanal(btn, canal) {
   document.getElementById('ventaCanalVenta').value = canal;
 }
 
-const CATEGORIAS = ['Sweater','Calza','Pantalón','Remera','Canguro','Buzo Deportivo','Pantalón Deportivo','Polera','Polerón','Jeans'];
+const CATEGORIAS = ['Sweater','Calza','Pantalón','Remera','Canguro','Buzo Deportivo','Pantalón Deportivo','Polera','Polerón','Jeans','Campera'];
 
 function agregarArticulo() {
   const lista = document.getElementById('articulosList');
@@ -1310,6 +1367,8 @@ function agregarArticulo() {
 function limpiarFormVenta() {
   limpiarClientaVenta();
   ['ventaEnvio','ventaNotas','ventaFechaEntrega'].forEach(id=>document.getElementById(id).value='');
+  const envioCheck = document.getElementById('ventaEnvioIncluido'); if(envioCheck) envioCheck.checked = false;
+  document.getElementById('envioIncluidoWrap').style.display = 'none';
   document.getElementById('ventaHorarioDesde').value='';
   document.getElementById('ventaHorarioHasta').innerHTML='<option value="">—</option>';
   document.querySelectorAll('.canal-pill').forEach(p=>{p.classList.remove('activo');p.style.background='var(--surface)';p.style.color='var(--text2)';p.style.borderColor='var(--border2)'});
@@ -1457,7 +1516,7 @@ function renderHistorial() {
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
             <span style="font-size:11px;color:var(--text2)">${v.pago||''}</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(${v.id})" style="padding:6px 14px;background:${estado==='Pendiente'?'var(--success)':'rgba(192,57,43,0.1)'};border:${estado==='Pendiente'?'none':'1px solid var(--danger)'};border-radius:20px;color:${estado==='Pendiente'?'#FAFAF8':'var(--danger)'};font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">${estado==='Pendiente'?'✓ Despachar':'↩ Pendiente'}</button>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(${v.id})" style="padding:6px 14px;background:${estado==='Pendiente'?'var(--danger)':'var(--success)'};border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">${estado==='Pendiente'?'✓ Despachar':'✓ Entregado'}</button>
           </div>
         </div>`;
     });
@@ -1475,6 +1534,7 @@ function abrirModalVenta(v) {
   const estado = v.estado || 'Pendiente';
   document.getElementById('modalVentaNombre').textContent = v.nombre_cliente || '—';
   // Populate editable fields
+  document.getElementById('modalCanalEnvio').value = v.canal || 'Cadete Mathias';
   document.getElementById('modalFechaEntrega').value = v.fecha_entrega || '';
   const horarioParts = (v.horario_entrega || '').split(' - ');
   document.getElementById('modalHorarioDesde').value = horarioParts[0] || '';
@@ -1532,7 +1592,8 @@ async function guardarCambiosVenta() {
   const desde = document.getElementById('modalHorarioDesde').value;
   const hasta = document.getElementById('modalHorarioHasta').value;
   const horario = [desde, hasta].filter(Boolean).join(' - ') || null;
-  const cambios = { fecha_entrega: fecha || null, horario_entrega: horario };
+  const canal = document.getElementById('modalCanalEnvio').value;
+  const cambios = { fecha_entrega: fecha || null, horario_entrega: horario, canal: canal };
   // Dirección si está disponible y venta es Pendiente
   const dirSelect = document.getElementById('modalDirSelect');
   if (dirSelect && (ventaModalActual.estado||'Pendiente') === 'Pendiente') {
@@ -1541,6 +1602,7 @@ async function guardarCambiosVenta() {
   }
   try {
     await API.patch('ventas', ventaModalActual.id, cambios);
+    await registrarAudit('Venta actualizada', 'ventas', ventaModalActual.id, { nombre: ventaModalActual.nombre_cliente, fecha: cambios.fecha_entrega, horario: cambios.horario_entrega, canal: cambios.canal });
     toast('Cambios guardados ✓', 'success');
     cerrarModalVenta();
     cargarHistorial();
@@ -1638,6 +1700,7 @@ function reimprimir(v) {
 
 // ETIQUETA LBX
 let ultimaVenta = null;
+let registrandoVenta = false;
 
 function generarLBX(venta) {
   const nombre = venta.nombre_cliente || '';
@@ -1666,7 +1729,12 @@ function generarLBX(venta) {
   // Líneas según método de pago
   const esPrevio = ['Transferencia','Mercado Pago'].includes(pago);
   if (esPrevio) {
-    lineas.push('Todo pago');
+    const envioIncluido = venta.envio_incluido || false;
+    if (envioIncluido || envio === 0) {
+      lineas.push('Todo pago');
+    } else {
+      lineas.push(`Envío $${envio} al recibir`);
+    }
   } else {
     lineas.push(`Abona $${monto} + Envío $${envio}`);
     if (pago === 'Débito/Crédito') {
@@ -1975,7 +2043,7 @@ async function guardarReserva() {
   try {
     const resDesde = document.getElementById('resHorarioDesde').value;
     const resHasta = document.getElementById('resHorarioHasta').value;
-    await API.post('reservas', {
+    const resResult = await API.post('reservas', {
       canal_venta: getCanalVentaRes(),
       nombre_cliente: clientaReservaSeleccionada.nombre,
       telefono: clientaReservaSeleccionada.telefono,
@@ -1991,8 +2059,9 @@ async function guardarReserva() {
       horario_entrega: [resDesde, resHasta].filter(Boolean).join(' - ')||null,
       estado: 'Activa'
     });
+    const resId = resResult?.[0]?.id || null;
+    await registrarAudit('Pedido creado', 'reservas', resId, { nombre: clientaReservaSeleccionada.nombre });
     toast('Reserva guardada ✓','success');
-    await registrarAudit('Pedido creado', 'reservas', null, { nombre: clientaReservaSeleccionada.nombre });
     cerrarModalReserva();
     cargarReservas();
   } catch(e) { toast('Error: '+e.message,'error'); }
@@ -2068,6 +2137,113 @@ async function convertirReservaEnVenta(id) {
   calcTotal();
   toast('Reserva convertida — revisá y completá los datos ✓','success');
   cargarReservas();
+}
+
+// CONSULTA
+let consultaTimer = null;
+
+async function buscarConsulta() {
+  const q = document.getElementById('consultaSearch').value.trim();
+  const el = document.getElementById('consultaResultado');
+  clearTimeout(consultaTimer);
+  if (!q || q.length < 2) { el.innerHTML = ''; return; }
+  consultaTimer = setTimeout(async () => {
+    el.innerHTML = '<div class="loader"><div class="spinner"></div></div>';
+    try {
+      const esNum = /^\d+$/.test(q);
+      const param = esNum ? `telefono=ilike.*${q}*` : `nombre=ilike.*${q}*`;
+      const clientes = await API.get('clientes', `${param}&limit=5`);
+      if (!clientes.length) { empty('consultaResultado','👗','No se encontraron clientas'); return; }
+
+      let html = '';
+      for (const c of clientes) {
+        // Cargar ventas y reservas de esta clienta
+        const [ventas, reservas] = await Promise.all([
+          API.get('ventas', `telefono=eq.${c.telefono}&order=created_at.desc&limit=20`),
+          API.get('reservas', `telefono=eq.${c.telefono}&order=created_at.desc&limit=20`)
+        ]);
+
+        if (!ventas.length && !reservas.length) continue;
+
+        // Mezclar y ordenar por fecha
+        const todos = [
+          ...ventas.map(v => ({ ...v, _tipo: 'venta' })),
+          ...reservas.map(r => ({ ...r, _tipo: 'reserva' }))
+        ].sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+        html += `<div style="margin-bottom:24px">
+          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--dark);margin-bottom:4px">${c.nombre}</div>
+          <div style="font-size:13px;color:var(--text2);margin-bottom:12px">📱 ${c.telefono}</div>
+          ${todos.map(item => {
+            const tipo = item._tipo;
+            const estado = item.estado || (tipo === 'venta' ? 'Pendiente' : 'Activa');
+            const colorEstado = estado === 'Despachado' || estado === 'Convertida' ? 'var(--success)' :
+                               estado === 'Cancelada' ? 'var(--text3)' : 'var(--danger)';
+            const fecha = item.fecha_entrega || item.created_at?.split('T')[0] || '';
+            const total = tipo === 'venta' ? `$${(item.total||0).toLocaleString('es-UY')}` : `$${(item.monto||0).toLocaleString('es-UY')}`;
+            const registro = aUY(item.created_at);
+            return `<div class="venta-card" style="margin-bottom:8px">
+              <div class="venta-header">
+                <div>
+                  <span style="font-size:10px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:${tipo==='venta'?'var(--accent)':'var(--text2)'}">${tipo === 'venta' ? 'VENTA' : 'RESERVA'}</span>
+                  <div class="venta-nombre" style="font-size:16px">${item.articulo||'—'}</div>
+                </div>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <button onclick="abrirTimeline('${tipo}',${item.id},'${c.nombre}')" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+                  <div class="venta-monto">${total}</div>
+                </div>
+              </div>
+              <div class="venta-detail">${registro}</div>
+              <span style="font-size:11px;font-weight:600;color:${colorEstado};margin-top:6px;display:inline-block">${estado}</span>
+            </div>`;
+          }).join('')}
+        </div>`;
+      }
+      el.innerHTML = html || '<div class="empty"><div class="empty-icon">📋</div><div class="empty-text">Sin registros</div></div>';
+    } catch(e) { empty('consultaResultado','⚠️','Error: ' + e.message); }
+  }, 400);
+}
+
+async function abrirTimeline(tipo, id, nombre) {
+  document.getElementById('modalTimelineNombre').textContent = nombre;
+  document.getElementById('modalTimelineSub').textContent = tipo === 'venta' ? 'Venta' : 'Reserva';
+  document.getElementById('modalTimelineContent').innerHTML = '<div class="loader"><div class="spinner"></div></div>';
+  document.getElementById('modalTimelineOverlay').classList.add('open');
+
+  try {
+    const tabla = tipo === 'venta' ? 'ventas' : 'reservas';
+    const eventos = await API.get('audit_trail', `tabla=eq.${tabla}&registro_id=eq.${id}&order=created_at.asc`);
+
+    if (!eventos.length) {
+      document.getElementById('modalTimelineContent').innerHTML = '<div style="font-size:14px;color:var(--text2);padding:16px 0">Sin eventos registrados</div>';
+      return;
+    }
+
+    const iconos = {
+      'Pedido creado': '📝',
+      'Venta registrada': '🛍',
+      'Venta confirmada desde reserva': '✅',
+      'Despachado': '📦',
+      'Vuelto a Pendiente': '↩️',
+      'Reserva cancelada': '❌',
+      'Fecha/dirección actualizada': '✏️',
+    };
+
+    document.getElementById('modalTimelineContent').innerHTML = `
+      <div style="position:relative;padding-left:24px">
+        <div style="position:absolute;left:8px;top:0;bottom:0;width:2px;background:var(--border)"></div>
+        ${eventos.map((e, i) => `
+          <div style="position:relative;margin-bottom:20px">
+            <div style="position:absolute;left:-20px;top:2px;width:12px;height:12px;border-radius:50%;background:${i===eventos.length-1?'var(--accent)':'var(--border2)'};border:2px solid ${i===eventos.length-1?'var(--accent)':'var(--border2)'}"></div>
+            <div style="font-size:13px;font-weight:600;color:var(--text)">${iconos[e.evento]||'•'} ${e.evento}</div>
+            <div style="font-size:12px;color:var(--text2);margin-top:2px">${aUY(e.created_at)}</div>
+            <div style="font-size:12px;color:var(--text3);margin-top:1px">${e.usuario||''}</div>
+            ${e.detalle && Object.keys(e.detalle).length ? `<div style="font-size:12px;color:var(--text2);margin-top:4px;background:var(--surface2);border-radius:6px;padding:6px 10px">${Object.entries(e.detalle).filter(([k,v])=>v&&k!=='nombre').map(([k,v])=>`${k}: ${v}`).join(' · ')}</div>` : ''}
+          </div>`).join('')}
+      </div>`;
+  } catch(e) {
+    document.getElementById('modalTimelineContent').innerHTML = '<div style="color:var(--danger)">Error al cargar</div>';
+  }
 }
 
 // BACKUP
