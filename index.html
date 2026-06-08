@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-07T223528.036.html -->
+<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-07T224332.823.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
+  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.1</div>
 </div>
@@ -622,7 +622,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast">Etiqueta descargada ✓</div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
@@ -1595,7 +1595,7 @@ function reimprimir(v) {
   ultimaVenta = {
     nombre_cliente: v.nombre_cliente, telefono: v.telefono,
     direccion: v.direccion||'', notas_venta: v.notas_venta||'',
-    pago: v.pago||'',
+    pago: v.pago||'', envio_incluido: v.envio_incluido||false,
     monto: v.monto||0, envio: v.envio||0, total: v.total||0,
     fecha_entrega: v.fecha_entrega||'', horario_entrega: v.horario_entrega||'',
     detalle: v.detalle||[]
