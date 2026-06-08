@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-07T212400.394.html -->
+<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-07T215708.348.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -168,25 +168,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <button class="res-filtro" id="resfiltro-recientes" onclick="toggleFiltroReservas(&#39;recientes&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Recientes</button>
         <button class="res-filtro" id="resfiltro-retraso" onclick="toggleFiltroReservas(&#39;retraso&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">⚠️ Retraso</button>
       </div>
-      <div id="reservasList">
-      <div class="venta-card">
-        <div class="venta-header">
-          <div class="venta-nombre">Naty Rocha</div>
-          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
-        </div>
-        <div class="venta-detail">1x Polerón, 1x Polerón · WhatsApp</div>
-        <div class="venta-detail" style="margin-top:2px;font-style:italic">Espera cierre tarjeta</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$4.280</div>
-          <span style="font-size:11px;color:var(--text3)">06/06/2026, 06:06 p. m.</span>
-        </div>
-        
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button onclick="abrirDetalleReserva(3)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
-          <button onclick="convertirReservaEnVenta(3)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
-          <button onclick="confirmarCancelarReserva(3)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
-        </div>
-      </div></div>
+      <div id="reservasList"></div>
       <button onclick="abrirNuevaReserva()" style="position:fixed;bottom:80px;right:20px;width:52px;height:52px;background:var(--dark);border:none;border-radius:50%;color:#FAFAF8;font-size:24px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center">+</button>
     </div>
 
@@ -378,7 +360,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
       <!-- Pills canal envío -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🛵 Cadete</button>
+        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--accent); background: rgba(74, 82, 64, 0.1); color: var(--accent); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🛵 Cadete</button>
         <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">📦 Correo</button>
         <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🤝 Retiro</button>
       </div>
@@ -386,86 +368,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 lunes, 8 de junio</div>
         <div class="venta-card">
           <div class="venta-header">
-            <div class="venta-nombre">Rosario Rodriguez</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(34)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(34)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.579</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(34)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(34)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Fabiana Molina</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(42)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(42)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.479</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Polerón · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(42)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(42)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Gladys López Burgos</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(41)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(41)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.379</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(41)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(41)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Mercedes Abalos</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(37)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(37)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$2.369</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater, 1x Polerón · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(37)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(37)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
             <div class="venta-nombre">Yanet</div>
             <div style="display:flex;align-items:center;gap:6px">
               <button onclick="event.stopPropagation();abrirDetalleVenta(36)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(36)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+<button onclick="event.stopPropagation();reimprimirPorId(36)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$1.330</div>
             </div>
           </div>
@@ -481,29 +387,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div class="venta-card">
           <div class="venta-header">
-            <div class="venta-nombre">Marlene Garaza</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(38)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(38)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.290</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 lun, 8 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(38)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(38)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
             <div class="venta-nombre">Graciela Pallarea</div>
             <div style="display:flex;align-items:center;gap:6px">
               <button onclick="event.stopPropagation();abrirDetalleVenta(33)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(33)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+<button onclick="event.stopPropagation();reimprimirPorId(33)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$1.590</div>
             </div>
           </div>
@@ -522,7 +409,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <div class="venta-nombre">Cristina Lettiere</div>
             <div style="display:flex;align-items:center;gap:6px">
               <button onclick="event.stopPropagation();abrirDetalleVenta(35)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(35)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+<button onclick="event.stopPropagation();reimprimirPorId(35)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$2.970</div>
             </div>
           </div>
@@ -541,7 +428,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <div class="venta-nombre">Rosana</div>
             <div style="display:flex;align-items:center;gap:6px">
               <button onclick="event.stopPropagation();abrirDetalleVenta(44)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(44)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+<button onclick="event.stopPropagation();reimprimirPorId(44)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
               <div class="venta-monto">$1.410</div>
             </div>
           </div>
@@ -735,7 +622,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast">Texto copiado ✓</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
@@ -867,7 +754,7 @@ function mostrarApp() {
   const hoy = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
   document.getElementById('ventaFechaEntrega').min = hoy;
   showScreen('ventas');
-  showTab('ventas','reservas');
+  showTab('ventas','nueva');
   try { cargarStats(); } catch(e) { console.error('Stats error:', e); }
 }
 
@@ -1333,7 +1220,8 @@ async function registrarVenta() {
     toast('Venta registrada ✓','success');
     // audit con ID se registra después
     limpiarFormVenta();
-    document.getElementById('btnEtiqueta').style.display = 'block';
+    const canalVenta = document.getElementById('ventaCanal').value;
+    document.getElementById('btnEtiqueta').style.display = canalVenta === 'Cadete Mathias' ? 'block' : 'none';
     cargarStats();
   } catch(e) { toast('Error: '+e.message,'error'); }
   btn.disabled=false; btn.textContent='Registrar venta';
@@ -1519,7 +1407,7 @@ function renderHistorial() {
             <div class="venta-nombre">${v.nombre_cliente||'—'}</div>
             <div style="display:flex;align-items:center;gap:6px">
               <button onclick="event.stopPropagation();abrirDetalleVenta(${v.id})" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(${v.id})" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+${v.canal === 'Cadete Mathias' ? `<button onclick="event.stopPropagation();reimprimirPorId(${v.id})" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>` : ''}
               <div class="venta-monto">$${(v.total||0).toLocaleString('es-UY')}</div>
             </div>
           </div>
@@ -2285,7 +2173,7 @@ function generarMensajeCadete() {
       : 'Sin fecha asignada';
     msg += 'Entrega: ' + fechaDisplay + '\n';
     grupos[fecha].forEach((v, i) => {
-      const esPosnet = v.pago === 'Debito/Credito';
+      const esPosnet = v.pago === 'Débito/Crédito';
       const esContado = v.pago === 'Contado';
       const esPrevio = ['Transferencia','Mercado Pago'].includes(v.pago);
       msg += '\n' + (i+1) + '. ' + v.nombre_cliente + '\n';
@@ -2298,10 +2186,11 @@ function generarMensajeCadete() {
           msg += 'Todo pago\n';
         }
       } else {
-        let cobro = 'Cobrar $' + (v.total||0).toLocaleString('es-UY');
-        if (esPosnet) cobro += ' (posnet)';
-        if (esContado) cobro += ' (contado)';
-        msg += cobro + '\n';
+        msg += 'Abona $' + (v.monto||0).toLocaleString('es-UY') + ' + Envio $' + (v.envio||0).toLocaleString('es-UY') + '\n';
+        let totalStr = 'Total $' + (v.total||0).toLocaleString('es-UY');
+        if (esPosnet) totalStr += ' posnet';
+        if (esContado) totalStr += ' contado';
+        msg += totalStr + '\n';
       }
       if (v.telefono) msg += 'Tel: ' + v.telefono + '\n';
     });
