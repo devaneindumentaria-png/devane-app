@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/gusta/Downloads/index%20(90).html -->
+<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-07T212400.394.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -136,7 +136,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div id="subtab-clientes-buscar">
       <div class="stats-bar">
         <div class="stat-box"><div class="stat-num" id="statTotal">1609</div><div class="stat-label">Clientas</div></div>
-        <div class="stat-box"><div class="stat-num" id="statRecurrentes">292</div><div class="stat-label">Recurrentes</div></div>
+        <div class="stat-box"><div class="stat-num" id="statRecurrentes">293</div><div class="stat-label">Recurrentes</div></div>
         <div class="stat-box"><div class="stat-num" id="statMvd">943</div><div class="stat-label">Montevideo</div></div>
       </div>
       <div class="search-wrap">
@@ -373,34 +373,17 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
         <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Pendiente</button>
         <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Despachado</button>
-        <button id="btnOrden" onclick="toggleOrdenHistorial()" style="padding:9px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;cursor:pointer;transition:all 0.2s;flex-shrink:0" title="Cambiar orden">↓</button>
+        <button onclick="generarMensajeCadete()" style="padding:9px 12px;border-radius:20px;border:1.5px solid #25D366;background:transparent;color:#25D366;font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;flex-shrink:0;transition:all 0.2s" title="Cadete Mañana">🛵</button>
+        <button id="btnOrden" onclick="toggleOrdenHistorial()" style="padding:9px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;cursor:pointer;transition:all 0.2s;flex-shrink:0" title="Cambiar orden">↑</button>
       </div>
       <!-- Pills canal envío -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🛵 Cadete</button>
-        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">📦 Correo</button>
-        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🤝 Retiro</button>
+        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🛵 Cadete</button>
+        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">📦 Correo</button>
+        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🤝 Retiro</button>
       </div>
-      <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 miércoles, 10 de junio</div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Rosana</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(44)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-              <button onclick="event.stopPropagation();reimprimirPorId(44)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.410</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Campera · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun. · 🕐 12:30 - 15:00</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(44)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(44)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 lunes, 8 de junio</div>
+
+      <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 lunes, 8 de junio</div>
         <div class="venta-card">
           <div class="venta-header">
             <div class="venta-nombre">Rosario Rodriguez</div>
@@ -552,6 +535,25 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Contado</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(35)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+        </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 miércoles, 10 de junio</div>
+        <div class="venta-card">
+          <div class="venta-header">
+            <div class="venta-nombre">Rosana</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(44)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+              <button onclick="event.stopPropagation();reimprimirPorId(44)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.410</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Campera · Cadete Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 mié, 10 jun. · 🕐 12:30 - 15:00</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(44)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
+            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(44)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
         </div></div>
     </div>
   </div>
@@ -594,27 +596,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <div class="modal-overlay" id="modalDetalleVentaOverlay" onclick="if(event.target===this)document.getElementById(&#39;modalDetalleVentaOverlay&#39;).classList.remove(&#39;open&#39;)">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="modalDetalleNombre">Rosana</div>
-    <div class="modal-sub" id="modalDetalleFecha">📅 2026-06-10 · 🕐 12:30 - 15:00</div>
-    <div class="detail-section" id="modalDetalleInfo">
-    <div class="detail-row"><span class="detail-key">Teléfono</span><span class="detail-val">094748666</span></div>
-    <div class="detail-row"><span class="detail-key">Dirección</span><span class="detail-val">Avenida Pedro de Mendoza 4421 entre Leandro Gómez y José Ramirez pegado&nbsp;a&nbsp;el&nbsp;súper</span></div>
-    <div class="detail-row"><span class="detail-key">Canal venta</span><span class="detail-val">—</span></div>
-    <div class="detail-row"><span class="detail-key">Canal envío</span><span class="detail-val">Cadete Mathias</span></div>
-    <div class="detail-row"><span class="detail-key">Fecha entrega</span><span class="detail-val">📅 2026-06-10 · 🕐 12:30 - 15:00</span></div>
-    <div class="detail-row"><span class="detail-key">Pago</span><span class="detail-val">Transferencia</span></div>
-    <div class="detail-row"><span class="detail-key">Monto</span><span class="detail-val">$1.190</span></div>
-    <div class="detail-row"><span class="detail-key">Envío</span><span class="detail-val">$220</span></div>
-    <div class="detail-row"><span class="detail-key">Total</span><span class="detail-val" style="font-weight:600;color:var(--accent)">$1.410</span></div>
-    <div class="detail-row"><span class="detail-key">Observaciones</span><span class="detail-val">Agregar bolsa regalo</span></div>
-    <div class="detail-row"><span class="detail-key">Estado</span><span class="detail-val" style="font-weight:600;color:var(--danger)">Pendiente</span></div>
-  </div>
-    <div id="modalDetalleArticulos">
-    <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:12px 0 8px">Artículos</div>
-    <div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)">
-      <div><span style="font-size:14px">1x Campera</span><br><span style="font-size:12px;color:var(--text2)">Teddy azul talle 1 (xl)</span></div>
-      <span style="font-size:14px;color:var(--accent)">$1.190</span>
-    </div></div>
+    <div class="modal-title" id="modalDetalleNombre"></div>
+    <div class="modal-sub" id="modalDetalleFecha"></div>
+    <div class="detail-section" id="modalDetalleInfo"></div>
+    <div id="modalDetalleArticulos"></div>
     <button onclick="document.getElementById(&#39;modalDetalleVentaOverlay&#39;).classList.remove(&#39;open&#39;)" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cerrar</button>
   </div>
 </div>
@@ -623,9 +608,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <div class="modal-overlay" id="modalVentaOverlay" onclick="if(event.target===this)cerrarModalVenta()">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="modalVentaNombre">Rosana</div>
+    <div class="modal-title" id="modalVentaNombre"></div>
     <div style="height:12px"></div>
-    <div id="modalDirContainer" style="display: block; margin-bottom: 4px;"><div class="form-group"><label class="form-label">Dirección de entrega</label><div style="font-size:14px;color:var(--text);padding:8px 0">Avenida Pedro de Mendoza 4421 entre Leandro Gómez y José Ramirez pegado&nbsp;a&nbsp;el&nbsp;súper</div></div></div>
+    <div id="modalDirContainer" style="display:none;margin-bottom:4px"></div>
     <div class="form-group">
       <label class="form-label">Canal de envío</label>
       <select id="modalCanalEnvio" class="form-input">
@@ -649,12 +634,27 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div>
           <label class="form-label" style="font-size:10px">Hasta</label>
-          <select id="modalHorarioHasta" class="form-input"><option value="">—</option><option value="13:00">13:00</option><option value="13:30">13:30</option><option value="14:00">14:00</option><option value="14:30">14:30</option><option value="15:00">15:00</option><option value="15:30">15:30</option><option value="16:00">16:00</option><option value="16:30">16:30</option><option value="17:00">17:00</option><option value="17:30">17:30</option><option value="18:00">18:00</option><option value="18:30">18:30</option><option value="19:00">19:00</option><option value="19:30">19:30</option><option value="20:00">20:00</option><option value="20:30">20:30</option><option value="21:00">21:00</option><option value="21:30">21:30</option><option value="22:00">22:00</option><option value="22:30">22:30</option><option value="23:00">23:00</option><option value="23:30">23:30</option></select>
+          <select id="modalHorarioHasta" class="form-input">
+            <option value="">—</option>
+          </select>
         </div>
       </div>
     </div>
     <button onclick="guardarCambiosVenta()" class="btn btn-primary" id="btnGuardarVenta">Guardar cambios</button>
     <button onclick="cerrarModalVenta()" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cerrar</button>
+  </div>
+</div>
+
+<!-- MODAL MENSAJE CADETE -->
+<div class="modal-overlay" id="modalWACadeteOverlay" onclick="if(event.target===this)document.getElementById(&#39;modalWACadeteOverlay&#39;).classList.remove(&#39;open&#39;)">
+  <div class="modal">
+    <div class="modal-handle"></div>
+    <div class="modal-title">Mensaje para cadete</div>
+    <div style="margin-bottom:12px">
+      <textarea id="textoCadete" style="width:100%;min-height:200px;padding:12px;background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);font-family:&#39;DM Sans&#39;,sans-serif;font-size:13px;color:var(--text);resize:vertical;outline:none" readonly=""></textarea>
+    </div>
+    <button onclick="copiarMensajeCadete()" class="btn btn-primary">📋 Copiar texto</button>
+    <button onclick="document.getElementById(&#39;modalWACadeteOverlay&#39;).classList.remove(&#39;open&#39;)" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cerrar</button>
   </div>
 </div>
 
@@ -735,7 +735,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast">Etiqueta descargada ✓</div>
+<div class="toast" id="toast">Texto copiado ✓</div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
@@ -864,7 +864,7 @@ function mostrarApp() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('appScreen').style.display = 'block';
   // Set min date to today
-  const hoy = new Date().toISOString().split('T')[0];
+  const hoy = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
   document.getElementById('ventaFechaEntrega').min = hoy;
   showScreen('ventas');
   showTab('ventas','reservas');
@@ -1477,8 +1477,8 @@ function setFiltroHistorial(estado) {
 }
 
 function renderHistorial() {
-  const hoy = new Date().toISOString().split('T')[0];
-  const ayer = new Date(Date.now()-86400000).toISOString().split('T')[0];
+  const hoy = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+  const ayer = new Date(Date.now()-86400000).toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
   const filtradas = todasVentas.filter(v => {
     if ((v.estado||'Pendiente') !== filtroHistorial) return false;
     if (filtroCanal !== 'todos' && v.canal !== filtroCanal) return false;
@@ -1536,6 +1536,8 @@ function renderHistorial() {
     });
   });
   document.getElementById('historialList').innerHTML = html;
+  // Mostrar botón cadete cuando filtro es Cadete + Pendiente
+
 }
 
 function abrirModalVentaPorId(id) {
@@ -2259,6 +2261,65 @@ async function abrirTimeline(tipo, id, nombre) {
   } catch(e) {
     document.getElementById('modalTimelineContent').innerHTML = '<div style="color:var(--danger)">Error al cargar</div>';
   }
+}
+
+// MENSAJE CADETE
+function generarMensajeCadete() {
+  const mananaUY = new Date(Date.now()+86400000).toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+  const pedidos = todasVentas.filter(v =>
+    (v.estado||'Pendiente') === 'Pendiente' &&
+    v.canal === 'Cadete Mathias' &&
+    v.fecha_entrega === mananaUY
+  );
+  if (!pedidos.length) { toast('No hay pedidos pendientes para cadete','error'); return; }
+  const grupos = {};
+  pedidos.forEach(v => {
+    const fecha = v.fecha_entrega || 'Sin fecha';
+    if (!grupos[fecha]) grupos[fecha] = [];
+    grupos[fecha].push(v);
+  });
+  let msg = '*Pedidos Cadete Devane*\n\n';
+  Object.keys(grupos).sort().forEach(fecha => {
+    const fechaDisplay = fecha !== 'Sin fecha'
+      ? new Date(fecha+'T12:00:00').toLocaleDateString('es-UY', {weekday:'long', day:'numeric', month:'long'})
+      : 'Sin fecha asignada';
+    msg += 'Entrega: ' + fechaDisplay + '\n';
+    grupos[fecha].forEach((v, i) => {
+      const esPosnet = v.pago === 'Debito/Credito';
+      const esContado = v.pago === 'Contado';
+      const esPrevio = ['Transferencia','Mercado Pago'].includes(v.pago);
+      msg += '\n' + (i+1) + '. ' + v.nombre_cliente + '\n';
+      msg += 'Dir: ' + (v.direccion||'Sin direccion') + '\n';
+      if (v.horario_entrega) msg += 'Horario: ' + v.horario_entrega + '\n';
+      if (esPrevio) {
+        if (!v.envio_incluido && v.envio > 0) {
+          msg += 'Cobrar envio $' + v.envio + '\n';
+        } else {
+          msg += 'Todo pago\n';
+        }
+      } else {
+        let cobro = 'Cobrar $' + (v.total||0).toLocaleString('es-UY');
+        if (esPosnet) cobro += ' (posnet)';
+        if (esContado) cobro += ' (contado)';
+        msg += cobro + '\n';
+      }
+      if (v.telefono) msg += 'Tel: ' + v.telefono + '\n';
+    });
+    msg += '\n';
+  });
+  document.getElementById('textoCadete').value = msg;
+  document.getElementById('modalWACadeteOverlay').classList.add('open');
+}
+
+function copiarMensajeCadete() {
+  const texto = document.getElementById('textoCadete');
+  texto.select();
+  navigator.clipboard.writeText(texto.value).then(() => {
+    toast('Texto copiado ✓', 'success');
+  }).catch(() => {
+    document.execCommand('copy');
+    toast('Texto copiado ✓', 'success');
+  });
 }
 
 // BACKUP
