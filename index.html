@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)https://devaneindumentaria-png.github.io/devane-app/index.html -->
+<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-07T230011.094.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -101,7 +101,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .inline-form.open{display:block}
 .section-label{font-size:11px;color:var(--text3);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
 </style>
-<link type="text/css" rel="stylesheet" href="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/css/mcafee_fonts.css"></head>
+</head>
 <body>
 
 <div id="loginScreen" class="login-screen" style="display: none;">
@@ -168,25 +168,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <button class="res-filtro" id="resfiltro-recientes" onclick="toggleFiltroReservas(&#39;recientes&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Recientes</button>
         <button class="res-filtro" id="resfiltro-retraso" onclick="toggleFiltroReservas(&#39;retraso&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">⚠️ Retraso</button>
       </div>
-      <div id="reservasList">
-      <div class="venta-card">
-        <div class="venta-header">
-          <div class="venta-nombre">Naty Rocha</div>
-          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
-        </div>
-        <div class="venta-detail">1x Polerón, 1x Polerón · WhatsApp</div>
-        <div class="venta-detail" style="margin-top:2px;font-style:italic">Espera cierre tarjeta</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$4.280</div>
-          <span style="font-size:11px;color:var(--text3)">06/06/2026, 06:06 p. m.</span>
-        </div>
-        
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button onclick="abrirDetalleReserva(3)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
-          <button onclick="convertirReservaEnVenta(3)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
-          <button onclick="confirmarCancelarReserva(3)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
-        </div>
-      </div></div>
+      <div id="reservasList"></div>
       <button onclick="abrirNuevaReserva()" style="position:fixed;bottom:80px;right:20px;width:52px;height:52px;background:var(--dark);border:none;border-radius:50%;color:#FAFAF8;font-size:24px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center">+</button>
     </div>
 
@@ -360,7 +342,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <button class="btn btn-primary" id="btnRegistrar" onclick="registrarVenta()">Registrar venta</button>
       <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display:none;margin-top:10px">🏷️ Descargar etiqueta .lbx</button>
     </div>
-        <div id="subtab-ventas-historial" style="display: none;">
+        <div id="subtab-ventas-historial" style="display:none">
       <!-- Pills fecha -->
       <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center;flex-wrap:wrap">
         <button class="hfecha-pill" id="hfecha-hoy" onclick="toggleFiltroFecha(&#39;hoy&#39;)" style="padding:9px 16px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Hoy</button>
@@ -371,190 +353,19 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
       <!-- Pills estado + orden -->
       <div style="display:flex;gap:8px;margin-bottom:16px;align-items:center">
-        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Pendiente</button>
-        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex: 1 1 0%; padding: 10px; border-radius: 20px; border: 1.5px solid var(--success); background: rgba(74, 82, 64, 0.1); color: var(--success); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; transition: 0.2s;">Despachado</button>
+        <button class="historial-pill active" id="pill-pendiente" onclick="setFiltroHistorial(&#39;Pendiente&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--danger);background:rgba(192,57,43,0.1);color:var(--danger);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Pendiente</button>
+        <button class="historial-pill" id="pill-despachado" onclick="setFiltroHistorial(&#39;Despachado&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Despachado</button>
         <button onclick="generarMensajeCadete()" style="padding:9px 12px;border-radius:20px;border:1.5px solid #25D366;background:transparent;color:#25D366;font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;flex-shrink:0;transition:all 0.2s" title="Cadete Mañana">🛵</button>
-        <button id="btnOrden" onclick="toggleOrdenHistorial()" style="padding:9px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;cursor:pointer;transition:all 0.2s;flex-shrink:0" title="Cambiar orden">↓</button>
+        <button id="btnOrden" onclick="toggleOrdenHistorial()" style="padding:9px 12px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;cursor:pointer;transition:all 0.2s;flex-shrink:0" title="Cambiar orden">↑</button>
       </div>
       <!-- Pills canal envío -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🛵 Cadete</button>
-        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">📦 Correo</button>
-        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border: 1.5px solid var(--border2); background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 11px; font-weight: 500; cursor: pointer; transition: 0.2s;">🤝 Retiro</button>
+        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🛵 Cadete</button>
+        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">📦 Correo</button>
+        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🤝 Retiro</button>
       </div>
 
-      <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 viernes, 5 de junio</div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Shirley Vasconcellos</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(32)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$1.579</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Calza · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 vie, 5 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(32)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(32)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Ana Paz</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(30)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$4.960</div>
-            </div>
-          </div>
-          <div class="venta-detail">4x Polerón · Flex Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 vie, 5 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(30)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(30)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 jueves, 4 de junio</div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Alejandra Fabiani</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(31)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$2.769</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Calza, 1x Sweater · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(31)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(31)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Santa Melo</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(27)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$1.610</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Polerón · Flex Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(27)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Contado</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(27)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Sandra</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(25)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$1.590</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Calza · Flex Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(25)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Débito/Crédito</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(25)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Yhojana Vignoli</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(29)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$1.679</div>
-            </div>
-          </div>
-          <div class="venta-detail">2x Polera · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(29)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(29)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Leticia Iguini</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(26)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$2.390</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Polerón, 1x Polerón · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(26)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(26)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Adriana Fernández</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(28)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$2.460</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Pantalón, 1x Sweater · Flex Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(28)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(28)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Luisa</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(24)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$2.620</div>
-            </div>
-          </div>
-          <div class="venta-detail">2x Polerón · Flex Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 4 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(24)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(24)" style="padding:6px 14px;background:var(--success);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Entregado</button>
-          </div>
-        </div></div>
+      <div id="historialList"></div>
     </div>
   </div>
 </div>
@@ -577,7 +388,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div style="font-size:13px;color:var(--text2);margin-bottom:40px;line-height:1.6;max-width:280px">Descargá todas tus tablas en un archivo ZIP con un CSV por tabla. Se detectan automáticamente.</div>
       <button id="btnBackup" onclick="hacerBackup()" style="background:var(--dark);color:#FAFAF8;border:none;border-radius:var(--radius);padding:18px 40px;font-family:&#39;DM Sans&#39;,sans-serif;font-size:15px;font-weight:500;cursor:pointer;transition:all 0.2s;width:100%;max-width:300px">Exportar backup</button>
       <div id="backupStatus" style="margin-top:20px;font-size:13px;color:var(--text2);min-height:20px">✓ Backup descargado</div>
-      <div id="backupInfo" style="margin-top:12px;font-size:12px;color:var(--text3)">3 tablas · 7/6/2026, 10:51:41 p. m.</div>
+      <div id="backupInfo" style="margin-top:12px;font-size:12px;color:var(--text3)">5 tablas · 7/6/2026, 11:00:24 p. m.</div>
     </div>
   </div>
 
@@ -2326,7 +2137,7 @@ function copiarMensajeCadete() {
 
 // BACKUP
 // Agregar acá el nombre de cualquier tabla nueva que crees en Supabase
-const TABLAS_BACKUP = ['clientes', 'ventas', 'reservas'];
+const TABLAS_BACKUP = ['clientes', 'ventas', 'reservas', 'direcciones', 'audit_trail'];
 
 async function hacerBackup() {
   const btn = document.getElementById('btnBackup');
@@ -2496,72 +2307,4 @@ function descargar(data, nombre, tipo) {
 }
 </script>
 
-<span id="PING_CONTENT_DLS_POPUP" style="display: none;"></span><div style="background-color: transparent; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial; bottom: 15px; display: block; margin: 0px; opacity: 1; padding: 0px; position: fixed; right: 15px; z-index: 2147483647;"><template shadowrootmode="closed"><style>/*!
- * 
- *     MCAFEE RESTRICTED CONFIDENTIAL
- *     Copyright (c) 2026 McAfee, LLC
- *
- *     The source code contained or described herein and all documents related
- *     to the source code ("Material") are owned by McAfee or its
- *     suppliers or licensors. Title to the Material remains with McAfee
- *     or its suppliers and licensors. The Material contains trade
- *     secrets and proprietary and confidential information of McAfee or its
- *     suppliers and licensors. The Material is protected by worldwide copyright
- *     and trade secret laws and treaty provisions. No part of the Material may
- *     be used, copied, reproduced, modified, published, uploaded, posted,
- *     transmitted, distributed, or disclosed in any way without McAfee's prior
- *     express written permission.
- *
- *     No license under any patent, copyright, trade secret or other intellectual
- *     property right is granted to or conferred upon you by disclosure or
- *     delivery of the Materials, either expressly, by implication, inducement,
- *     estoppel or otherwise. Any license under such intellectual property rights
- *     must be expressed and approved by McAfee in writing.
- *
- */
-@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Thin.ttf") format("truetype");font-weight:100;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ThinItalic.ttf") format("truetype");font-weight:100;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraLight.ttf") format("truetype");font-weight:200;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraLightItalic.ttf") format("truetype");font-weight:200;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Light.ttf") format("truetype");font-weight:300;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-LightItalic.ttf") format("truetype");font-weight:300;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Regular.ttf") format("truetype");font-weight:400;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Italic.ttf") format("truetype");font-weight:400;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Medium.ttf") format("truetype");font-weight:500;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-MediumItalic.ttf") format("truetype");font-weight:500;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-SemiBold.ttf") format("truetype");font-weight:600;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-SemiBoldItalic.ttf") format("truetype");font-weight:600;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Bold.ttf") format("truetype");font-weight:700;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-BoldItalic.ttf") format("truetype");font-weight:700;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraBold.ttf") format("truetype");font-weight:800;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");font-weight:800;font-style:italic}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-Black.ttf") format("truetype");font-weight:900;font-style:normal}@font-face{font-family:"McAfeePoppins";src:url("../../../fonts/Poppins-BlackItalic.ttf") format("truetype");font-weight:900;font-style:italic}*{border:0;box-sizing:border-box;font:inherit;font-family:"McAfeePoppins",Helvetica,Arial;font-size:100%;margin:0;padding:0;vertical-align:baseline;outline:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}html,body{background-color:#f5f6fa;font-family:"McAfeePoppins",Helvetica,Arial;line-height:1;height:100%;width:100%}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}b{font-weight:bold}img{display:block}.dls__container{align-items:center;display:flex;margin:0 auto;margin-top:50px;position:relative}.dls__popup__expanded{align-items:center;overflow:hidden;border-radius:100px;cursor:pointer;display:flex;left:0;padding:15px;position:absolute;height:95px;width:383px;background-color:#fff;transition:all .3s ease-in-out}.dls__popup__expanded .dls__icon{height:65px;width:73px}.content{margin-left:12px}.content .content__images{display:flex;align-items:center;width:250px}.content .content__images .seperator__line{margin-left:5px;margin-right:10px}.content .content__images #dls_close_icon{cursor:pointer;margin-left:auto;margin-right:0px}.content p{font-family:"McAfeePoppins",Helvetica,Arial;font-weight:"400";font-size:14px;line-height:20px;margin-top:8px;color:#4258ff;width:250px;cursor:pointer}.shield{overflow:hidden;box-shadow:0px 2px 4px 0px rgba(33,41,52,.12),0px -1px 2px 0px rgba(0,0,0,.08);align-items:center;border-radius:100px;bottom:0;display:flex;height:95px;justify-content:center;position:absolute;right:0;width:383px;transition:all .3s ease-in-out}.shield__circle{display:flex;justify-content:center;align-items:center;width:55px;height:55px;background-color:#c01818;transition:all .6s ease-in-out .2s;z-index:1;opacity:0}
-
-/*# sourceMappingURL=../sourceMap/chrome/css/download_scan_popup.css.map*/</style><div class="dls__container">
-  <div class="shield" style="background: transparent; opacity: 0.1; display: none;">
-    <div class="shield__circle" style="opacity: 1;">
-      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_white.svg?secret=i4z9tm" x-mcsrc="" id="dls_ballon_icon" x-mcsrcparsed="true">
-    </div>
-    <div class="dls__popup__expanded" style="opacity: 0;">
-      <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/download_scan_icon.svg?secret=i4z9tm" x-mcsrc="" class="dls__icon" x-mcsrcparsed="true">
-      <div class="content">
-        <div class="content__images">
-          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/mcafee_logo_red.svg?secret=i4z9tm" x-mcsrc="" id="dls_mcafee_logo" x-mcsrcparsed="true">
-          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/seperator_line.svg?secret=i4z9tm" x-mcsrc="" class="seperator__line" x-mcsrcparsed="true">
-          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/webadvisor.svg?secret=i4z9tm" x-mcsrc="" x-mcsrcparsed="true">
-          <img src="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/images/download_scan/close-outline.svg?secret=i4z9tm" x-mcsrc="" id="dls_close_icon" x-mcsrcparsed="true">
-        </div>
-        <p id="download_scan_popup_expanded_descriptions">Estamos analizando tu descarga. Te avisaremos si hay algún problema.</p>
-      </div>
-    </div>
-  </div>
-</div><style>/*!
- * 
- *     MCAFEE RESTRICTED CONFIDENTIAL
- *     Copyright (c) 2026 McAfee, LLC
- *
- *     The source code contained or described herein and all documents related
- *     to the source code ("Material") are owned by McAfee or its
- *     suppliers or licensors. Title to the Material remains with McAfee
- *     or its suppliers and licensors. The Material contains trade
- *     secrets and proprietary and confidential information of McAfee or its
- *     suppliers and licensors. The Material is protected by worldwide copyright
- *     and trade secret laws and treaty provisions. No part of the Material may
- *     be used, copied, reproduced, modified, published, uploaded, posted,
- *     transmitted, distributed, or disclosed in any way without McAfee's prior
- *     express written permission.
- *
- *     No license under any patent, copyright, trade secret or other intellectual
- *     property right is granted to or conferred upon you by disclosure or
- *     delivery of the Materials, either expressly, by implication, inducement,
- *     estoppel or otherwise. Any license under such intellectual property rights
- *     must be expressed and approved by McAfee in writing.
- *
- */
-.mc-interactive-balloon{position:absolute;right:-50px;bottom:8px;box-shadow:rgba(0,0,0,.12) 0px 0px 10px;height:40px;width:40px;background:#1671ee;border-radius:20px;display:flex;justify-content:center;align-items:center}
-
-/*# sourceMappingURL=../sourceMap/chrome/css/interactive_balloon.css.map*/</style></template></div></body></html>
+</body></html>
