@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-08T225934.180.html -->
+<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-08T234437.378.html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -133,19 +133,69 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <button class="tab-btn active" onclick="showTab(&#39;clientes&#39;,&#39;buscar&#39;)" id="tab-clientes-buscar">Buscar</button>
       <button class="tab-btn" onclick="showTab(&#39;clientes&#39;,&#39;agregar&#39;)" id="tab-clientes-agregar">Nueva clienta</button>
     </div>
-    <div id="subtab-clientes-buscar">
+    <div id="subtab-clientes-buscar" style="display: block;">
       <div class="stats-bar">
         <div class="stat-box"><div class="stat-num" id="statTotal">1617</div><div class="stat-label">Clientas</div></div>
-        <div class="stat-box"><div class="stat-num" id="statRecurrentes">296</div><div class="stat-label">Recurrentes</div></div>
+        <div class="stat-box"><div class="stat-num" id="statRecurrentes">297</div><div class="stat-label">Recurrentes</div></div>
         <div class="stat-box"><div class="stat-num" id="statMvd">945</div><div class="stat-label">Montevideo</div></div>
       </div>
       <div class="search-wrap">
         <input type="text" id="searchInput" class="search-input" placeholder="Nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
         <span class="search-icon">🔍</span>
       </div>
-      <div id="clientesList"></div>
+      <div id="clientesList"><div class="section-label">Últimas agregadas</div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2252,&quot;nombre&quot;:&quot;Antonella Rivas&quot;,&quot;telefono&quot;:&quot;095646808&quot;,&quot;direccion&quot;:&quot;Eusebio Ruiz Zorrill entre Simón del Pino y Bvar Maldonado&quot;,&quot;departamento&quot;:&quot;Maldonado&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-08&quot;,&quot;cantidad_envios&quot;:0,&quot;created_at&quot;:&quot;2026-06-08T22:49:19.944646&quot;})">
+      <div class="card-name">Antonella Rivas</div>
+      <div class="card-detail">📱 095646808</div>
+      <div class="card-detail">📍 Eusebio Ruiz Zorrill entre Simón del Pino y Bvar M…</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Maldonado</span>
+        
+        <span class="tag tag-fecha">2026-06-08</span>
+      </div>
     </div>
-    <div id="subtab-clientes-agregar" style="display:none">
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2246,&quot;nombre&quot;:&quot;Claudia Díaz&quot;,&quot;telefono&quot;:&quot;095924223&quot;,&quot;direccion&quot;:&quot;&quot;,&quot;departamento&quot;:null,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-08&quot;,&quot;cantidad_envios&quot;:0,&quot;created_at&quot;:&quot;2026-06-08T22:32:00.473402&quot;})">
+      <div class="card-name">Claudia Díaz</div>
+      <div class="card-detail">📱 095924223</div>
+      
+      <div class="card-tags">
+        
+        
+        <span class="tag tag-fecha">2026-06-08</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2245,&quot;nombre&quot;:&quot;Miriam Avellaneda&quot;,&quot;telefono&quot;:&quot;099405454&quot;,&quot;direccion&quot;:&quot;Suave 28 sacando del yi&quot;,&quot;departamento&quot;:&quot;Durazno&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-08&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-08T21:12:10.541016&quot;})">
+      <div class="card-name">Miriam Avellaneda</div>
+      <div class="card-detail">📱 099405454</div>
+      <div class="card-detail">📍 Suave 28 sacando del yi</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Durazno</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-08</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2244,&quot;nombre&quot;:&quot;Sandra Godoy&quot;,&quot;telefono&quot;:&quot;099572035&quot;,&quot;direccion&quot;:&quot;Bulevar Artigas 1705 apto 501 entre 8 de Octubre y 18 de Julio&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-08&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-08T18:48:02.776576&quot;})">
+      <div class="card-name">Sandra Godoy</div>
+      <div class="card-detail">📱 099572035</div>
+      <div class="card-detail">📍 Bulevar Artigas 1705 apto 501 entre 8 de Octubre y…</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-08</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2243,&quot;nombre&quot;:&quot;María Laura Aunchayna&quot;,&quot;telefono&quot;:&quot;098694154&quot;,&quot;direccion&quot;:&quot;Rico puppo casi origen dolores soriano&quot;,&quot;departamento&quot;:null,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-08&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-08T18:17:15.749795&quot;})">
+      <div class="card-name">María Laura Aunchayna</div>
+      <div class="card-detail">📱 098694154</div>
+      <div class="card-detail">📍 Rico puppo casi origen dolores soriano</div>
+      <div class="card-tags">
+        
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-08</span>
+      </div>
+    </div></div>
+    </div>
+    <div id="subtab-clientes-agregar" style="display: none;">
       <div class="form-group"><label class="form-label">Nombre</label><input type="text" id="nuevaNombre" class="form-input" placeholder="Nombre completo"></div>
       <div class="form-group"><label class="form-label">Teléfono</label><input type="tel" id="nuevaTel" class="form-input" placeholder="09X XXX XXX"></div>
       <div class="form-group"><label class="form-label">Dirección</label><input type="text" id="nuevaDireccion" class="form-input" placeholder="Dirección de entrega"></div>
@@ -168,7 +218,64 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <button class="res-filtro" id="resfiltro-recientes" onclick="toggleFiltroReservas(&#39;recientes&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Recientes</button>
         <button class="res-filtro" id="resfiltro-retraso" onclick="toggleFiltroReservas(&#39;retraso&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">⚠️ Retraso</button>
       </div>
-      <div id="reservasList"></div>
+      <div id="reservasList">
+      <div class="venta-card">
+        <div class="venta-header">
+          <div class="venta-nombre">Claudia Díaz</div>
+          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
+        </div>
+        <div class="venta-detail">1x Sweater · WhatsApp</div>
+        
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$1.290</div>
+          <span style="font-size:11px;color:var(--text3)">08/06/2026, 07:32 p. m.</span>
+        </div>
+        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#8</span></div>
+        
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="abrirDetalleReserva(8)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
+          <button onclick="convertirReservaEnVenta(8)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
+          <button onclick="confirmarCancelarReserva(8)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
+        </div>
+      </div>
+      <div class="venta-card">
+        <div class="venta-header">
+          <div class="venta-nombre">Raquel Rastelino</div>
+          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
+        </div>
+        <div class="venta-detail">1x Sweater · WhatsApp</div>
+        
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$1.290</div>
+          <span style="font-size:11px;color:var(--text3)">08/06/2026, 03:15 p. m.</span>
+        </div>
+        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#6</span></div>
+        
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="abrirDetalleReserva(6)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
+          <button onclick="convertirReservaEnVenta(6)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
+          <button onclick="confirmarCancelarReserva(6)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
+        </div>
+      </div>
+      <div class="venta-card">
+        <div class="venta-header">
+          <div class="venta-nombre">Naty Rocha</div>
+          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
+        </div>
+        <div class="venta-detail">1x Polerón, 1x Polerón · WhatsApp</div>
+        <div class="venta-detail" style="margin-top:2px;font-style:italic">Espera cierre tarjeta</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
+          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$4.280</div>
+          <span style="font-size:11px;color:var(--text3)">06/06/2026, 06:06 p. m.</span>
+        </div>
+        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#3</span></div>
+        
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button onclick="abrirDetalleReserva(3)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
+          <button onclick="convertirReservaEnVenta(3)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
+          <button onclick="confirmarCancelarReserva(3)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
+        </div>
+      </div></div>
       <button onclick="abrirNuevaReserva()" style="position:fixed;bottom:80px;right:20px;width:52px;height:52px;background:var(--dark);border:none;border-radius:50%;color:#FAFAF8;font-size:24px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center">+</button>
     </div>
 
@@ -361,11 +468,23 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
       <!-- Pills canal envío -->
       <div style="display:flex;gap:8px;margin-bottom:16px">
-        <button class="hcanal-pill" id="hcanal-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🛵 Cadete</button>
-        <button class="hcanal-pill" id="hcanal-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">📦 Correo</button>
-        <button class="hcanal-pill" id="hcanal-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s">🤝 Retiro</button>
       </div>
 
+      <!-- Contadores por canal — también son filtros -->
+      <div id="contadoresCanal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
+        <div id="cnt-card-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="background: rgba(74, 82, 64, 0.08); border-color: var(--accent); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;">
+          <div style="font-size:11px;color:var(--text2);margin-bottom:4px">🛵 Cadete</div>
+          <div id="cntCadete" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">7</div>
+        </div>
+        <div id="cnt-card-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="background: var(--surface); border-color: var(--border); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;">
+          <div style="font-size:11px;color:var(--text2);margin-bottom:4px">📦 Correo</div>
+          <div id="cntCorreo" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">4</div>
+        </div>
+        <div id="cnt-card-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="background: var(--surface); border-color: var(--border); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;">
+          <div style="font-size:11px;color:var(--text2);margin-bottom:4px">🤝 Retiro</div>
+          <div id="cntRetiro" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">0</div>
+        </div>
+      </div>
       <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 martes, 9 de junio</div>
         <div class="venta-card">
           <div class="venta-header">
@@ -385,63 +504,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Transferencia</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(47)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Sandra Godoy</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(51)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(51)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$2.760</div>
-            </div>
-          </div>
-          <div class="venta-detail">2x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mar, 9 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(51)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Contado</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(51)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Miriam Avellaneda</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(54)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$1.190</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mar, 9 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(54)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(54)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-        </div>
-        <div class="venta-card">
-          <div class="venta-header">
-            <div class="venta-nombre">Silavana Román</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(48)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$4.960</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Canguro, 1x Sweater, 1x Polerón, 1x Polerón · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mar, 9 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(48)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(48)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#47</span></div>
         </div>
         <div class="venta-card">
           <div class="venta-header">
@@ -461,25 +524,27 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Transferencia</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(53)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#53</span></div>
         </div>
         <div class="venta-card">
           <div class="venta-header">
-            <div class="venta-nombre">María Laura Aunchayna</div>
+            <div class="venta-nombre">Sandra Godoy</div>
             <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(52)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$2.579</div>
+              <button onclick="event.stopPropagation();abrirDetalleVenta(51)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+<button onclick="event.stopPropagation();reimprimirPorId(51)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$2.760</div>
             </div>
           </div>
-          <div class="venta-detail">2x Polerón · Correo Uruguayo</div>
+          <div class="venta-detail">2x Sweater · Cadete Mathias</div>
           <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
             <span class="venta-detail">📅 mar, 9 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(52)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(51)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
           </div>
           <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center">
-            <span style="font-size:11px;color:var(--text2)">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(52)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+            <span style="font-size:11px;color:var(--text2)">Contado</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(51)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#51</span></div>
         </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 miércoles, 10 de junio</div>
         <div class="venta-card">
           <div class="venta-header">
@@ -499,6 +564,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Transferencia</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(44)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#44</span></div>
         </div>
         <div class="venta-card">
           <div class="venta-header">
@@ -518,6 +584,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Contado</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(49)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#49</span></div>
         </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 jueves, 11 de junio</div>
         <div class="venta-card">
           <div class="venta-header">
@@ -537,6 +604,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Transferencia</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(50)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#50</span></div>
         </div>
         <div class="venta-card">
           <div class="venta-header">
@@ -556,6 +624,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
             <span style="font-size:11px;color:var(--text2)">Contado</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(46)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#46</span></div>
         </div></div>
     </div>
   </div>
@@ -897,8 +966,8 @@ function showTab(screen, tab) {
   document.getElementById(`tab-${screen}-${tab}`).classList.add('active');
   document.querySelectorAll(`[id^="subtab-${screen}-"]`).forEach(s => s.style.display='none');
   document.getElementById(`subtab-${screen}-${tab}`).style.display = 'block';
-  if (screen==='ventas' && tab==='historial') cargarHistorial();
-  if (screen==='ventas' && tab==='reservas') cargarReservas();
+  if (screen==='ventas' && tab==='historial') { if (!todasVentas.length) cargarHistorial(); else renderHistorial(); }
+  if (screen==='ventas' && tab==='reservas') { if (!todasReservas.length) cargarReservas(); else renderReservas(); }
 }
 
 // HELPERS
@@ -1432,11 +1501,17 @@ async function cargarHistorial() {
 
 function toggleFiltroCanal(canal) {
   filtroCanal = filtroCanal === canal ? 'todos' : canal;
-  const ids = {'Cadete Mathias':'hcanal-cadete','Correo Uruguayo':'hcanal-correo','Retira en mano':'hcanal-retiro'};
-  Object.entries(ids).forEach(([c, id]) => {
-    const btn = document.getElementById(id);
+  const cards = {
+    'Cadete Mathias': 'cnt-card-cadete',
+    'Correo Uruguayo': 'cnt-card-correo',
+    'Retira en mano': 'cnt-card-retiro'
+  };
+  Object.entries(cards).forEach(([c, id]) => {
+    const card = document.getElementById(id);
+    if (!card) return;
     const activo = c === filtroCanal;
-    btn.style.cssText = `flex:1;padding:9px;border-radius:20px;border:1.5px solid ${activo?'var(--accent)':'var(--border2)'};background:${activo?'rgba(74,82,64,0.1)':'transparent'};color:${activo?'var(--accent)':'var(--text2)'};font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;cursor:pointer;transition:all 0.2s`;
+    card.style.background = activo ? 'rgba(74,82,64,0.08)' : 'var(--surface)';
+    card.style.borderColor = activo ? 'var(--accent)' : 'var(--border)';
   });
   renderHistorial();
 }
@@ -1466,6 +1541,20 @@ function setFiltroHistorial(estado) {
 function renderHistorial() {
   const hoy = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
   const ayer = new Date(Date.now()-86400000).toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+  // Calcular contadores por canal (solo filtro fecha y estado, sin canal)
+  const filtradaSinCanal = todasVentas.filter(v => {
+    if ((v.estado||'Pendiente') !== filtroHistorial) return false;
+    const fecha = v.fecha_entrega || '';
+    const desde = document.getElementById('historialDesde')?.value || '';
+    const hasta = document.getElementById('historialHasta')?.value || '';
+    if (desde && fecha < desde) return false;
+    if (hasta && fecha > hasta) return false;
+    return true;
+  });
+  document.getElementById('cntCadete').textContent = filtradaSinCanal.filter(v => v.canal === 'Cadete Mathias').length;
+  document.getElementById('cntCorreo').textContent = filtradaSinCanal.filter(v => v.canal === 'Correo Uruguayo').length;
+  document.getElementById('cntRetiro').textContent = filtradaSinCanal.filter(v => v.canal === 'Retira en mano').length;
+
   const filtradas = todasVentas.filter(v => {
     if ((v.estado||'Pendiente') !== filtroHistorial) return false;
     if (filtroCanal !== 'todos' && v.canal !== filtroCanal) return false;
@@ -1516,6 +1605,7 @@ ${v.canal === 'Cadete Mathias' ? `<button onclick="event.stopPropagation();reimp
             <span style="font-size:11px;color:var(--text2)">${v.pago||''}</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(${v.id})" style="padding:6px 14px;background:${estado==='Pendiente'?'var(--danger)':'var(--success)'};border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">${estado==='Pendiente'?'✓ Despachar':'✓ Entregado'}</button>
           </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#${v.id}</span></div>
         </div>`;
     });
   });
@@ -1856,6 +1946,7 @@ function renderReservas() {
           <div style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--accent)">$${(r.monto||0).toLocaleString('es-UY')}</div>
           <span style="font-size:11px;color:var(--text3)">${r.created_at ? aUY(r.created_at) : ''}</span>
         </div>
+        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#${r.id}</span></div>
         ${estado === 'Activa' ? `
         <div style="display:flex;gap:8px;margin-top:12px">
           <button onclick="abrirDetalleReserva(${r.id})" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
