@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0071)file:///C:/Users/gusta/Downloads/index%20-%202026-06-10T013144.281.html -->
+<!-- saved from url=(0049)file:///C:/Users/devan/Downloads/index%20(6).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
+  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.1</div>
 </div>
@@ -135,9 +135,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
     <div id="subtab-clientes-buscar">
       <div class="stats-bar">
-        <div class="stat-box"><div class="stat-num" id="statTotal">1621</div><div class="stat-label">Clientas</div></div>
-        <div class="stat-box"><div class="stat-num" id="statRecurrentes">299</div><div class="stat-label">Recurrentes</div></div>
-        <div class="stat-box"><div class="stat-num" id="statMvd">947</div><div class="stat-label">Montevideo</div></div>
+        <div class="stat-box"><div class="stat-num" id="statTotal">1623</div><div class="stat-label">Clientas</div></div>
+        <div class="stat-box"><div class="stat-num" id="statRecurrentes">301</div><div class="stat-label">Recurrentes</div></div>
+        <div class="stat-box"><div class="stat-num" id="statMvd">948</div><div class="stat-label">Montevideo</div></div>
       </div>
       <div class="search-wrap">
         <input type="text" id="searchInput" class="search-input" placeholder="Nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
@@ -159,8 +159,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <div class="screen active" id="screen-ventas">
     <div class="tabs">
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
-      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
-      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
+      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
+      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
     </div>
     <div id="subtab-ventas-reservas" style="display: none;">
       <!-- FILTROS -->
@@ -168,83 +168,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <button class="res-filtro" id="resfiltro-recientes" onclick="toggleFiltroReservas(&#39;recientes&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Recientes</button>
         <button class="res-filtro" id="resfiltro-retraso" onclick="toggleFiltroReservas(&#39;retraso&#39;)" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">⚠️ Retraso</button>
       </div>
-      <div id="reservasList">
-      <div class="venta-card">
-        <div class="venta-header">
-          <div class="venta-nombre">Marta</div>
-          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
-        </div>
-        <div class="venta-detail">1x Polerón · WhatsApp</div>
-        
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$1.390</div>
-          <span style="font-size:11px;color:var(--text3)">09/06/2026, 09:38 p. m.</span>
-        </div>
-        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#13</span></div>
-        
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button onclick="abrirDetalleReserva(13)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
-          <button onclick="convertirReservaEnVenta(13)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
-          <button onclick="confirmarCancelarReserva(13)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
-        </div>
-      </div>
-      <div class="venta-card">
-        <div class="venta-header">
-          <div class="venta-nombre">Adriana</div>
-          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
-        </div>
-        <div class="venta-detail">3x Polerón, 1x Sweater · WhatsApp</div>
-        
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$4.775</div>
-          <span style="font-size:11px;color:var(--text3)">09/06/2026, 09:23 p. m.</span>
-        </div>
-        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#12</span></div>
-        
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button onclick="abrirDetalleReserva(12)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
-          <button onclick="convertirReservaEnVenta(12)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
-          <button onclick="confirmarCancelarReserva(12)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
-        </div>
-      </div>
-      <div class="venta-card">
-        <div class="venta-header">
-          <div class="venta-nombre">Patricia Lozano</div>
-          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
-        </div>
-        <div class="venta-detail">3x Polerón · WhatsApp</div>
-        
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$3.585</div>
-          <span style="font-size:11px;color:var(--text3)">09/06/2026, 08:57 p. m.</span>
-        </div>
-        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#11</span></div>
-        
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button onclick="abrirDetalleReserva(11)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
-          <button onclick="convertirReservaEnVenta(11)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
-          <button onclick="confirmarCancelarReserva(11)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
-        </div>
-      </div>
-      <div class="venta-card">
-        <div class="venta-header">
-          <div class="venta-nombre">Naty Rocha</div>
-          <span style="font-size:11px;font-weight:600;color:var(--accent)">Activa</span>
-        </div>
-        <div class="venta-detail">1x Polerón, 1x Polerón · WhatsApp</div>
-        <div class="venta-detail" style="margin-top:2px;font-style:italic">Espera cierre tarjeta</div>
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px">
-          <div style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:20px;color:var(--accent)">$4.280</div>
-          <span style="font-size:11px;color:var(--text3)">06/06/2026, 06:06 p. m.</span>
-        </div>
-        <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#3</span></div>
-        
-        <div style="display:flex;gap:8px;margin-top:12px">
-          <button onclick="abrirDetalleReserva(3)" style="padding:9px 12px;background:none;border:1px solid var(--border);border-radius:var(--radius);color:var(--text2);font-size:14px;cursor:pointer">👁</button>
-          <button onclick="convertirReservaEnVenta(3)" style="flex:2;padding:9px;background:var(--dark);border:none;border-radius:var(--radius);color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✓ Confirmar venta</button>
-          <button onclick="confirmarCancelarReserva(3)" style="flex:1;padding:9px;background:none;border:1px solid var(--danger);border-radius:var(--radius);color:var(--danger);font-size:12px;font-weight:500;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif">✕ Cancelar</button>
-        </div>
-      </div></div>
+      <div id="reservasList"></div>
       <button onclick="abrirNuevaReserva()" style="position:fixed;bottom:80px;right:20px;width:52px;height:52px;background:var(--dark);border:none;border-radius:50%;color:#FAFAF8;font-size:24px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.2);z-index:50;display:flex;align-items:center;justify-content:center">+</button>
     </div>
 
@@ -318,15 +242,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
     </div>
 
-        <div id="subtab-ventas-nueva" style="display: none;">
+        <div id="subtab-ventas-nueva" style="display: block;">
       <!-- 1. CANAL DE VENTA -->
       <div class="form-group">
         <label class="form-label">Canal de venta</label>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:4px">
-          <button type="button" class="canal-pill active" onclick="seleccionarCanal(this,&#39;WhatsApp&#39;)" style="flex: 1 1 0%; min-width: 80px; padding: 10px 8px; border-radius: 24px; border-width: 1.5px; border-style: solid; border-color: var(--border2); border-image: initial; background: rgba(37, 211, 102, 0.1); color: rgb(26, 128, 64); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s;">💬 WhatsApp</button>
-          <button type="button" class="canal-pill" onclick="seleccionarCanal(this,&#39;Instagram&#39;)" style="flex: 1 1 0%; min-width: 80px; padding: 10px 8px; border-radius: 24px; border-color: var(--border2); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s;">📸 Instagram</button>
-          <button type="button" class="canal-pill" onclick="seleccionarCanal(this,&#39;Facebook&#39;)" style="flex: 1 1 0%; min-width: 80px; padding: 10px 8px; border-radius: 24px; border-color: var(--border2); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s;">👥 Facebook</button>
-          <button type="button" class="canal-pill" onclick="seleccionarCanal(this,&#39;Web&#39;)" style="flex: 1 1 0%; min-width: 80px; padding: 10px 8px; border-radius: 24px; border-color: var(--border2); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; transition: 0.2s;">🌐 Web</button>
+          <button type="button" class="canal-pill active" onclick="seleccionarCanal(this,&#39;WhatsApp&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid #25D366;background:rgba(37,211,102,0.1);color:#1a8040;font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">💬 WhatsApp</button>
+          <button type="button" class="canal-pill" onclick="seleccionarCanal(this,&#39;Instagram&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">📸 Instagram</button>
+          <button type="button" class="canal-pill" onclick="seleccionarCanal(this,&#39;Facebook&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">👥 Facebook</button>
+          <button type="button" class="canal-pill" onclick="seleccionarCanal(this,&#39;Web&#39;)" style="flex:1;min-width:80px;padding:10px 8px;border-radius:24px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px;transition:all 0.2s">🌐 Web</button>
         </div>
       </div>
 
@@ -335,16 +259,16 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <label class="form-label">Clienta</label>
         <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px">
           <div class="search-wrap" style="margin-bottom:0;flex:1">
-            <input type="text" id="ventaClientaBuscar" class="search-input" placeholder="Buscar clienta…" oninput="buscarParaVenta()" autocomplete="off" style="">
+            <input type="text" id="ventaClientaBuscar" class="search-input" placeholder="Buscar clienta…" oninput="buscarParaVenta()" autocomplete="off">
             <span class="search-icon">🔍</span>
           </div>
           <button onclick="toggleFormInline()" title="Nueva clienta" style="width:42px;height:42px;border-radius:50%;background:var(--accent);border:none;color:#FAFAF8;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(74,82,64,0.3)">+</button>
         </div>
         <div id="ventaClientaSugerencias"></div>
-        <div id="ventaClientaSeleccionada" style="display: none;" class="card">
-          <div class="card-name" id="ventaClientaNombre">Test</div>
-          <div class="card-detail" id="ventaClientaTel">📱 099123456</div>
-          <div class="card-detail" id="ventaClientaDir" style="font-size:12px;margin-top:2px">📍 Camino Maldonado 6279</div>
+        <div id="ventaClientaSeleccionada" style="display:none" class="card">
+          <div class="card-name" id="ventaClientaNombre"></div>
+          <div class="card-detail" id="ventaClientaTel"></div>
+          <div class="card-detail" id="ventaClientaDir" style="font-size:12px;margin-top:2px"></div>
           <button onclick="limpiarClientaVenta()" style="margin-top:10px;background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;font-size:12px;cursor:pointer">Cambiar</button>
         </div>
 <div id="btnAgregarInlineWrap" style="display:none"></div>
@@ -364,18 +288,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <!-- 3. ARTÍCULOS -->
       <div class="form-group">
         <label class="form-label">Artículos</label>
-        <div id="articulosList"><div class="articulo-fila" style="margin-bottom: 12px; padding: 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius);">
-    <div style="display:grid;grid-template-columns:1fr 60px 90px 32px;gap:6px;margin-bottom:8px;align-items:center">
-      <select class="art-cat form-input" style="padding:10px 12px;font-size:13px" onchange="calcTotal()">
-        <option value="">Categoría…</option>
-        <option>Sweater</option><option>Calza</option><option>Pantalón</option><option>Remera</option><option>Canguro</option><option>Buzo Deportivo</option><option>Pantalón Deportivo</option><option>Polera</option><option>Polerón</option><option>Jeans</option><option>Campera</option>
-      </select>
-      <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center" oninput="calcTotal()">
-      <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px" oninput="calcTotal()">
-      <button onclick="this.closest(&#39;.articulo-fila&#39;).remove();calcTotal()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
-    </div>
-    <input type="text" class="art-desc form-input" placeholder="Descripción (color, talle, detalle…)" style="font-size:13px;padding:10px 12px">
-  </div></div>
+        <div id="articulosList"></div>
         <button onclick="agregarArticulo()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
       </div>
 
@@ -387,7 +300,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
       <!-- 7. ENVÍO -->
       <div class="form-group"><label class="form-label">Envío ($)</label><input type="number" id="ventaEnvio" class="form-input" placeholder="0" oninput="calcTotal();actualizarEnvioIncluido()"></div>
-      <div id="envioIncluidoWrap" style="display: none; margin-bottom: 16px;">
+      <div id="envioIncluidoWrap" style="display:none;margin-bottom:16px">
         <label style="display:flex;align-items:center;gap:10px;cursor:pointer;padding:12px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)">
           <input type="checkbox" id="ventaEnvioIncluido" style="width:18px;height:18px;accent-color:var(--accent);cursor:pointer">
           <span style="font-size:14px;color:var(--text)">Envío incluido en el pago previo</span>
@@ -397,7 +310,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <!-- 8. FECHA ENTREGA -->
       <div class="form-group">
         <label class="form-label">Fecha de entrega</label>
-        <input type="date" id="ventaFechaEntrega" class="form-input" min="2026-06-10">
+        <input type="date" id="ventaFechaEntrega" class="form-input" min="2026-06-11">
       </div>
 
       <!-- 9. HORARIO -->
@@ -412,7 +325,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </div>
           <div>
             <label class="form-label" style="font-size:10px">Hasta</label>
-            <select id="ventaHorarioHasta" class="form-input"><option value="">—</option></select>
+            <select id="ventaHorarioHasta" class="form-input">
+              <option value="">—</option>
+            </select>
           </div>
         </div>
       </div>
@@ -425,9 +340,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div class="total-amount">$<span id="totalDisplay">0</span></div>
       </div>
       <button class="btn btn-primary" id="btnRegistrar" onclick="registrarVenta()">Registrar venta</button>
-      <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display: block; margin-top: 10px;">🏷️ Descargar etiqueta .lbx</button>
+      <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display:none;margin-top:10px">🏷️ Descargar etiqueta .lbx</button>
     </div>
-        <div id="subtab-ventas-historial" style="display: block;">
+        <div id="subtab-ventas-historial" style="display:none">
       <!-- Filtros fecha desde/hasta -->
       <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
         <label style="flex:1;padding:9px 14px;border-radius:20px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
@@ -453,228 +368,18 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div id="contadoresCanal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
         <div id="cnt-card-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:10px;text-align:center;cursor:pointer;transition:all 0.2s">
           <div style="font-size:11px;color:var(--text2);margin-bottom:4px">🛵 Cadete</div>
-          <div id="cntCadete" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">9</div>
+          <div id="cntCadete" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">—</div>
         </div>
         <div id="cnt-card-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:10px;text-align:center;cursor:pointer;transition:all 0.2s">
           <div style="font-size:11px;color:var(--text2);margin-bottom:4px">📦 Correo</div>
-          <div id="cntCorreo" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">1</div>
+          <div id="cntCorreo" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">—</div>
         </div>
         <div id="cnt-card-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:10px;text-align:center;cursor:pointer;transition:all 0.2s">
           <div style="font-size:11px;color:var(--text2);margin-bottom:4px">🤝 Retiro</div>
-          <div id="cntRetiro" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">0</div>
+          <div id="cntRetiro" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">—</div>
         </div>
       </div>
-      <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 Hoy</div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Adriana Fernández</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(63)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(63)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$380</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Polera · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun. · 🕐 12:00 - 14:00</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(63)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(63)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#63</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Rosana</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(44)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(44)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.410</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Campera · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun. · 🕐 12:30 - 15:00</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(44)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(44)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#44</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Joaquín /Olga</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(65)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(65)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.100</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(65)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-<button onclick="event.stopPropagation();abrirCancelarVenta(65)" style="padding:6px 10px;background:none;border:1px solid var(--border);border-radius:20px;color:var(--text2);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">✕</button>
-            <span style="font-size:11px;color:var(--text2);flex:1">Débito/Crédito</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(65)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#65</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Raquel Rastelino</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(62)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-
-              <div class="venta-monto">$1.479</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Correo Uruguayo</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(62)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(62)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#62</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Nair</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(61)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(61)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.579</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Calza · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(61)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Mercado Pago</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(61)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#61</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Sonia</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(64)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(64)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.470</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Polerón · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(64)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(64)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#64</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Sandra</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(49)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(49)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.540</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 mié, 10 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(49)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-<button onclick="event.stopPropagation();abrirCancelarVenta(49)" style="padding:6px 10px;background:none;border:1px solid var(--border);border-radius:20px;color:var(--text2);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">✕</button>
-            <span style="font-size:11px;color:var(--text2);flex:1">Contado</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(49)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#49</span></div>
-        </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 jueves, 11 de junio</div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Alejandra</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(50)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(50)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$2.560</div>
-            </div>
-          </div>
-          <div class="venta-detail">2x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 11 jun. · 🕐 12:30 - 18:00</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(50)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(50)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#50</span></div>
-        </div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Maria del Carmen Roi</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(46)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(46)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$2.760</div>
-            </div>
-          </div>
-          <div class="venta-detail">2x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 jue, 11 jun.</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(46)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-<button onclick="event.stopPropagation();abrirCancelarVenta(46)" style="padding:6px 10px;background:none;border:1px solid var(--border);border-radius:20px;color:var(--text2);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">✕</button>
-            <span style="font-size:11px;color:var(--text2);flex:1">Contado</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(46)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#46</span></div>
-        </div><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 viernes, 12 de junio</div>
-        <div class="venta-card" style="">
-          <div class="venta-header">
-            <div class="venta-nombre">Cecilia</div>
-            <div style="display:flex;align-items:center;gap:6px">
-              <button onclick="event.stopPropagation();abrirDetalleVenta(47)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
-<button onclick="event.stopPropagation();reimprimirPorId(47)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
-              <div class="venta-monto">$1.370</div>
-            </div>
-          </div>
-          <div class="venta-detail">1x Sweater · Cadete Mathias</div>
-          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
-            <span class="venta-detail">📅 vie, 12 jun. · 🕐 12:00 - 15:00</span>
-            <button onclick="event.stopPropagation();abrirModalVentaPorId(47)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
-          </div>
-          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
-
-            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
-            <button onclick="event.stopPropagation();cambiarEstadoDirecto(47)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
-          </div>
-          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#47</span></div>
-        </div></div>
+      <div id="historialList"></div>
     </div>
   </div>
 </div>
@@ -721,6 +426,61 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div class="detail-section" id="modalDetalleInfo"></div>
     <div id="modalDetalleArticulos"></div>
     <button onclick="document.getElementById(&#39;modalDetalleVentaOverlay&#39;).classList.remove(&#39;open&#39;)" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cerrar</button>
+  </div>
+</div>
+
+<!-- MODAL CAMBIO -->
+<div class="modal-overlay" id="modalCambioOverlay" onclick="if(event.target===this)cerrarModalCambio()">
+  <div class="modal" style="max-height:95vh;overflow-y:auto">
+    <div class="modal-handle"></div>
+    <div class="modal-title">🔄 Cambio de artículo</div>
+    <div class="modal-sub" id="modalCambioSubtitle"></div>
+    <input type="hidden" id="cambioVentaId">
+
+    <!-- ARTÍCULOS DEVUELTOS -->
+    <div style="margin:16px 0 8px">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Artículos que devuelve</div>
+      <div id="cambioDevueltosLista"></div>
+    </div>
+
+    <!-- ARTÍCULOS NUEVOS -->
+    <div style="margin:16px 0 8px">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Artículos que se lleva</div>
+      <div id="cambioNuevosLista"></div>
+      <button onclick="agregarArticuloCambio()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
+    </div>
+
+    <!-- ENVÍO -->
+    <div class="form-group">
+      <label class="form-label">Fecha de entrega <span style="color:var(--danger)">*</span></label>
+      <input type="date" id="cambioFechaEntrega" class="form-input">
+    </div>
+    <div class="form-group">
+      <label class="form-label">Canal de envío</label>
+      <select id="cambioCanalEnvio" class="form-input" onchange="calcularCambio()">
+        <option value="Retira en mano">🤝 Retira en mano</option>
+        <option value="Cadete Mathias">🛵 Cadete Mathias</option>
+        <option value="Correo Uruguayo">📦 Correo Uruguayo</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Costo de envío ($) — a cargo de la clienta</label>
+      <input type="number" id="cambioCostoEnvio" class="form-input" value="0" min="0" oninput="calcularCambio()">
+    </div>
+
+    <!-- RESUMEN -->
+    <div id="cambioResumen" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin:16px 0"></div>
+
+    <!-- ALERTA CRÉDITO -->
+    <div id="cambioCreditoAlerta" style="display:none;background:rgba(192,57,43,0.1);border:1px solid var(--danger);border-radius:var(--radius);padding:12px;margin-bottom:12px;font-size:13px;color:var(--danger)"></div>
+
+    <div class="form-group">
+      <label class="form-label">Notas (opcional)</label>
+      <input type="text" id="cambioNotas" class="form-input" placeholder="Motivo del cambio, talle, color…">
+    </div>
+
+    <button id="btnConfirmarCambio" onclick="confirmarCambio()" class="btn btn-primary">Confirmar cambio</button>
+    <button onclick="cerrarModalCambio()" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cancelar</button>
   </div>
 </div>
 
@@ -889,7 +649,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
-<div class="toast" id="toast">Venta registrada ✓</div>
+<div class="toast" id="toast"></div>
 
 <script>
 const SUPABASE_URL = 'https://olhnnavpojoqepklnwrf.supabase.co';
@@ -1493,6 +1253,7 @@ async function registrarVenta() {
       monto: monto, envio: envio, total: monto+envio,
       detalle: detalle
     };
+    todasVentas = []; // Limpiar caché para que historial recargue
     toast('Venta registrada ✓','success');
     // Si viene de una reserva, marcarla como Convertida
     if (window._reservaOrigenId) {
@@ -1696,6 +1457,7 @@ ${v.canal === 'Cadete Mathias' ? `<button onclick="event.stopPropagation();reimp
           </div>
           ${estado !== 'Cancelada' ? `<div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
 ${['Contado','Débito/Crédito'].includes(v.pago) ? `<button onclick="event.stopPropagation();abrirCancelarVenta(${v.id})" style="padding:6px 10px;background:none;border:1px solid var(--border);border-radius:20px;color:var(--text2);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">✕</button>` : ''}
+${estado==='Despachado' ? `<button onclick="event.stopPropagation();abrirModalCambio(${v.id})" title="Registrar cambio" style="padding:6px 10px;background:none;border:1px solid var(--accent);border-radius:20px;color:var(--accent);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">🔄</button>` : ''}
             <span style="font-size:11px;color:var(--text2);flex:1">${v.pago||''}</span>
             <button onclick="event.stopPropagation();cambiarEstadoDirecto(${v.id})" style="padding:6px 14px;background:${estado==='Pendiente'?'var(--danger)':'var(--success)'};border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">${estado==='Pendiente'?'✓ Despachar':'✓ Entregado'}</button>
           </div>` : ''}
@@ -1972,6 +1734,202 @@ function generarZIPEtiqueta(labelXML, propXML) {
     { nombre: 'prop.xml', contenido: encoder.encode(propXML) }
   ];
   return generarZIP(archivos.map(a => ({ nombre: a.nombre, contenido: new TextDecoder().decode(a.contenido) })));
+}
+
+// CAMBIOS
+let ventaCambioActual = null;
+
+function abrirModalCambio(id) {
+  ventaCambioActual = todasVentas.find(v => v.id === id);
+  if (!ventaCambioActual) return;
+  document.getElementById('cambioVentaId').value = id;
+  document.getElementById('modalCambioSubtitle').textContent = ventaCambioActual.nombre_cliente + ' · Venta #' + id;
+  document.getElementById('cambioNotas').value = '';
+  const hoyStr = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+  document.getElementById('cambioFechaEntrega').value = '';
+  document.getElementById('cambioFechaEntrega').min = hoyStr;
+  document.getElementById('cambioCostoEnvio').value = '0';
+  document.getElementById('cambioCanalEnvio').value = 'Retira en mano';
+  document.getElementById('cambioCreditoAlerta').style.display = 'none';
+  document.getElementById('btnConfirmarCambio').disabled = false;
+
+  // Listar artículos de la venta original como checkboxes
+  const arts = ventaCambioActual.detalle || [];
+  document.getElementById('cambioDevueltosLista').innerHTML = arts.map((a, i) => `
+    <label style="display:flex;align-items:center;gap:10px;padding:10px;background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:6px;cursor:pointer">
+      <input type="checkbox" class="cambio-devuelto-check" data-index="${i}" data-precio="${a.precio_unitario||0}" data-cantidad="${a.cantidad||1}" onchange="calcularCambio()" style="width:18px;height:18px;accent-color:var(--accent)">
+      <div style="flex:1">
+        <div style="font-size:14px">${a.cantidad}x ${a.categoria}</div>
+        ${a.descripcion ? `<div style="font-size:12px;color:var(--text2)">${a.descripcion}</div>` : ''}
+      </div>
+      <span style="font-size:14px;color:var(--accent)">$${((a.precio_unitario||0)*(a.cantidad||1)).toLocaleString('es-UY')}</span>
+    </label>`).join('');
+
+  document.getElementById('cambioNuevosLista').innerHTML = '';
+  agregarArticuloCambio();
+  calcularCambio();
+  document.getElementById('modalCambioOverlay').classList.add('open');
+}
+
+function cerrarModalCambio() {
+  document.getElementById('modalCambioOverlay').classList.remove('open');
+  ventaCambioActual = null;
+}
+
+function agregarArticuloCambio() {
+  const lista = document.getElementById('cambioNuevosLista');
+  const div = document.createElement('div');
+  div.className = 'cambio-nuevo-fila';
+  div.style.cssText = 'background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:8px';
+  div.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 60px 90px 32px;gap:6px;margin-bottom:8px;align-items:center">
+      <select class="art-cat form-input" style="padding:10px 12px;font-size:13px" onchange="calcularCambio()">
+        <option value="">Categoría…</option>
+        ${CATEGORIAS.map(c=>`<option>${c}</option>`).join('')}
+      </select>
+      <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center" oninput="calcularCambio()">
+      <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px" oninput="calcularCambio()">
+      <button onclick="this.closest('.cambio-nuevo-fila').remove();calcularCambio()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
+    </div>
+    <input type="text" class="art-desc form-input" placeholder="Descripción (color, talle…)" style="font-size:13px;padding:10px 12px">
+  `;
+  lista.appendChild(div);
+}
+
+function calcularCambio() {
+  // Crédito — artículos devueltos seleccionados
+  let credito = 0;
+  document.querySelectorAll('.cambio-devuelto-check:checked').forEach(ch => {
+    credito += parseFloat(ch.dataset.precio) * parseInt(ch.dataset.cantidad);
+  });
+
+  // Débito — artículos nuevos
+  let debito = 0;
+  document.querySelectorAll('.cambio-nuevo-fila').forEach(fila => {
+    const cant = parseInt(fila.querySelector('.art-cant').value) || 1;
+    const precio = parseFloat(fila.querySelector('.art-precio').value) || 0;
+    debito += cant * precio;
+  });
+
+  const envio = parseFloat(document.getElementById('cambioCostoEnvio').value) || 0;
+  const diferencia = debito - credito;
+  const totalCobrar = diferencia + envio;
+
+  // Resumen
+  let resumenHTML = `
+    <div class="detail-row"><span class="detail-key">Crédito (devuelve)</span><span class="detail-val" style="color:var(--success)">$${credito.toLocaleString('es-UY')}</span></div>
+    <div class="detail-row"><span class="detail-key">Artículos nuevos</span><span class="detail-val">$${debito.toLocaleString('es-UY')}</span></div>
+    <div class="detail-row"><span class="detail-key">Diferencia artículos</span><span class="detail-val" style="font-weight:600;color:${diferencia>=0?'var(--text)':'var(--danger)'}">$${diferencia.toLocaleString('es-UY')}</span></div>
+    <div class="detail-row"><span class="detail-key">Envío (clienta)</span><span class="detail-val">$${envio.toLocaleString('es-UY')}</span></div>
+    <div style="border-top:1px solid var(--border);margin-top:8px;padding-top:8px" class="detail-row"><span class="detail-key" style="font-weight:600">Total a cobrar</span><span class="detail-val" style="font-weight:600;font-size:18px;font-family:'Cormorant Garamond',serif;color:var(--accent)">$${Math.max(0,totalCobrar).toLocaleString('es-UY')}</span></div>
+  `;
+  document.getElementById('cambioResumen').innerHTML = resumenHTML;
+
+  // Alerta crédito negativo
+  const alerta = document.getElementById('cambioCreditoAlerta');
+  const btn = document.getElementById('btnConfirmarCambio');
+  if (diferencia < 0) {
+    alerta.style.display = 'block';
+    alerta.textContent = `La clienta tiene un crédito a favor de $${Math.abs(diferencia).toLocaleString('es-UY')}. Ajustá los artículos antes de continuar — no se registran créditos pendientes.`;
+    btn.disabled = true;
+  } else {
+    alerta.style.display = 'none';
+    btn.disabled = false;
+  }
+}
+
+async function confirmarCambio() {
+  const ventaId = parseInt(document.getElementById('cambioVentaId').value);
+  const venta = ventaCambioActual;
+  if (!venta) return;
+
+  // Artículos devueltos
+  const arts = venta.detalle || [];
+  const devueltos = [];
+  document.querySelectorAll('.cambio-devuelto-check:checked').forEach(ch => {
+    const a = arts[parseInt(ch.dataset.index)];
+    if (a) devueltos.push(a);
+  });
+
+  if (!devueltos.length) { toast('Seleccioná al menos un artículo devuelto','error'); return; }
+
+  // Artículos nuevos
+  const nuevos = [];
+  document.querySelectorAll('.cambio-nuevo-fila').forEach(fila => {
+    const cat = fila.querySelector('.art-cat').value;
+    const cant = parseInt(fila.querySelector('.art-cant').value)||1;
+    const precio = parseFloat(fila.querySelector('.art-precio').value)||0;
+    const desc = fila.querySelector('.art-desc').value.trim();
+    if (cat && precio > 0) nuevos.push({categoria:cat, cantidad:cant, precio_unitario:precio, subtotal:cant*precio, descripcion:desc});
+  });
+
+  if (!nuevos.length) { toast('Agregá al menos un artículo nuevo','error'); return; }
+
+  const montoDevuelto = devueltos.reduce((s,a) => s + (a.precio_unitario||0)*(a.cantidad||1), 0);
+  const montoNuevo = nuevos.reduce((s,a) => s + a.subtotal, 0);
+  const diferencia = montoNuevo - montoDevuelto;
+  const costoEnvio = parseFloat(document.getElementById('cambioCostoEnvio').value)||0;
+  const totalCobrar = Math.max(0, diferencia + costoEnvio);
+  const canal = document.getElementById('cambioCanalEnvio').value;
+  const notas = document.getElementById('cambioNotas').value.trim();
+
+  const fechaCambio = document.getElementById('cambioFechaEntrega').value;
+  if (!fechaCambio) { toast('La fecha de entrega es obligatoria','error'); return; }
+  const btn = document.getElementById('btnConfirmarCambio');
+  btn.disabled = true; btn.textContent = 'Procesando…';
+
+  try {
+    // 1. Guardar cambio
+    await API.post('cambios', {
+      venta_id: ventaId,
+      articulos_devueltos: devueltos,
+      articulos_nuevos: nuevos,
+      monto_devuelto: montoDevuelto,
+      monto_nuevo: montoNuevo,
+      diferencia: diferencia,
+      canal_envio: canal,
+      costo_envio: costoEnvio,
+      total_a_cobrar: totalCobrar,
+      estado: 'Pendiente',
+      notas: notas
+    });
+
+    // 2. Crear nueva venta de despacho vinculada al cambio
+    const resumenNuevos = nuevos.map(a => `${a.cantidad}x ${a.categoria}`).join(', ');
+    await API.post('ventas', {
+      nombre_cliente: venta.nombre_cliente,
+      telefono: venta.telefono,
+      direccion: venta.direccion||'',
+      departamento: venta.departamento||'',
+      articulo: resumenNuevos + ' (Cambio #' + ventaId + ')',
+      detalle: nuevos,
+      monto: Math.max(0, diferencia),
+      envio: costoEnvio,
+      total: totalCobrar,
+      pago: 'Contado',
+      canal: canal,
+      canal_venta: venta.canal_venta||'',
+      fecha_entrega: fechaCambio,
+      horario_entrega: null,
+      estado: 'Pendiente',
+      notas_venta: 'Cambio de venta #' + ventaId + (notas ? '. ' + notas : ''),
+      envio_incluido: false
+    });
+
+    // 3. Registrar en audit trail
+    await registrarAudit('Cambio registrado', 'ventas', ventaId, {
+      nombre: venta.nombre_cliente,
+      devuelve: devueltos.map(a => a.categoria).join(', '),
+      lleva: nuevos.map(a => a.categoria).join(', '),
+      total_cobrar: totalCobrar
+    });
+
+    toast('Cambio registrado ✓','success');
+    cerrarModalCambio();
+    todasVentas = [];
+    cargarHistorial();
+  } catch(e) { toast('Error: '+e.message,'error'); }
+  btn.disabled = false; btn.textContent = 'Confirmar cambio';
 }
 
 // AUDIT TRAIL
