@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(28).html -->
+<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(30).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
+  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.1</div>
 </div>
@@ -121,10 +121,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <button class="logout-btn" onclick="logout()">Salir</button>
   </div>
   <nav class="nav">
-    <button class="nav-btn" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
+    <button class="nav-btn active" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
     <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
     <button class="nav-btn" onclick="showScreen(&#39;consulta&#39;)" id="nav-consulta"><span class="icon">🔍</span>Consulta</button>
-    <button class="nav-btn active" onclick="showScreen(&#39;tablero&#39;)" id="nav-tablero"><span class="icon">📊</span>Tablero</button>
+    <button class="nav-btn" onclick="showScreen(&#39;tablero&#39;)" id="nav-tablero"><span class="icon">📊</span>Tablero</button>
     <button class="nav-btn" onclick="showScreen(&#39;backup&#39;)" id="nav-backup"><span class="icon">💾</span>Backup</button>
   </nav>
 
@@ -144,7 +144,57 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <input type="text" id="searchInput" class="search-input" placeholder="Nombre o teléfono…" oninput="buscarClientes()" autocomplete="off">
         <span class="search-icon">🔍</span>
       </div>
-      <div id="clientesList"></div>
+      <div id="clientesList"><div class="section-label">Últimas agregadas</div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2266,&quot;nombre&quot;:&quot;Nelly Rodríguez&quot;,&quot;telefono&quot;:&quot;094290695&quot;,&quot;direccion&quot;:&quot;18 de Julio 1204 Young&quot;,&quot;departamento&quot;:&quot;Río Negro&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-12&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-12T00:57:30.562108&quot;})">
+      <div class="card-name">Nelly Rodríguez</div>
+      <div class="card-detail">📱 094290695</div>
+      <div class="card-detail">📍 18 de Julio 1204 Young</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Río Negro</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-12</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2265,&quot;nombre&quot;:&quot;Alice Rizzo&quot;,&quot;telefono&quot;:&quot;099369472&quot;,&quot;direccion&quot;:&quot;Baldomir 441&quot;,&quot;departamento&quot;:&quot;Artigas&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-12&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-12T00:47:35.478624&quot;})">
+      <div class="card-name">Alice Rizzo</div>
+      <div class="card-detail">📱 099369472</div>
+      <div class="card-detail">📍 Baldomir 441</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Artigas</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-12</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2264,&quot;nombre&quot;:&quot;Claudia Salveraglio&quot;,&quot;telefono&quot;:&quot;095544814&quot;,&quot;direccion&quot;:&quot;Democracia 1803 bis&quot;,&quot;departamento&quot;:&quot;Montevideo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:&quot;&quot;,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-10&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-10T22:56:02.491031&quot;})">
+      <div class="card-name">Claudia Salveraglio</div>
+      <div class="card-detail">📱 095544814</div>
+      <div class="card-detail">📍 Democracia 1803 bis</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Montevideo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-10</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2263,&quot;nombre&quot;:&quot;Claudia Ruiz&quot;,&quot;telefono&quot;:&quot;095236569&quot;,&quot;direccion&quot;:&quot;Luisa Nair Mello 576 esquina suárez del rondelo. Melo&quot;,&quot;departamento&quot;:&quot;Cerro Largo&quot;,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-10&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-10T16:24:55.004142&quot;})">
+      <div class="card-name">Claudia Ruiz</div>
+      <div class="card-detail">📱 095236569</div>
+      <div class="card-detail">📍 Luisa Nair Mello 576 esquina suárez del rondelo. M…</div>
+      <div class="card-tags">
+        <span class="tag tag-depto">Cerro Largo</span>
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-10</span>
+      </div>
+    </div>
+    <div class="card card-clickable" onclick="abrirModal({&quot;id&quot;:2256,&quot;nombre&quot;:&quot;Marta&quot;,&quot;telefono&quot;:&quot;099021000&quot;,&quot;direccion&quot;:&quot;Interior&quot;,&quot;departamento&quot;:null,&quot;localidad&quot;:null,&quot;notas&quot;:null,&quot;fecha_ultimo_envio&quot;:&quot;2026-06-10&quot;,&quot;cantidad_envios&quot;:1,&quot;created_at&quot;:&quot;2026-06-10T00:38:01.216202&quot;})">
+      <div class="card-name">Marta</div>
+      <div class="card-detail">📱 099021000</div>
+      <div class="card-detail">📍 Interior</div>
+      <div class="card-tags">
+        
+        <span class="tag tag-envios">1 envío</span>
+        <span class="tag tag-fecha">2026-06-10</span>
+      </div>
+    </div></div>
     </div>
     <div id="subtab-clientes-agregar" style="display:none">
       <div class="form-group"><label class="form-label">Nombre</label><input type="text" id="nuevaNombre" class="form-input" placeholder="Nombre completo"></div>
@@ -157,11 +207,11 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
   <!-- VENTAS -->
-  <div class="screen" id="screen-ventas">
+  <div class="screen active" id="screen-ventas">
     <div class="tabs">
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
-      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
-      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
+      <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
+      <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;historial&#39;)" id="tab-ventas-historial">Historial</button>
     </div>
     <div id="subtab-ventas-reservas" style="display: none;">
       <!-- FILTROS -->
@@ -243,7 +293,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
     </div>
 
-        <div id="subtab-ventas-nueva" style="display: block;">
+        <div id="subtab-ventas-nueva" style="display: none;">
       <!-- 1. CANAL DE VENTA -->
       <div class="form-group">
         <label class="form-label">Canal de venta</label>
@@ -343,7 +393,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <button class="btn btn-primary" id="btnRegistrar" onclick="registrarVenta()">Registrar venta</button>
       <button class="btn btn-secondary" id="btnEtiqueta" onclick="descargarEtiqueta()" style="display:none;margin-top:10px">🏷️ Descargar etiqueta .lbx</button>
     </div>
-        <div id="subtab-ventas-historial" style="display:none">
+        <div id="subtab-ventas-historial" style="display: block;">
       <!-- Filtros fecha desde/hasta -->
       <div style="display:flex;gap:8px;margin-bottom:10px;align-items:center">
         <label style="flex:1;padding:9px 14px;border-radius:20px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 3px rgba(0,0,0,0.06)">
@@ -367,20 +417,152 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
       <!-- Contadores por canal — también son filtros -->
       <div id="contadoresCanal" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:14px">
-        <div id="cnt-card-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:10px;text-align:center;cursor:pointer;transition:all 0.2s">
+        <div id="cnt-card-cadete" onclick="toggleFiltroCanal(&#39;Cadete Mathias&#39;)" style="background: var(--surface); border-color: var(--border); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;">
           <div style="font-size:11px;color:var(--text2);margin-bottom:4px">🛵 Cadete</div>
-          <div id="cntCadete" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">—</div>
+          <div id="cntCadete" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">3</div>
         </div>
-        <div id="cnt-card-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:10px;text-align:center;cursor:pointer;transition:all 0.2s">
+        <div id="cnt-card-correo" onclick="toggleFiltroCanal(&#39;Correo Uruguayo&#39;)" style="background: var(--surface); border-color: var(--border); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;">
           <div style="font-size:11px;color:var(--text2);margin-bottom:4px">📦 Correo</div>
-          <div id="cntCorreo" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">—</div>
+          <div id="cntCorreo" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">3</div>
         </div>
-        <div id="cnt-card-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="background:var(--surface);border:1.5px solid var(--border);border-radius:12px;padding:10px;text-align:center;cursor:pointer;transition:all 0.2s">
+        <div id="cnt-card-retiro" onclick="toggleFiltroCanal(&#39;Retira en mano&#39;)" style="background: var(--surface); border-color: var(--border); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 12px; padding: 10px; text-align: center; cursor: pointer; transition: 0.2s;">
           <div style="font-size:11px;color:var(--text2);margin-bottom:4px">🤝 Retiro</div>
-          <div id="cntRetiro" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">—</div>
+          <div id="cntRetiro" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:24px;font-weight:400;color:var(--accent)">0</div>
         </div>
       </div>
-      <div id="historialList"></div>
+      <div id="historialList"><div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin:16px 0 8px">📅 Hoy</div>
+        <div class="venta-card" style="">
+          <div class="venta-header">
+            <div class="venta-nombre">Alice Rizzo</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(89)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+
+              <div class="venta-monto">$3.024</div>
+            </div>
+          </div>
+          <div class="venta-detail">3x Remera · Correo Uruguayo</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 vie, 12 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(89)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
+
+
+            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(89)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#89</span></div>
+        </div>
+        <div class="venta-card" style="">
+          <div class="venta-header">
+            <div class="venta-nombre">Amabilia Melo</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(90)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+
+              <div class="venta-monto">$1.679</div>
+            </div>
+          </div>
+          <div class="venta-detail">2x Polera · Correo Uruguayo</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 vie, 12 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(90)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
+
+
+            <span style="font-size:11px;color:var(--text2);flex:1">Mercado Pago</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(90)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#90</span></div>
+        </div>
+        <div class="venta-card" style="">
+          <div class="venta-header">
+            <div class="venta-nombre">Nelly Rodríguez</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(91)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+
+              <div class="venta-monto">$7.039</div>
+            </div>
+          </div>
+          <div class="venta-detail">3x Sweater, 2x Polerón, 1x Pantalón · Correo Uruguayo</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 vie, 12 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(91)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
+
+
+            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(91)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#91</span></div>
+        </div>
+        <div class="venta-card" style="">
+          <div class="venta-header">
+            <div class="venta-nombre">Rosana</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(94)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+<button onclick="event.stopPropagation();reimprimirPorId(94)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.680</div>
+            </div>
+          </div>
+          <div class="venta-detail">2x Polera · Cadete Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 vie, 12 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(94)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
+<button onclick="event.stopPropagation();abrirCancelarVenta(94)" style="padding:6px 10px;background:none;border:1px solid var(--border);border-radius:20px;color:var(--text2);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">✕</button>
+
+            <span style="font-size:11px;color:var(--text2);flex:1">Contado</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(94)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#94</span></div>
+        </div>
+        <div class="venta-card" style="">
+          <div class="venta-header">
+            <div class="venta-nombre">Graciela Echeto</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(92)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+<button onclick="event.stopPropagation();reimprimirPorId(92)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$1.270</div>
+            </div>
+          </div>
+          <div class="venta-detail">1x Remera · Cadete Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 vie, 12 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(92)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
+
+
+            <span style="font-size:11px;color:var(--text2);flex:1">Transferencia</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(92)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#92</span></div>
+        </div>
+        <div class="venta-card" style="">
+          <div class="venta-header">
+            <div class="venta-nombre">Santa Melo</div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button onclick="event.stopPropagation();abrirDetalleVenta(93)" title="Ver detalle" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">👁</button>
+<button onclick="event.stopPropagation();reimprimirPorId(93)" title="Reimprimir etiqueta" style="background:none;border:1px solid var(--border);border-radius:6px;padding:4px 8px;cursor:pointer;font-size:14px">🏷️</button>
+              <div class="venta-monto">$3.200</div>
+            </div>
+          </div>
+          <div class="venta-detail">4x Polera · Cadete Mathias</div>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:6px">
+            <span class="venta-detail">📅 vie, 12 jun.</span>
+            <button onclick="event.stopPropagation();abrirModalVentaPorId(93)" title="Editar fecha" style="background:none;border:none;cursor:pointer;font-size:13px;padding:2px;color:var(--text2)">✏️</button>
+          </div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:6px">
+<button onclick="event.stopPropagation();abrirCancelarVenta(93)" style="padding:6px 10px;background:none;border:1px solid var(--border);border-radius:20px;color:var(--text2);font-size:11px;cursor:pointer;font-family:DM Sans,sans-serif;flex-shrink:0">✕</button>
+
+            <span style="font-size:11px;color:var(--text2);flex:1">Contado</span>
+            <button onclick="event.stopPropagation();cambiarEstadoDirecto(93)" style="padding:6px 14px;background:var(--danger);border:none;border-radius:20px;color:#FAFAF8;font-size:12px;font-weight:600;cursor:pointer;font-family:DM Sans,sans-serif">✓ Despachar</button>
+          </div>
+          <div style="text-align:right;margin-top:4px"><span style="font-size:10px;color:var(--text3)">#93</span></div>
+        </div></div>
     </div>
   </div>
 </div>
@@ -396,7 +578,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
   <!-- TABLERO -->
-  <div class="screen active" id="screen-tablero">
+  <div class="screen" id="screen-tablero">
     <div class="section-title">Tablero</div>
 
     <!-- Selector período -->
@@ -429,9 +611,18 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <!-- Evolución histórica -->
     <div class="card" style="margin-bottom:1rem;padding:1rem 1.25rem">
       <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Evolución histórica</p>
-      <div style="position:relative;width:100%;height:200px;min-height:200px">
-        <canvas id="chartEvoReal" role="img" aria-label="Evolución histórica de ventas Devané" style="display: block; width: 398px; height: 200px; box-sizing: border-box;" width="598" height="300">Cargando datos...</canvas>
-      </div>
+      <div id="chartEvoContainer" style="width:100%;height:180px;overflow:hidden"><svg width="399" height="180" viewBox="0 0 399 180" xmlns="http://www.w3.org/2000/svg">
+    <text x="40" y="144" text-anchor="end" font-size="9" fill="#9B9B93">$0k</text>
+            <line x1="45" y1="140" x2="389" y2="140" stroke="#f0ece4" stroke-width="1"></line><text x="40" y="111.5" text-anchor="end" font-size="9" fill="#9B9B93">$5k</text>
+            <line x1="45" y1="107.5" x2="389" y2="107.5" stroke="#f0ece4" stroke-width="1"></line><text x="40" y="79" text-anchor="end" font-size="9" fill="#9B9B93">$10k</text>
+            <line x1="45" y1="75" x2="389" y2="75" stroke="#f0ece4" stroke-width="1"></line><text x="40" y="46.5" text-anchor="end" font-size="9" fill="#9B9B93">$15k</text>
+            <line x1="45" y1="42.5" x2="389" y2="42.5" stroke="#f0ece4" stroke-width="1"></line><text x="40" y="14" text-anchor="end" font-size="9" fill="#9B9B93">$20k</text>
+            <line x1="45" y1="10" x2="389" y2="10" stroke="#f0ece4" stroke-width="1"></line>
+    <polygon points="45,140 45,121.6268429079817 94.14285714285714,104.83985765124555 143.28571428571428,92.81138790035587 192.42857142857144,10 241.57142857142858,100.67615658362989 290.7142857142857,25.432130147432645 339.8571428571429,132.399593289273 389,29.397559735638026 389,140" fill="rgba(74,82,64,0.08)"></polygon>
+    <polyline points="45,121.6268429079817 94.14285714285714,104.83985765124555 143.28571428571428,92.81138790035587 192.42857142857144,10 241.57142857142858,100.67615658362989 290.7142857142857,25.432130147432645 339.8571428571429,132.399593289273 389,29.397559735638026" fill="none" stroke="#4A5240" stroke-width="2" stroke-linejoin="round"></polyline>
+    <circle cx="45" cy="121.6268429079817" r="3" fill="#4A5240"></circle><circle cx="94.14285714285714" cy="104.83985765124555" r="3" fill="#4A5240"></circle><circle cx="143.28571428571428" cy="92.81138790035587" r="3" fill="#4A5240"></circle><circle cx="192.42857142857144" cy="10" r="3" fill="#4A5240"></circle><circle cx="241.57142857142858" cy="100.67615658362989" r="3" fill="#4A5240"></circle><circle cx="290.7142857142857" cy="25.432130147432645" r="3" fill="#4A5240"></circle><circle cx="339.8571428571429" cy="132.399593289273" r="3" fill="#4A5240"></circle><circle cx="389" cy="29.397559735638026" r="3" fill="#4A5240"></circle>
+    <text x="45" y="175" text-anchor="middle" font-size="9" fill="#9B9B93">vie 5</text><text x="143.28571428571428" y="175" text-anchor="middle" font-size="9" fill="#9B9B93">dom 7</text><text x="241.57142857142858" y="175" text-anchor="middle" font-size="9" fill="#9B9B93">mar 9</text><text x="339.8571428571429" y="175" text-anchor="middle" font-size="9" fill="#9B9B93">jue 11</text><text x="389" y="175" text-anchor="middle" font-size="9" fill="#9B9B93">vie 12</text>
+  </svg></div>
     </div>
 
     <!-- Top artículos -->
@@ -632,7 +823,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <div class="modal-overlay" id="modalVentaOverlay" onclick="if(event.target===this)cerrarModalVenta()">
   <div class="modal">
     <div class="modal-handle"></div>
-    <div class="modal-title" id="modalVentaNombre"></div>
+    <div class="modal-title" id="modalVentaNombre">Rosana</div>
     <div style="height:12px"></div>
     <div class="form-group">
       <label class="form-label">Dirección de entrega</label>
@@ -640,9 +831,20 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
 
     <!-- ARTÍCULOS EDITABLES -->
-    <div id="modalArticulosSection" style="display:none;margin-bottom:16px">
+    <div id="modalArticulosSection" style="display: block; margin-bottom: 16px;">
       <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Artículos</div>
-      <div id="modalArticulosList"></div>
+      <div id="modalArticulosList"><div class="art-modal-fila" style="background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; margin-bottom: 8px;">
+    <div style="display:grid;grid-template-columns:1fr 60px 90px 32px;gap:6px;margin-bottom:8px;align-items:center">
+      <select class="art-cat form-input" style="padding:10px 12px;font-size:13px">
+        <option value="">Categoría…</option>
+        <option>Sweater</option><option>Calza</option><option>Pantalón</option><option>Remera</option><option>Canguro</option><option>Buzo Deportivo</option><option>Pantalón Deportivo</option><option>Polera</option><option>Polerón</option><option>Jeans</option><option>Campera</option>
+      </select>
+      <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center">
+      <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px">
+      <button onclick="this.closest(&#39;.art-modal-fila&#39;).remove()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
+    </div>
+    <input type="text" class="art-desc form-input" placeholder="Descripción (color, talle…)" style="font-size:13px;padding:10px 12px">
+  </div></div>
       <button onclick="agregarArticuloModal()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
     </div>
 
@@ -670,9 +872,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div>
           <label class="form-label" style="font-size:10px">Hasta</label>
-          <select id="modalHorarioHasta" class="form-input">
-            <option value="">—</option>
-          </select>
+          <select id="modalHorarioHasta" class="form-input"><option value="">—</option></select>
         </div>
       </div>
     </div>
@@ -2750,6 +2950,58 @@ function filtrarVentasPorPeriodo(ventas, periodo) {
   });
 }
 
+function renderSVGChart(labels, data) {
+  const container = document.getElementById('chartEvoContainer');
+  if (!container || !data.length) return;
+  const W = container.clientWidth || 300;
+  const H = 180;
+  const pad = { top: 10, right: 10, bottom: 40, left: 45 };
+  const cw = W - pad.left - pad.right;
+  const ch = H - pad.top - pad.bottom;
+  const maxV = Math.max(...data) || 1;
+  const minV = 0;
+  const xStep = cw / (labels.length - 1 || 1);
+
+  const points = data.map((v, i) => {
+    const x = pad.left + i * xStep;
+    const y = pad.top + ch - ((v - minV) / (maxV - minV)) * ch;
+    return `${x},${y}`;
+  }).join(' ');
+
+  const areaPoints = `${pad.left},${pad.top + ch} ` + points + ` ${pad.left + (data.length-1)*xStep},${pad.top + ch}`;
+
+  // Y axis labels
+  const yTicks = [0, 0.25, 0.5, 0.75, 1].map(t => {
+    const v = minV + t * (maxV - minV);
+    const y = pad.top + ch - t * ch;
+    return `<text x="${pad.left - 5}" y="${y + 4}" text-anchor="end" font-size="9" fill="#9B9B93">$${(v/1000).toFixed(0)}k</text>
+            <line x1="${pad.left}" y1="${y}" x2="${pad.left + cw}" y2="${y}" stroke="#f0ece4" stroke-width="1"/>`;
+  }).join('');
+
+  // X axis labels — mostrar máx 6
+  const step = Math.ceil(labels.length / 6);
+  const xLabels = labels.map((l, i) => {
+    if (i % step !== 0 && i !== labels.length - 1) return '';
+    const x = pad.left + i * xStep;
+    return `<text x="${x}" y="${H - 5}" text-anchor="middle" font-size="9" fill="#9B9B93">${l}</text>`;
+  }).join('');
+
+  // Dots
+  const dots = data.map((v, i) => {
+    const x = pad.left + i * xStep;
+    const y = pad.top + ch - ((v - minV) / (maxV - minV)) * ch;
+    return `<circle cx="${x}" cy="${y}" r="3" fill="#4A5240"/>`;
+  }).join('');
+
+  container.innerHTML = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">
+    ${yTicks}
+    <polygon points="${areaPoints}" fill="rgba(74,82,64,0.08)"/>
+    <polyline points="${points}" fill="none" stroke="#4A5240" stroke-width="2" stroke-linejoin="round"/>
+    ${dots}
+    ${xLabels}
+  </svg>`;
+}
+
 function renderTablero() {
   const filtradas = filtrarVentasPorPeriodo(tableroVentas, tableroPeriodo);
 
@@ -2793,37 +3045,8 @@ function renderTablero() {
   const labels = Object.keys(grupos).slice(-12);
   const dataEvo = labels.map(k => grupos[k]);
 
-  if (tableroChart) { tableroChart.destroy(); tableroChart = null; }
-  const _labels = labels;
-  const _dataEvo = dataEvo;
-  setTimeout(() => {
-    if (typeof Chart === 'undefined') return;
-    const canvasEl = document.getElementById('chartEvoReal');
-    if (!canvasEl) return;
-    tableroChart = new Chart(canvasEl, {
-      type: 'line',
-      data: {
-        labels: _labels,
-        datasets: [{
-          data: _dataEvo,
-          borderColor: '#4A5240',
-          backgroundColor: 'rgba(74,82,64,0.08)',
-          borderWidth: 2,
-          pointRadius: 3,
-          fill: true,
-          tension: 0.4
-        }]
-      },
-      options: {
-        responsive: true, maintainAspectRatio: false,
-        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toLocaleString('es-UY') } } },
-        scales: {
-          x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 6 } },
-          y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' } }
-        }
-      }
-    });
-  }, 300);
+  // SVG chart — no depende de librerías externas
+  renderSVGChart(labels, dataEvo);
 
   // Top artículos
   const artConteo = {};
@@ -3036,6 +3259,5 @@ function descargar(data, nombre, tipo) {
   URL.revokeObjectURL(url);
 }
 </script>
-<script src="./index_files/chart.umd.js.descarga"></script>
 
 </body></html>
