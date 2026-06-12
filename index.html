@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(27).html -->
+<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(28).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -2794,35 +2794,36 @@ function renderTablero() {
   const dataEvo = labels.map(k => grupos[k]);
 
   if (tableroChart) { tableroChart.destroy(); tableroChart = null; }
-  const canvasEl = document.getElementById('chartEvoReal');
-  // Force canvas dimensions before creating chart (fixes mobile rendering)
-  const wrapper = canvasEl.parentElement;
-  canvasEl.width = wrapper.clientWidth || 300;
-  canvasEl.height = 200;
-  tableroChart = new Chart(canvasEl, {
-    type: 'line',
-    data: {
-      labels,
-      datasets: [{
-        data: dataEvo,
-        borderColor: '#4A5240',
-        backgroundColor: 'rgba(74,82,64,0.08)',
-        borderWidth: 2,
-        pointRadius: 3,
-        fill: true,
-        tension: 0.4
-      }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      devicePixelRatio: window.devicePixelRatio || 1,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toLocaleString('es-UY') } } },
-      scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 6 } },
-        y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' } }
+  const _labels = labels;
+  const _dataEvo = dataEvo;
+  setTimeout(() => {
+    if (typeof Chart === 'undefined') return;
+    const canvasEl = document.getElementById('chartEvoReal');
+    if (!canvasEl) return;
+    tableroChart = new Chart(canvasEl, {
+      type: 'line',
+      data: {
+        labels: _labels,
+        datasets: [{
+          data: _dataEvo,
+          borderColor: '#4A5240',
+          backgroundColor: 'rgba(74,82,64,0.08)',
+          borderWidth: 2,
+          pointRadius: 3,
+          fill: true,
+          tension: 0.4
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toLocaleString('es-UY') } } },
+        scales: {
+          x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 6 } },
+          y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' } }
+        }
       }
-    }
-  });
+    });
+  }, 300);
 
   // Top artículos
   const artConteo = {};
