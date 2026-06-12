@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(23).html -->
+<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(24).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -121,10 +121,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <button class="logout-btn" onclick="logout()">Salir</button>
   </div>
   <nav class="nav">
-    <button class="nav-btn active" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
+    <button class="nav-btn" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
     <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
     <button class="nav-btn" onclick="showScreen(&#39;consulta&#39;)" id="nav-consulta"><span class="icon">🔍</span>Consulta</button>
-    <button class="nav-btn" onclick="showScreen(&#39;tablero&#39;)" id="nav-tablero"><span class="icon">📊</span>Tablero</button>
+    <button class="nav-btn active" onclick="showScreen(&#39;tablero&#39;)" id="nav-tablero"><span class="icon">📊</span>Tablero</button>
     <button class="nav-btn" onclick="showScreen(&#39;backup&#39;)" id="nav-backup"><span class="icon">💾</span>Backup</button>
   </nav>
 
@@ -157,7 +157,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
   <!-- VENTAS -->
-  <div class="screen active" id="screen-ventas">
+  <div class="screen" id="screen-ventas">
     <div class="tabs">
       <button class="tab-btn" onclick="showTab(&#39;ventas&#39;,&#39;reservas&#39;)" id="tab-ventas-reservas">Reservas</button>
       <button class="tab-btn active" onclick="showTab(&#39;ventas&#39;,&#39;nueva&#39;)" id="tab-ventas-nueva">Nueva venta</button>
@@ -396,54 +396,129 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 
   <!-- TABLERO -->
-  <div class="screen" id="screen-tablero">
+  <div class="screen active" id="screen-tablero">
     <div class="section-title">Tablero</div>
 
     <!-- Selector período -->
     <div style="display:flex;gap:6px;margin-bottom:1.25rem">
-      <button onclick="setTablePeriodo(&#39;semana&#39;)" id="tp-semana" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Semana</button>
-      <button onclick="setTablePeriodo(&#39;mes&#39;)" id="tp-mes" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--accent);background:rgba(74,82,64,0.1);color:var(--accent);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Mes</button>
-      <button onclick="setTablePeriodo(&#39;todo&#39;)" id="tp-todo" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Todo</button>
+      <button onclick="setTablePeriodo(&#39;semana&#39;)" id="tp-semana" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border-color: var(--accent); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: rgba(74, 82, 64, 0.1); color: var(--accent); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">Semana</button>
+      <button onclick="setTablePeriodo(&#39;mes&#39;)" id="tp-mes" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border-color: var(--border2); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">Mes</button>
+      <button onclick="setTablePeriodo(&#39;todo&#39;)" id="tp-todo" style="flex: 1 1 0%; padding: 9px; border-radius: 20px; border-color: var(--border2); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; background: transparent; color: var(--text2); font-family: &quot;DM Sans&quot;, sans-serif; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.2s;">Todo</button>
     </div>
 
     <!-- Métricas rápidas -->
     <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:1.25rem">
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
         <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Total facturado</p>
-        <p id="tp-total" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+        <p id="tp-total" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">$76.080</p>
       </div>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
         <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Ticket promedio</p>
-        <p id="tp-ticket" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+        <p id="tp-ticket" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">$1.902</p>
       </div>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
         <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Conversión</p>
-        <p id="tp-conv" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+        <p id="tp-conv" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">45%</p>
       </div>
       <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
         <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Costo envíos</p>
-        <p id="tp-envios" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+        <p id="tp-envios" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">$6.683</p>
       </div>
     </div>
 
     <!-- Evolución histórica -->
     <div class="card" style="margin-bottom:1rem;padding:1rem 1.25rem">
       <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Evolución histórica</p>
-      <div style="position:relative;width:100%;height:160px">
-        <canvas id="chartEvoReal" role="img" aria-label="Evolución histórica de ventas Devané">Cargando datos...</canvas>
+      <div style="position:relative;width:100%;height:200px;min-height:200px">
+        <canvas id="chartEvoReal" role="img" aria-label="Evolución histórica de ventas Devané" style="display: block; width: 398px; height: 200px; box-sizing: border-box;" width="598" height="300">Cargando datos...</canvas>
       </div>
     </div>
 
     <!-- Top artículos -->
     <div class="card" style="margin-bottom:1rem;padding:1rem 1.25rem">
       <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Artículos más vendidos</p>
-      <div id="tp-arts" style="display:flex;flex-direction:column;gap:10px"><div class="loader"><div class="spinner"></div></div></div>
+      <div id="tp-arts" style="display:flex;flex-direction:column;gap:10px">
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span style="color:var(--text)">Sweater</span>
+        <span style="color:var(--text2)">27 uds</span>
+      </div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px">
+        <div style="height:6px;width:100%;background:var(--accent);border-radius:3px"></div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span style="color:var(--text)">Polerón</span>
+        <span style="color:var(--text2)">16 uds</span>
+      </div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px">
+        <div style="height:6px;width:59%;background:var(--accent);border-radius:3px"></div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span style="color:var(--text)">Polera</span>
+        <span style="color:var(--text2)">9 uds</span>
+      </div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px">
+        <div style="height:6px;width:33%;background:var(--accent);border-radius:3px"></div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span style="color:var(--text)">Remera</span>
+        <span style="color:var(--text2)">5 uds</span>
+      </div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px">
+        <div style="height:6px;width:19%;background:var(--accent);border-radius:3px"></div>
+      </div>
+    </div>
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span style="color:var(--text)">Canguro</span>
+        <span style="color:var(--text2)">4 uds</span>
+      </div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px">
+        <div style="height:6px;width:15%;background:var(--accent);border-radius:3px"></div>
+      </div>
+    </div></div>
     </div>
 
     <!-- Top clientas -->
     <div class="card" style="padding:1rem 1.25rem">
       <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Top clientas</p>
-      <div id="tp-clis" style="display:flex;flex-direction:column;gap:10px"><div class="loader"><div class="spinner"></div></div></div>
+      <div id="tp-clis" style="display:flex;flex-direction:column;gap:10px"><div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(74,82,64,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--accent)">NR</div>
+        <span style="font-size:13px;color:var(--text)">Nelly Rodríguez</span>
+      </div>
+      <span style="font-size:13px;color:var(--text2)">$6.850</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(74,82,64,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--accent)">SR</div>
+        <span style="font-size:13px;color:var(--text)">Silavana Román</span>
+      </div>
+      <span style="font-size:13px;color:var(--text2)">$4.960</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(74,82,64,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--accent)">PL</div>
+        <span style="font-size:13px;color:var(--text)">Patricia Lozano</span>
+      </div>
+      <span style="font-size:13px;color:var(--text2)">$3.585</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(74,82,64,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--accent)">Y</div>
+        <span style="font-size:13px;color:var(--text)">Yanet</span>
+      </div>
+      <span style="font-size:13px;color:var(--text2)">$3.450</span>
+    </div><div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(74,82,64,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--accent)">SM</div>
+        <span style="font-size:13px;color:var(--text)">Santa Melo</span>
+      </div>
+      <span style="font-size:13px;color:var(--text2)">$2.980</span>
+    </div></div>
     </div>
   </div>
 
@@ -2735,9 +2810,10 @@ function renderTablero() {
     },
     options: {
       responsive: true, maintainAspectRatio: false,
+      devicePixelRatio: window.devicePixelRatio || 1,
       plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toLocaleString('es-UY') } } },
       scales: {
-        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45 } },
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45, autoSkip: true, maxTicksLimit: 6 } },
         y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' } }
       }
     }
