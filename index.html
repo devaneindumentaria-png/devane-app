@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///C:/Users/devan/Downloads/index%20(6).html -->
+<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(20).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -110,7 +110,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
   <div class="login-field"><input type="email" id="loginEmail" placeholder="Email" autocomplete="off"></div>
   <div class="login-field"><input type="password" id="loginPassword" placeholder="Contraseña" autocomplete="new-password" onkeydown="if(event.key===&#39;Enter&#39;)login()"></div>
-  <button class="login-btn" id="loginBtn" onclick="login()" disabled="">Entrando…</button>
+  <button class="login-btn" id="loginBtn" onclick="login()">Entrar</button>
   <div class="login-error" id="loginError"></div>
   <div style="margin-top:32px;font-size:11px;color:var(--text3);text-align:center;letter-spacing:0.5px">© Tubino SRL · v1.1</div>
 </div>
@@ -135,8 +135,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
     <div id="subtab-clientes-buscar">
       <div class="stats-bar">
-        <div class="stat-box"><div class="stat-num" id="statTotal">1623</div><div class="stat-label">Clientas</div></div>
-        <div class="stat-box"><div class="stat-num" id="statRecurrentes">301</div><div class="stat-label">Recurrentes</div></div>
+        <div class="stat-box"><div class="stat-num" id="statTotal">1625</div><div class="stat-label">Clientas</div></div>
+        <div class="stat-box"><div class="stat-num" id="statRecurrentes">303</div><div class="stat-label">Recurrentes</div></div>
         <div class="stat-box"><div class="stat-num" id="statMvd">948</div><div class="stat-label">Montevideo</div></div>
       </div>
       <div class="search-wrap">
@@ -310,7 +310,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <!-- 8. FECHA ENTREGA -->
       <div class="form-group">
         <label class="form-label">Fecha de entrega</label>
-        <input type="date" id="ventaFechaEntrega" class="form-input" min="2026-06-11">
+        <input type="date" id="ventaFechaEntrega" class="form-input" min="2026-06-12">
       </div>
 
       <!-- 9. HORARIO -->
@@ -510,6 +510,14 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <label class="form-label">Dirección de entrega</label>
       <input type="text" id="modalDireccion" class="form-input" placeholder="Dirección de entrega">
     </div>
+
+    <!-- ARTÍCULOS EDITABLES -->
+    <div id="modalArticulosSection" style="display:none;margin-bottom:16px">
+      <div style="font-size:11px;font-weight:600;color:var(--text2);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px">Artículos</div>
+      <div id="modalArticulosList"></div>
+      <button onclick="agregarArticuloModal()" style="width:100%;padding:11px;background:none;border:1px dashed var(--border2);color:var(--accent);border-radius:var(--radius);font-size:13px;cursor:pointer;font-family:&#39;DM Sans&#39;,sans-serif;margin-top:4px">+ Agregar artículo</button>
+    </div>
+
     <div class="form-group">
       <label class="form-label">Canal de envío</label>
       <select id="modalCanalEnvio" class="form-input">
@@ -518,6 +526,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <option>Retira en mano</option>
       </select>
     </div>
+
     <div class="form-group">
       <label class="form-label">Fecha de entrega</label>
       <input type="date" id="modalFechaEntrega" class="form-input">
@@ -538,6 +547,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           </select>
         </div>
       </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Observaciones</label>
+      <input type="text" id="modalNotasVenta" class="form-input" placeholder="Notas de la entrega…">
     </div>
     <button onclick="guardarCambiosVenta()" class="btn btn-primary" id="btnGuardarVenta">Guardar cambios</button>
     <button onclick="cerrarModalVenta()" style="width:100%;padding:12px;background:none;border:none;color:var(--text2);font-size:14px;cursor:pointer;margin-top:8px">Cerrar</button>
@@ -718,26 +731,40 @@ function horaUY(dateStr) {
 
 // AUTH
 window.addEventListener('load', async () => {
-  // Ocultar todo hasta verificar
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('appScreen').style.display = 'none';
+
+  const mostrarLogin = () => {
+    document.getElementById('loginScreen').style.display = 'flex';
+    const btn = document.getElementById('loginBtn');
+    btn.disabled = false; btn.textContent = 'Entrar';
+  };
+
   const saved = localStorage.getItem('devane_session');
   if (saved) {
+    // Timeout de 5 segundos para la verificación de sesión
+    const timeout = setTimeout(() => {
+      localStorage.removeItem('devane_session');
+      mostrarLogin();
+    }, 5000);
+
     try {
       const s = JSON.parse(saved);
       if (!s || !s.access_token) throw new Error('no token');
       const r = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
         headers: {'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${s.access_token}`}
       });
+      clearTimeout(timeout);
       if (!r.ok) throw new Error('expired');
       SESSION = s;
       mostrarApp();
       return;
     } catch(e) {
+      clearTimeout(timeout);
       localStorage.removeItem('devane_session');
     }
   }
-  document.getElementById('loginScreen').style.display = 'flex';
+  mostrarLogin();
 });
 
 async function login() {
@@ -1248,6 +1275,7 @@ async function registrarVenta() {
       direccion: c.direccion||'', notas_venta: notasVenta,
       pago: pagoVenta,
       envio_incluido: document.getElementById('ventaEnvioIncluido')?.checked || false,
+      todo_pago: false,
       fecha_entrega: document.getElementById('ventaFechaEntrega').value||'',
       horario_entrega: [document.getElementById('ventaHorarioDesde').value, document.getElementById('ventaHorarioHasta').value].filter(Boolean).join(' - ')||'',
       monto: monto, envio: envio, total: monto+envio,
@@ -1470,6 +1498,33 @@ ${estado==='Despachado' ? `<button onclick="event.stopPropagation();abrirModalCa
 
 }
 
+function agregarArticuloModal(art) {
+  const lista = document.getElementById('modalArticulosList');
+  const div = document.createElement('div');
+  div.className = 'art-modal-fila';
+  div.style.cssText = 'background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:8px';
+  div.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 60px 90px 32px;gap:6px;margin-bottom:8px;align-items:center">
+      <select class="art-cat form-input" style="padding:10px 12px;font-size:13px">
+        <option value="">Categoría…</option>
+        ${CATEGORIAS.map(c=>`<option>${c}</option>`).join('')}
+      </select>
+      <input type="number" class="art-cant form-input" value="1" min="1" style="padding:10px 8px;font-size:13px;text-align:center">
+      <input type="number" class="art-precio form-input" placeholder="$0" style="padding:10px 8px;font-size:13px">
+      <button onclick="this.closest('.art-modal-fila').remove()" style="background:none;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;padding:8px;font-size:14px;height:40px">✕</button>
+    </div>
+    <input type="text" class="art-desc form-input" placeholder="Descripción (color, talle…)" style="font-size:13px;padding:10px 12px">
+  `;
+  lista.appendChild(div);
+  // Pre-fill if art provided
+  if (art) {
+    div.querySelector('.art-cat').value = art.categoria || '';
+    div.querySelector('.art-cant').value = art.cantidad || 1;
+    div.querySelector('.art-precio').value = art.precio_unitario || 0;
+    div.querySelector('.art-desc').value = art.descripcion || '';
+  }
+}
+
 function abrirModalVentaPorId(id) {
   const v = todasVentas.find(v => v.id === id);
   if (v) abrirModalVenta(v);
@@ -1481,6 +1536,7 @@ function abrirModalVenta(v) {
   document.getElementById('modalVentaNombre').textContent = v.nombre_cliente || '—';
   // Populate editable fields
   document.getElementById('modalCanalEnvio').value = v.canal || 'Cadete Mathias';
+  document.getElementById('modalNotasVenta').value = v.notas_venta || '';
   document.getElementById('modalFechaEntrega').value = v.fecha_entrega || '';
   const horarioParts = (v.horario_entrega || '').split(' - ');
   document.getElementById('modalHorarioDesde').value = horarioParts[0] || '';
@@ -1496,6 +1552,21 @@ function abrirModalVenta(v) {
     dirInput.value = v.direccion || '';
     dirInput.disabled = true;
     dirInput.style.opacity = '0.6';
+  }
+
+  // Cargar artículos editables (solo Pendiente)
+  const artSection = document.getElementById('modalArticulosSection');
+  const artList = document.getElementById('modalArticulosList');
+  if (estado === 'Pendiente') {
+    artSection.style.display = 'block';
+    artList.innerHTML = '';
+    const detalleArts = v.detalle || [];
+    detalleArts.forEach(a => {
+      agregarArticuloModal(a);
+    });
+    if (!detalleArts.length) agregarArticuloModal();
+  } else {
+    artSection.style.display = 'none';
   }
 
   document.getElementById('modalVentaOverlay').classList.add('open');
@@ -1529,10 +1600,32 @@ async function guardarCambiosVenta() {
   const horario = [desde, hasta].filter(Boolean).join(' - ') || null;
   const canal = document.getElementById('modalCanalEnvio').value;
   const direccion = document.getElementById('modalDireccion').value.trim();
-  const cambios = { fecha_entrega: fecha || null, horario_entrega: horario, canal: canal };
+  const notasVenta = document.getElementById('modalNotasVenta').value.trim();
+  const cambios = { fecha_entrega: fecha || null, horario_entrega: horario, canal: canal, notas_venta: notasVenta };
   if ((ventaModalActual.estado||'Pendiente') === 'Pendiente' && direccion) {
     cambios.direccion = direccion;
   }
+  // Recalcular artículos si es Pendiente
+  if ((ventaModalActual.estado||'Pendiente') === 'Pendiente') {
+    const filas = document.querySelectorAll('.art-modal-fila');
+    const nuevoDetalle = [];
+    filas.forEach(fila => {
+      const cat = fila.querySelector('.art-cat').value;
+      const cant = parseInt(fila.querySelector('.art-cant').value)||1;
+      const precio = parseFloat(fila.querySelector('.art-precio').value)||0;
+      const desc = fila.querySelector('.art-desc').value.trim();
+      if (cat && precio > 0) nuevoDetalle.push({categoria:cat, cantidad:cant, precio_unitario:precio, subtotal:cant*precio, descripcion:desc});
+    });
+    if (nuevoDetalle.length) {
+      const nuevoMonto = nuevoDetalle.reduce((s,a) => s+a.subtotal, 0);
+      const envioActual = ventaModalActual.envio || 0;
+      cambios.detalle = nuevoDetalle;
+      cambios.articulo = nuevoDetalle.map(a => `${a.cantidad}x ${a.categoria}`).join(', ');
+      cambios.monto = nuevoMonto;
+      cambios.total = nuevoMonto + envioActual;
+    }
+  }
+
   try {
     await API.patch('ventas', ventaModalActual.id, cambios);
     await registrarAudit('Venta actualizada', 'ventas', ventaModalActual.id, { nombre: ventaModalActual.nombre_cliente, fecha: cambios.fecha_entrega, horario: cambios.horario_entrega, canal: cambios.canal });
@@ -1647,7 +1740,7 @@ function reimprimir(v) {
   ultimaVenta = {
     nombre_cliente: v.nombre_cliente, telefono: v.telefono,
     direccion: v.direccion||'', notas_venta: v.notas_venta||'',
-    pago: v.pago||'', envio_incluido: v.envio_incluido||false,
+    pago: v.pago||'', envio_incluido: v.envio_incluido||false, todo_pago: v.todo_pago||false,
     monto: v.monto||0, envio: v.envio||0, total: v.total||0,
     fecha_entrega: v.fecha_entrega||'', horario_entrega: v.horario_entrega||'',
     detalle: v.detalle||[]
@@ -1687,17 +1780,25 @@ function generarLBX(venta) {
   const esPrevio = ['Transferencia','Mercado Pago'].includes(pago);
   if (esPrevio) {
     const envioIncluido = venta.envio_incluido || false;
-    if (envioIncluido || envio === 0) {
+    const todoPago = venta.todo_pago || false;
+    if (todoPago) {
+      lineas.push('Todo pago');
+    } else if (envioIncluido || envio === 0) {
       lineas.push('Todo pago');
     } else {
       lineas.push(`Envío $${envio} al recibir`);
     }
   } else {
+    const todoPago = venta.todo_pago || false;
+    if (todoPago) {
+      lineas.push('Todo pago');
+    } else {
     lineas.push(`Abona $${monto} + Envío $${envio}`);
     if (pago === 'Débito/Crédito') {
       lineas.push(`Total $${totalCalc} posnet`);
     } else {
       lineas.push(`Total $${totalCalc} contado`);
+    }
     }
   }
 
@@ -2440,7 +2541,9 @@ function generarMensajeCadeteParaFecha(fechaSeleccionada) {
     msg += (i+1) + '. ' + v.nombre_cliente + '\n';
     msg += 'Dir: ' + (v.direccion||'Sin direccion') + '\n';
     if (v.horario_entrega) msg += 'Horario: ' + v.horario_entrega + '\n';
-    if (esPrevio) {
+    if (v.todo_pago) {
+      msg += 'Todo pago\n';
+    } else if (esPrevio) {
       if (!v.envio_incluido && v.envio > 0) {
         msg += 'Cobrar envio $' + v.envio + '\n';
       } else {
@@ -2454,6 +2557,7 @@ function generarMensajeCadeteParaFecha(fechaSeleccionada) {
       msg += totalStr + '\n';
     }
     if (v.telefono) msg += 'Tel: ' + v.telefono + '\n';
+    if (v.notas_venta) msg += 'Notas: ' + v.notas_venta + '\n';
     msg += '\n';
   });
   document.getElementById('textoCadete').value = msg;
