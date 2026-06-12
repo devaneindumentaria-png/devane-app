@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(20).html -->
+<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(23).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -124,6 +124,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <button class="nav-btn active" onclick="showScreen(&#39;ventas&#39;)" id="nav-ventas"><span class="icon">🛍</span>Ventas</button>
     <button class="nav-btn" onclick="showScreen(&#39;clientes&#39;)" id="nav-clientes"><span class="icon">👥</span>Clientas</button>
     <button class="nav-btn" onclick="showScreen(&#39;consulta&#39;)" id="nav-consulta"><span class="icon">🔍</span>Consulta</button>
+    <button class="nav-btn" onclick="showScreen(&#39;tablero&#39;)" id="nav-tablero"><span class="icon">📊</span>Tablero</button>
     <button class="nav-btn" onclick="showScreen(&#39;backup&#39;)" id="nav-backup"><span class="icon">💾</span>Backup</button>
   </nav>
 
@@ -392,6 +393,58 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <span class="search-icon">🔍</span>
     </div>
     <div id="consultaResultado"></div>
+  </div>
+
+  <!-- TABLERO -->
+  <div class="screen" id="screen-tablero">
+    <div class="section-title">Tablero</div>
+
+    <!-- Selector período -->
+    <div style="display:flex;gap:6px;margin-bottom:1.25rem">
+      <button onclick="setTablePeriodo(&#39;semana&#39;)" id="tp-semana" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Semana</button>
+      <button onclick="setTablePeriodo(&#39;mes&#39;)" id="tp-mes" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--accent);background:rgba(74,82,64,0.1);color:var(--accent);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Mes</button>
+      <button onclick="setTablePeriodo(&#39;todo&#39;)" id="tp-todo" style="flex:1;padding:9px;border-radius:20px;border:1.5px solid var(--border2);background:transparent;color:var(--text2);font-family:&#39;DM Sans&#39;,sans-serif;font-size:12px;font-weight:500;cursor:pointer;transition:all 0.2s">Todo</button>
+    </div>
+
+    <!-- Métricas rápidas -->
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:1.25rem">
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
+        <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Total facturado</p>
+        <p id="tp-total" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
+        <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Ticket promedio</p>
+        <p id="tp-ticket" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
+        <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Conversión</p>
+        <p id="tp-conv" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1rem">
+        <p style="font-size:11px;color:var(--text2);margin:0 0 4px;text-transform:uppercase;letter-spacing:0.5px">Costo envíos</p>
+        <p id="tp-envios" style="font-family:&#39;Cormorant Garamond&#39;,serif;font-size:26px;font-weight:400;margin:0;color:var(--accent)">—</p>
+      </div>
+    </div>
+
+    <!-- Evolución histórica -->
+    <div class="card" style="margin-bottom:1rem;padding:1rem 1.25rem">
+      <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Evolución histórica</p>
+      <div style="position:relative;width:100%;height:160px">
+        <canvas id="chartEvoReal" role="img" aria-label="Evolución histórica de ventas Devané">Cargando datos...</canvas>
+      </div>
+    </div>
+
+    <!-- Top artículos -->
+    <div class="card" style="margin-bottom:1rem;padding:1rem 1.25rem">
+      <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Artículos más vendidos</p>
+      <div id="tp-arts" style="display:flex;flex-direction:column;gap:10px"><div class="loader"><div class="spinner"></div></div></div>
+    </div>
+
+    <!-- Top clientas -->
+    <div class="card" style="padding:1rem 1.25rem">
+      <p style="font-size:13px;font-weight:500;margin:0 0 1rem;color:var(--text)">Top clientas</p>
+      <div id="tp-clis" style="display:flex;flex-direction:column;gap:10px"><div class="loader"><div class="spinner"></div></div></div>
+    </div>
   </div>
 
   <!-- BACKUP -->
@@ -826,6 +879,7 @@ function showScreen(id) {
   document.getElementById('screen-'+id).classList.add('active');
   document.getElementById('nav-'+id).classList.add('active');
   if (id === 'clientes') cargarClientesRecientes();
+  if (id === 'tablero') cargarTablero();
 }
 
 function showTab(screen, tab) {
@@ -2575,6 +2629,160 @@ function copiarMensajeCadete() {
   });
 }
 
+// TABLERO
+let tableroChart = null;
+let tableroPeriodo = 'mes';
+let tableroVentas = [];
+let tableroReservas = [];
+let tableroLoaded = false;
+
+async function cargarTablero() {
+  if (tableroLoaded) { renderTablero(); return; }
+  try {
+    const [ventas, reservas] = await Promise.all([
+      API.get('ventas', 'select=monto,envio,total,estado,detalle,canal_venta,nombre_cliente,created_at,fecha_entrega&order=created_at.asc&limit=1000'),
+      API.get('reservas', 'select=estado,created_at&limit=1000')
+    ]);
+    tableroVentas = ventas;
+    tableroReservas = reservas;
+    tableroLoaded = true;
+    renderTablero();
+  } catch(e) { console.error('Error cargando tablero:', e); }
+}
+
+function setTablePeriodo(p) {
+  tableroPeriodo = p;
+  ['semana','mes','todo'].forEach(x => {
+    const btn = document.getElementById('tp-'+x);
+    const activo = x === p;
+    btn.style.borderColor = activo ? 'var(--accent)' : 'var(--border2)';
+    btn.style.background = activo ? 'rgba(74,82,64,0.1)' : 'transparent';
+    btn.style.color = activo ? 'var(--accent)' : 'var(--text2)';
+  });
+  renderTablero();
+}
+
+function filtrarVentasPorPeriodo(ventas, periodo) {
+  const hoy = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+  const hace7 = new Date(Date.now()-7*86400000).toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+  const inicioMes = hoy.substring(0,7) + '-01';
+  return ventas.filter(v => {
+    if (v.estado === 'Cancelada') return false;
+    const fecha = (v.created_at||'').split('T')[0];
+    if (periodo === 'semana') return fecha >= hace7;
+    if (periodo === 'mes') return fecha >= inicioMes;
+    return true;
+  });
+}
+
+function renderTablero() {
+  const filtradas = filtrarVentasPorPeriodo(tableroVentas, tableroPeriodo);
+
+  // Métricas
+  const total = filtradas.reduce((s,v) => s + (v.monto||0), 0);
+  const totalEnvios = filtradas.reduce((s,v) => s + (v.envio||0), 0);
+  const ticket = filtradas.length ? Math.round(total / filtradas.length) : 0;
+
+  // Conversión reservas
+  const reservasFiltradas = tableroReservas.filter(r => {
+    const fecha = (r.created_at||'').split('T')[0];
+    const hoy = new Date().toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+    const hace7 = new Date(Date.now()-7*86400000).toLocaleString('sv', {timeZone:'America/Montevideo'}).split(' ')[0];
+    const inicioMes = hoy.substring(0,7) + '-01';
+    if (tableroPeriodo === 'semana') return fecha >= hace7;
+    if (tableroPeriodo === 'mes') return fecha >= inicioMes;
+    return true;
+  });
+  const convertidas = reservasFiltradas.filter(r => r.estado === 'Convertida').length;
+  const conv = reservasFiltradas.length ? Math.round(convertidas / reservasFiltradas.length * 100) : 0;
+
+  document.getElementById('tp-total').textContent = '$' + total.toLocaleString('es-UY');
+  document.getElementById('tp-ticket').textContent = '$' + ticket.toLocaleString('es-UY');
+  document.getElementById('tp-conv').textContent = conv + '%';
+  document.getElementById('tp-envios').textContent = '$' + totalEnvios.toLocaleString('es-UY');
+
+  // Evolución histórica
+  const grupos = {};
+  filtradas.forEach(v => {
+    const fecha = (v.created_at||'').split('T')[0];
+    let key;
+    if (tableroPeriodo === 'semana') {
+      key = new Date(fecha+'T12:00:00').toLocaleDateString('es-UY', {weekday:'short', day:'numeric'});
+    } else if (tableroPeriodo === 'mes') {
+      key = fecha.substring(0,7);
+    } else {
+      key = fecha.substring(0,7);
+    }
+    grupos[key] = (grupos[key]||0) + (v.monto||0);
+  });
+  const labels = Object.keys(grupos).slice(-12);
+  const dataEvo = labels.map(k => grupos[k]);
+
+  if (tableroChart) tableroChart.destroy();
+  tableroChart = new Chart(document.getElementById('chartEvoReal'), {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        data: dataEvo,
+        borderColor: '#4A5240',
+        backgroundColor: 'rgba(74,82,64,0.08)',
+        borderWidth: 2,
+        pointRadius: 3,
+        fill: true,
+        tension: 0.4
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => '$' + ctx.parsed.y.toLocaleString('es-UY') } } },
+      scales: {
+        x: { grid: { display: false }, ticks: { font: { size: 10 }, maxRotation: 45 } },
+        y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: { size: 10 }, callback: v => '$' + (v/1000).toFixed(0) + 'k' } }
+      }
+    }
+  });
+
+  // Top artículos
+  const artConteo = {};
+  filtradas.forEach(v => {
+    (v.detalle||[]).forEach(a => {
+      artConteo[a.categoria] = (artConteo[a.categoria]||0) + (a.cantidad||1);
+    });
+  });
+  const topArts = Object.entries(artConteo).sort((a,b) => b[1]-a[1]).slice(0,5);
+  const maxArt = topArts[0]?.[1] || 1;
+  document.getElementById('tp-arts').innerHTML = topArts.length ? topArts.map(([n,v]) => `
+    <div>
+      <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:4px">
+        <span style="color:var(--text)">${n}</span>
+        <span style="color:var(--text2)">${v} uds</span>
+      </div>
+      <div style="height:6px;background:var(--surface2);border-radius:3px">
+        <div style="height:6px;width:${Math.round(v/maxArt*100)}%;background:var(--accent);border-radius:3px"></div>
+      </div>
+    </div>`).join('') : '<p style="font-size:13px;color:var(--text2)">Sin datos</p>';
+
+  // Top clientas
+  const cliConteo = {};
+  filtradas.forEach(v => {
+    if (!v.nombre_cliente) return;
+    if (!cliConteo[v.nombre_cliente]) cliConteo[v.nombre_cliente] = 0;
+    cliConteo[v.nombre_cliente] += (v.monto||0);
+  });
+  const topClis = Object.entries(cliConteo).sort((a,b) => b[1]-a[1]).slice(0,5);
+  document.getElementById('tp-clis').innerHTML = topClis.length ? topClis.map(([n,m]) => {
+    const ini = n.split(' ').map(x=>x[0]).slice(0,2).join('').toUpperCase();
+    return `<div style="display:flex;justify-content:space-between;align-items:center">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:32px;height:32px;border-radius:50%;background:rgba(74,82,64,0.1);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:var(--accent)">${ini}</div>
+        <span style="font-size:13px;color:var(--text)">${n}</span>
+      </div>
+      <span style="font-size:13px;color:var(--text2)">$${m.toLocaleString('es-UY')}</span>
+    </div>`;
+  }).join('') : '<p style="font-size:13px;color:var(--text2)">Sin datos</p>';
+}
+
 // BACKUP
 // Agregar acá el nombre de cualquier tabla nueva que crees en Supabase
 const TABLAS_BACKUP = ['clientes', 'ventas', 'reservas', 'direcciones', 'audit_trail'];
@@ -2746,5 +2954,6 @@ function descargar(data, nombre, tipo) {
   URL.revokeObjectURL(url);
 }
 </script>
+<script src="./index_files/chart.umd.js.descarga"></script>
 
 </body></html>
