@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(24).html -->
+<!-- saved from url=(0050)file:///C:/Users/devan/Downloads/index%20(27).html -->
 <html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -2793,8 +2793,13 @@ function renderTablero() {
   const labels = Object.keys(grupos).slice(-12);
   const dataEvo = labels.map(k => grupos[k]);
 
-  if (tableroChart) tableroChart.destroy();
-  tableroChart = new Chart(document.getElementById('chartEvoReal'), {
+  if (tableroChart) { tableroChart.destroy(); tableroChart = null; }
+  const canvasEl = document.getElementById('chartEvoReal');
+  // Force canvas dimensions before creating chart (fixes mobile rendering)
+  const wrapper = canvasEl.parentElement;
+  canvasEl.width = wrapper.clientWidth || 300;
+  canvasEl.height = 200;
+  tableroChart = new Chart(canvasEl, {
     type: 'line',
     data: {
       labels,
